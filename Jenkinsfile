@@ -1,0 +1,1 @@
+# Jenkins pipeline configuration placeholder
