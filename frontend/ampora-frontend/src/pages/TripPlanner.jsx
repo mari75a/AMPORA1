@@ -1,123 +1,69 @@
-import React, { useState } from "react";
+import React from "react";
+import roadtrip from "../assets/road-trip.png";
 
-export default function TripPlanner() {
-  const [start, setStart] = useState("");
-  const [destination, setDestination] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const palette = {
-    vibrant: "#00FF9A",
-    dark: "#159E5C",
-  };
-
-  const handlePlanTrip = () => {
-    if (!start || !destination) return alert("Please fill both fields!");
-
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      alert("AI Powered Trip Optimization Complete!");
-    }, 1200);
-  };
-
+const TripPlanner = () => {
   return (
-    <div className="bg-gray-50 w-screen min-h-screen pb-20">
-      {/* Header */}
-      <div className="text-center pt-10">
-        <h1 className="text-4xl font-extrabold text-gray-800">
-          Plan Your Smart EV Trip
-        </h1>
-        <p className="mt-2 text-gray-600">
-          AI-powered route optimization with charging station predictions
-        </p>
-      </div>
+    <div className="w-screen min-h-screen bg-[#EDFFFF] flex flex-col items-center">
 
-      {/* Form Container */}
-      <div className="max-w-4xl mx-auto mt-12 bg-white shadow-xl rounded-2xl p-8">
-        <h2 className="text-2xl font-bold text-gray-700 mb-6">Trip Details</h2>
+      {/* TOP BANNER */}
+      <div className="relative w-full h-[45vh] bg-gradient-to-r from-emerald-300 to-emerald-500 rounded-b-[80px] overflow-hidden">
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Start Location */}
-          <div>
-            <label className="text-gray-700 font-medium">Start Location</label>
-            <input
-              type="text"
-              placeholder="Enter starting point"
-              value={start}
-              onChange={(e) => setStart(e.target.value)}
-              className="w-full mt-2 px-4 py-3 rounded-lg border focus:outline-none focus:ring-2"
-              style={{ borderColor: palette.vibrant }}
-            />
-          </div>
-
-          {/* Destination */}
-          <div>
-            <label className="text-gray-700 font-medium">Destination</label>
-            <input
-              type="text"
-              placeholder="Enter destination"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-              className="w-full mt-2 px-4 py-3 rounded-lg border focus:outline-none focus:ring-2"
-              style={{ borderColor: palette.vibrant }}
-            />
-          </div>
-        </div>
-
-        {/* Plan Button */}
-        <button
-          onClick={handlePlanTrip}
-          className="w-full mt-8 py-4 rounded-xl text-white font-semibold text-lg shadow-md hover:opacity-90 transition"
-          style={{ background: palette.dark }}
+        {/* CURVED WAVE */}
+        <svg
+          className="absolute bottom-0 left-0 w-full"
+          viewBox="0 0 1440 320"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          {loading ? "Optimizing..." : "Plan My Trip"}
-        </button>
-      </div>
+          <path
+            fill="#EDFFFF"
+            d="M0,256L40,245.3C80,235,160,213,240,197.3C320,181,400,171,480,176C560,181,640,203,720,218.7C800,235,880,245,960,234.7C1040,224,1120,192,1200,170.7C1280,149,1360,139,1400,133.3L1440,128L1440,320L0,320Z"
+          ></path>
+        </svg>
 
-      {/* Section Title */}
-      <div className="max-w-4xl mx-auto mt-16">
-        <h2 className="text-2xl font-bold text-gray-800">Route Preview</h2>
-        <p className="text-gray-600 mt-1">
-          Map preview and AI recommendations appear here
-        </p>
-      </div>
+        {/* BANNER CONTENT */}
+        <div className="absolute top-16 w-full flex flex-col items-center text-white">
+          <h1 className="text-4xl font-bold drop-shadow-md">PLAN YOUR NEXT TRIP</h1>
 
-      {/* Map Placeholder */}
-      <div className="max-w-4xl mx-auto mt-6">
-        <div className="w-full h-64 rounded-xl bg-gray-200 flex items-center justify-center text-gray-500">
-          Map will render here (Google Maps)
+          <div className="mt-6 flex gap-4 px-4 w-full justify-center">
+            <input
+              type="text"
+              placeholder="Starting point"
+              className="w-[250px] h-[50px] rounded-xl px-4 bg-white text-black border-2 border-emerald-400"
+            />
+            <input
+              type="text"
+              placeholder="Destination"
+              className="w-[250px] h-[50px] rounded-xl px-4 bg-white text-black border-2 border-emerald-400"
+            />
+          </div>
+
+          <button className="mt-6 bg-white text-emerald-600 px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-100">
+            Plan Trip
+          </button>
         </div>
       </div>
 
-      {/* Recommended Stops */}
-      <div className="max-w-5xl mx-auto mt-16">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Recommended Charging Stations
-        </h2>
+      {/* BODY SECTION */}
+      <div className="mt-10 w-10/12 bg-white rounded-3xl shadow-lg p-8 flex gap-10">
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* Card 1 */}
-          <div className="bg-white rounded-xl shadow-md p-5 border">
-            <h3 className="text-lg font-bold">Station A</h3>
-            <p className="text-gray-600">Fast Charging • 5 km from route</p>
-            <p className="text-green-600 mt-2 font-semibold">Slot Available</p>
-          </div>
+        <img src={roadtrip} className="w-[180px] h-[180px]" alt="Roadtrip icon" />
 
-          {/* Card 2 */}
-          <div className="bg-white rounded-xl shadow-md p-5 border">
-            <h3 className="text-lg font-bold">Station B</h3>
-            <p className="text-gray-600">Ultra-Fast • 12 km from route</p>
-            <p className="text-red-500 mt-2 font-semibold">Queue: 4 Vehicles</p>
-          </div>
+        <div>
+          <h2 className="text-2xl font-bold text-emerald-500">Trip Planner</h2>
+          <p className="mt-4 text-gray-700 w-10/12 leading-relaxed">
+            Plan your electric journey easily with real-time charging station
+            locations, distance calculations, and optimized energy usage.  
+            Enter your start and destination to see the best EV-friendly route.
+          </p>
 
-          {/* Card 3 */}
-          <div className="bg-white rounded-xl shadow-md p-5 border">
-            <h3 className="text-lg font-bold">Station C</h3>
-            <p className="text-gray-600">Fast Charging • 8 km from route</p>
-            <p className="text-yellow-500 mt-2 font-semibold">Limited Slots</p>
-          </div>
+          <button className="mt-6 border-2 border-emerald-400 px-6 py-2 rounded-xl text-emerald-500 hover:bg-emerald-50">
+            Start Planning
+          </button>
         </div>
+
       </div>
     </div>
   );
-}
+};
+
+export default TripPlanner;

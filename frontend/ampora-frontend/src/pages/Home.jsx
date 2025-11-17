@@ -7,8 +7,8 @@ const Home = () => {
     <div className='flex flex-col w-screen  bg-[#EDFFFF]'>
       <div className='w-12/12  flex justify-center items-center mt-2'>
 
-        <div className='w-5/12 h-[50vh] bg-[#2EC770] rounded-tl-[50px] rounded-bl-[50px] -skew-x-12 bg-[url(./assets/bg1.jpg)]'></div>
-        <div className='w-5/12 h-[50vh] bg-[#D0FBE7] rounded-tr-[50px] rounded-br-[50px] -skew-x-12'>
+        <div className='w-5/12 h-[50vh] bg-[#2EC770] rounded-tl-[50px] rounded-bl-[50px] bg-[url(./assets/bg1.jpg)]'></div>
+        <div className='w-5/12 h-[50vh] bg-[#D0FBE7] rounded-tr-[50px] rounded-br-[50px] '>
           <h2 className=' mt-5 font-bold text-black text-[50px] text-center'>POWER YOUR RV</h2>
           <div className='mt-5 w-12/12 flex justify-center items-center'>
             <input type="text" className='w-8/12  h-[50px] border-2 border-[#2EC770] rounded-[50px] bg-white' />
