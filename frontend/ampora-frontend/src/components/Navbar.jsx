@@ -33,6 +33,7 @@ export default function Navbar() {
           <a href="/stations" className="hover:text-black"><span className="text-gray-700 font-medium hover:text-black ">Station</span> </a>
           <a href="/bookings" className="hover:text-black"><span className="text-gray-700 font-medium hover:text-black ">Bookings</span> </a>
           <a href="/payments" className="hover:text-black"><span className="text-gray-700 font-medium hover:text-black ">Payments</span> </a>
+          <a href="/user-dashboard" className="hover:text-black"><span className="text-gray-700 font-medium hover:text-black ">Dashboard</span> </a>
         </nav>
 
         {/* Profile */}
