@@ -22,7 +22,7 @@ const glass =
 const UserDashboard = () => {
   // ------- Mock data (replace with API data) -------
   const user = {
-    name: "Hi, Sangeeth 👋",
+    name: "Hi, Sangeeth ",
   };
 
   const monthly = {
@@ -83,7 +83,7 @@ const UserDashboard = () => {
               href="/trip"
               className="ml-2 text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-500 px-3 py-1 rounded-lg"
             >
-              Open Trip Planner
+             <span className="text-white">Open Trip Planner</span> 
             </a>
           </div>
         </div>
@@ -184,9 +184,9 @@ const UserDashboard = () => {
                 href="/bookings"
                 className="px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700"
               >
-                View Details
+                <span className="text-white">View Details</span>
               </a>
-              <button className="px-4 py-2 rounded-lg border border-emerald-300 text-emerald-700 text-sm hover:bg-emerald-50">
+              <button className="px-4 py-2 rounded-lg border border-emerald-300 text-white text-sm hover:bg-emerald-50">
                 Reschedule
               </button>
             </div>
@@ -234,9 +234,9 @@ const UserDashboard = () => {
               href="/trip"
               className="px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-semibold shadow hover:shadow-lg"
             >
-              Plan with this vehicle
+              <span className="text-white">Plan with this vehicle</span>
             </a>
-            <button className="px-4 py-2 rounded-lg border border-emerald-300 text-emerald-700 text-sm hover:bg-emerald-50">
+            <button className="px-4 py-2 rounded-lg border border-emerald-300 text-white text-sm hover:bg-emerald-50">
               Manage vehicles
             </button>
           </div>
