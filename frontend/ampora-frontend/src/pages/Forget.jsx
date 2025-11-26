@@ -22,58 +22,57 @@ export default function ForgetPassword() {
   return (
     <div className="min-h-screen w-screen flex  flex-row overflow-hidden p-4 justify-center bg-[#EDFEFF] fixed top-0 right-0 left-0">
      
-      <div className="w-[500px] bg-white rounded-2xl shadow-xl p-10 text-center">
-        {/* Title */}
-        <h2 className="text-2xl font-semibold mb-2">Forget Password?</h2>
-        <p className="text-gray-600 mb-8">
-          Enter your New password below to complete the <br /> reset process
+      <div className="w-[500px]  bg-gray-100 rounded-2xl shadow-xl/30 p-10 text-center ">
+        <div className=" p-8">
+        <h2 className="text-2xl font-bold text-black mb-2 ">Forget Password?</h2>
+        <p className="text-gray-600 mb-4 font-medium">
+          Enter your New password below to complete the reset process
         </p>
+        </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5 ">
           {/* Password */}
           <div className="text-left">
-            <label className="font-medium">Password</label>
+            <label className="font-medium text-black">Password</label>
             <input
               type="password"
               className="w-full mt-1 px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-600"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <p className="text-[13px] text-gray-500 mt-1">
+            <p className="text-[13px] font-regular text-gray-700 mt-1">
               password must be contain at least 8 characters
             </p>
           </div>
 
           {/* Confirm Password */}
           <div className="text-left">
-            <label className="font-medium">confirm Password</label>
+            <label className="font-medium text-black">confirm Password</label>
             <input
               type="password"
               className="w-full mt-1 px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-600"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <p className="text-[13px] text-gray-500 mt-1">
+            <p className="text-[13px] font-regular text-gray-700 mt-1">
               Password must be identical
             </p>
           </div>
 
-          {/* Reset Button */}
-          <button
-            type="submit"
-            className="w-full bg-teal-600 text-white py-3 rounded-xl font-semibold hover:bg-teal-700 transition"
-          >
-            Reset Password
-          </button>
-        </form>
+           <a className="w-[300px] flex items-center justify-center  p-3 ml-15 bg-[#0ABAB5] hover:bg-[#56DFCF] rounded-lg  shadow-md" href="">
+            
+            <span className=" text-white font-bold">Reset Password</span>
+          </a>
+          
+        
 
         {/* Back to login */}
-        <div className="mt-6">
-          <a href="/login" className="text-black underline">
-            Back to Login
+        
+          <a href="/login">
+            <p className="text-black underline p-1 ">Back to Login</p>
           </a>
-        </div>
+        </form>
       </div>
     </div>
   );
