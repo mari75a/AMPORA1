@@ -47,7 +47,7 @@ const PaymentPage = () => {
   ];
 
   return (
-    <div className="w-screen min-h-screen bg-[#EDFFFF] flex flex-col items-center p-10">
+    <div className="w-screen min-h-screen mt-3 bg-[#EDFFFF] flex flex-col items-center p-10">
 
       {/* Title */}
       <h1 className="text-4xl font-bold text-emerald-600 mb-3 mt-5">

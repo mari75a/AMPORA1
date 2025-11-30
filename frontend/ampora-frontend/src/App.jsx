@@ -8,6 +8,7 @@ import StationFinder from "./pages/StationFinder.jsx";
 import BookingsPage from "./pages/BookingsPage.jsx";
 import PaymentPage from "./pages/PaymentPage.jsx";
 import UserDashboard from "./pages/UserDashboard.jsx";
+
 import UserProfile from "./pages/UserProfile.jsx";
 import VehicleManager from "./pages/VehicleManager.jsx";
 import StationDetails from "./pages/StationDetails.jsx";
@@ -18,21 +19,29 @@ import SubscriptionPlans from "./pages/SubscriptionPlans.jsx";
 import ChargingHistory from "./pages/ChargingHistory.jsx";
 import Footer from "./components/Footer.jsx";
 
+import Register from "./pages/Register.jsx";
+import Forget from "./pages/Forget.jsx";
+import LoaderProvider from "./components/LoaderProvider.jsx";
+
+
+
 // Layout wrapper that hides navbar on certain pages
 function AppLayout() {
   const location = useLocation();
 
   // Pages where navbar should be hidden
-  const hideNavbarPages = ["/login"];
+  const hideNavbarPages = ["/login","/register","/forget"];
   const shouldHideNavbar = hideNavbarPages.includes(location.pathname);
 
   return (
     <>
       {!shouldHideNavbar && <Navbar />}
-
+<LoaderProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register/>} />
+        <Route path="/forget" element={<Forget/>} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/trip" element={<TripPlanner />} />
         <Route path="/stations" element={<StationFinder />} />
@@ -48,6 +57,7 @@ function AppLayout() {
 <Route path="/settings" element={<Settings />} />
 <Route path="/help" element={<HelpSupport />} />
       </Routes>
+      </LoaderProvider>
       
       {!shouldHideNavbar && <Footer />}
     </>

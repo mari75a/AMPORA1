@@ -55,7 +55,7 @@ const BookingsPage = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen bg-gradient-to-b from-emerald-50 via-teal-50 to-white px-6 py-10 flex flex-col items-center">
+    <div className="w-screen min-h-screen mt-8 bg-gradient-to-b from-emerald-50 via-teal-50 to-white px-6 py-10 flex flex-col items-center">
 
       {/* PAGE TITLE */}
       <motion.h1

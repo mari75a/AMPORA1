@@ -42,7 +42,7 @@ const TripPlanner = () => {
   const batteryPct = Math.max(0, Math.min(100, Number(battery) || 0));
 
   return (
-    <div className="w-screen min-h-screen bg-gradient-to-b from-emerald-50 via-teal-50 to-white text-gray-900 overflow-hidden">
+    <div className="w-screen  bg-gradient-to-b from-emerald-50 via-teal-50 to-white text-gray-900 overflow-hidden">
 
       {/* HERO */}
       {/* HERO SECTION */}

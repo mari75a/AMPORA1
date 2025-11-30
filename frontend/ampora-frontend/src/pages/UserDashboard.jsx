@@ -63,7 +63,7 @@ const UserDashboard = () => {
     "inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold";
 
   return (
-    <div className="w-screen min-h-screen bg-gradient-to-b from-emerald-50 via-teal-50 to-white text-gray-900">
+    <div className="w-screen min-h-screen mt-10 bg-gradient-to-b from-emerald-50 via-teal-50 to-white text-gray-900">
       {/* Header */}
       <div className="mx-auto w-11/12 max-w-7xl py-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
