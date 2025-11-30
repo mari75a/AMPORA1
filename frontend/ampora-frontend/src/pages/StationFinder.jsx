@@ -64,10 +64,11 @@ const StationFinder = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen bg-[#EDFFFF] flex flex-col items-center pb-10">
+    <div className=" w-screen overflow-x-hidden
+ bg-[#EDFFFF] flex flex-col items-center pb-10">
 
       {/* Banner */}
-      <div className="w-full h-[30vh] bg-gradient-to-r from-emerald-300 to-emerald-500 rounded-b-[50px] flex justify-center items-center shadow-md">
+      <div className="w-full h-[30vh] bg-black from-emerald-300 to-emerald-500 rounded-b-[50px] flex justify-center items-center shadow-md">
         <h1 className="text-5xl font-bold text-white drop-shadow-lg text-center">
           Find Charging Stations ⚡
         </h1>

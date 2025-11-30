@@ -21,6 +21,7 @@ import Footer from "./components/Footer.jsx";
 
 import Register from "./pages/Register.jsx";
 import Forget from "./pages/Forget.jsx";
+import LoaderProvider from "./components/LoaderProvider.jsx";
 
 
 
@@ -29,17 +30,17 @@ function AppLayout() {
   const location = useLocation();
 
   // Pages where navbar should be hidden
-  const hideNavbarPages = ["/login","/Register","/forget"];
+  const hideNavbarPages = ["/login","/register","/forget"];
   const shouldHideNavbar = hideNavbarPages.includes(location.pathname);
 
   return (
     <>
       {!shouldHideNavbar && <Navbar />}
-
+<LoaderProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Register" element={<Register/>} />
+        <Route path="/register" element={<Register/>} />
         <Route path="/forget" element={<Forget/>} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/trip" element={<TripPlanner />} />
@@ -56,6 +57,9 @@ function AppLayout() {
 <Route path="/settings" element={<Settings />} />
 <Route path="/help" element={<HelpSupport />} />
       </Routes>
+      </LoaderProvider>
+      
+      {!shouldHideNavbar && <Footer />}
     </>
   );
 }
@@ -64,7 +68,8 @@ export default function App() {
   return (
     <Router>
       <AppLayout />
-      <Footer/>
+   
+      
     </Router>
   );
 }
