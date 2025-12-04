@@ -1,248 +1,526 @@
-import React, { useState } from "react";
+// src/components/TripPlanner/TripPlanner.jsx
+/* global google */
+import React, { useMemo, useRef, useState } from "react";
+import {
+  GoogleMap,
+  DirectionsRenderer,
+  Polyline,
+  Marker,
+  Autocomplete,
+  useLoadScript,
+} from "@react-google-maps/api";
 import { motion } from "framer-motion";
-import MapView from "./MapView";
-import RouteSummary from "./RouteSummary";
-import calculateEnergy from "./EnergyCalculator";
-import pin from "../../assets/placeholder.png";
-import herobg from "../../assets/hero-bg.png";
-import HeroBanner from "./HeroBanner";
 
-const fade = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
+const API_BASE = "http://127.0.0.1:8000";
+const containerStyle = { width: "100%", height: "100%" };
 
-const glass =
-  "backdrop-blur-xl bg-white/70 border border-emerald-200/60 shadow-[0_8px_35px_rgba(16,185,129,0.15)]";
+// Fallback text → lat/lng using Google Geocoding API
+async function geocodeText(text, key) {
+  if (!text) return null;
+  const res = await fetch(
+    `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+      text
+    )}&key=${key}`
+  );
+  const json = await res.json();
+  if (json.status !== "OK" || !json.results?.length) return null;
+  const loc = json.results[0].geometry.location;
+  return { lat: loc.lat, lng: loc.lng };
+}
 
-const TripPlanner = () => {
-  const [currentLocation, setCurrentLocation] = useState("");
-  const [destination, setDestination] = useState("");
-  const [battery, setBattery] = useState("");
+// Pick the shortest (by distance, then duration) route from a Google DirectionsResult
+function pickShortestRouteIndex(dirResult) {
+  if (!dirResult?.routes?.length) return 0;
+  let idxBest = 0;
+  let metersBest = Infinity;
+  let secondsBest = Infinity;
 
-  const [stops] = useState([{ id: 1, location: "" }]);
-  const [routeData, setRouteData] = useState(null);
+  dirResult.routes.forEach((r, i) => {
+    const m = (r.legs || []).reduce((s, l) => s + (l.distance?.value || 0), 0);
+    const s = (r.legs || []).reduce((s, l) => s + (l.duration?.value || 0), 0);
+    if (m < metersBest || (m === metersBest && s < secondsBest)) {
+      metersBest = m;
+      secondsBest = s;
+      idxBest = i;
+    }
+  });
+  return idxBest;
+}
+
+export default function TripPlanner() {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+    libraries: ["places"],
+  });
+
+  // UI
+  const [loading, setLoading] = useState(false);
+  const [renderMode, setRenderMode] = useState("osrm"); // 'osrm' | 'google'
+
+  // 🔥 Force map reload between plans
+  const [mapKey, setMapKey] = useState(0);
+
+  // Inputs
+  const [startText, setStartText] = useState("");
+  const [endText, setEndText] = useState("");
+  const [startGeo, setStartGeo] = useState(null);
+  const [endGeo, setEndGeo] = useState(null);
+  const [stops, setStops] = useState([]); // {id, text, location?}
+
+  // Google route
+  const [directions, setDirections] = useState(null);
+  const [selectedRouteIndex, setSelectedRouteIndex] = useState(0);
+
+  // OSRM / backend
   const [stations, setStations] = useState([]);
-  const [energy, setEnergy] = useState(null);
+  const [osrmPath, setOsrmPath] = useState([]); // [[lat,lon], ...]
+  const [routeInfo, setRouteInfo] = useState(null);
 
-  const handleRouteCalculated = (data) => {
-    setRouteData(data);
-    const totalDistance = data?.totalDistanceKm || 0;
+  // Station modal
+  const [selectedStation, setSelectedStation] = useState(null);
 
-    const energyUsage = calculateEnergy(totalDistance, 0.18);
-    setEnergy(energyUsage);
+  // refs
+  const acStartRef = useRef(null);
+  const acEndRef = useRef(null);
+  const stopRefs = useRef([]);
+  const mapRef = useRef(null);
 
-    setStations([
-      { id: 1, name: "Ampora Station – Colombo 03", distance: 1.2, status: "Available", price: 98 },
-      { id: 2, name: "Ampora Fast – Borella", distance: 3.7, status: "Busy", price: 105 },
-      { id: 3, name: "Ampora Green – Nugegoda", distance: 5.1, status: "Available", price: 99 },
-    ]);
+  const center = useMemo(() => ({ lat: 7.8731, lng: 80.7718 }), []);
+
+  const onMapLoad = (map) => (mapRef.current = map);
+
+  const onAutoComplete = (ref, setGeo, setText) => {
+    const place = ref.current?.getPlace?.();
+    if (!place?.geometry) return;
+    const p = {
+      lat: place.geometry.location.lat(),
+      lng: place.geometry.location.lng(),
+    };
+    setGeo(p);
+    if (place.formatted_address && setText) setText(place.formatted_address);
   };
 
-  const batteryPct = Math.max(0, Math.min(100, Number(battery) || 0));
+  const addStop = () =>
+    setStops((prev) => [...prev, { id: Date.now(), text: "", location: null }]);
+
+  const removeStop = (id) =>
+    setStops((prev) => prev.filter((s) => s.id !== id));
+
+  // Add stop directly from modal (marker click)
+  const addStopFromStation = (station) => {
+    setStops((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        text: station.name || `${station.lat}, ${station.lon}`,
+        location: { lat: station.lat, lng: station.lon },
+      },
+    ]);
+    setSelectedStation(null);
+  };
+
+  function fitToOsrmPath(coords) {
+    if (!mapRef.current || !coords?.length) return;
+    const bounds = new google.maps.LatLngBounds();
+    coords.forEach(([lat, lon]) =>
+      bounds.extend(new google.maps.LatLng(lat, lon))
+    );
+    mapRef.current.fitBounds(bounds, 60);
+  }
+
+  async function planRoute() {
+    if (!isLoaded) return;
+
+    setLoading(true);
+
+    // 🔥 RESET MAP COMPLETELY — fixes leftover overlays after second/third plan
+    setMapKey((k) => k + 1);
+
+    // Reset old data
+    setDirections(null);
+    setSelectedRouteIndex(0);
+    setOsrmPath([]);
+    setStations([]);
+    setRouteInfo(null);
+    setSelectedStation(null);
+    stopRefs.current = [];
+
+    try {
+      const key = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+
+      const s = startGeo || (await geocodeText(startText, key));
+      const e = endGeo || (await geocodeText(endText, key));
+      if (!s || !e) {
+        alert("Please provide valid Start and Destination.");
+        setLoading(false);
+        return;
+      }
+
+      const wp = [];
+      for (const st of stops) {
+        if (st.location) wp.push(st.location);
+        else if (st.text?.trim()) {
+          const g = await geocodeText(st.text, key);
+          if (g) wp.push(g);
+        }
+      }
+
+      // Google route (for optional comparison / rendering)
+      const svc = new google.maps.DirectionsService();
+      const gResult = await svc.route({
+        origin: s,
+        destination: e,
+        waypoints: wp.map((p) => ({ location: p, stopover: true })),
+        travelMode: google.maps.TravelMode.DRIVING,
+        provideRouteAlternatives: true,
+      });
+
+      const bestIdx = pickShortestRouteIndex(gResult);
+      setDirections(gResult);
+      setSelectedRouteIndex(bestIdx);
+
+      // OSRM route via backend
+      const resp = await fetch(`${API_BASE}/api/route`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ start: s, end: e, stops: wp }),
+      });
+      const data = await resp.json();
+
+      if (!data.success) {
+        console.error("Backend error:", data.error);
+        setOsrmPath([]);
+        setStations([]);
+      } else {
+        const path = data.routes?.[0]?.path || [];
+        setOsrmPath(path);
+        setStations(data.nearby_stations || []);
+        setRouteInfo(data.routes?.[0] || null);
+
+        // Fit map to OSRM polyline (the one backend used for stations/distance)
+        fitToOsrmPath(path);
+      }
+
+      setRenderMode("osrm");
+    } catch (err) {
+      console.error("Routing error:", err);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
-    <div className="w-screen  bg-gradient-to-b from-emerald-50 via-teal-50 to-white text-gray-900 overflow-hidden">
-
-      {/* HERO */}
-      {/* HERO SECTION */}
-<div
-  className="relative w-full h-[45vh] md:h-[55vh] bg-center bg-cover flex items-center justify-center"
-  style={{ backgroundImage: `url(${herobg})` }}
->
-  {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-
-  {/* CONTENT */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    className="relative z-10 text-center px-4"
-  >
-    <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-2xl tracking-tight">
-      Plan Your Electric Journey
-    </h1>
-
-    {/* Animated Charging Line */}
-    <motion.div
-      initial={{ width: 0 }}
-      animate={{ width: "140px" }}
-      transition={{ duration: 1.2, ease: "easeInOut" }}
-      className="h-[3px] bg-gradient-to-r from-white via-emerald-300 to-white mx-auto mt-4 rounded-full shadow-xl"
-    ></motion.div>
-
-    <p className="mt-4 text-white/80 text-sm md:text-lg max-w-xl mx-auto">
-      Smart routing • Real-time charging • Energy-aware navigation ⚡
-    </p>
-  </motion.div>
-
-  {/* Soft glowing blobs */}
-  <div className="absolute -top-10 -left-10 w-40 h-40 bg-emerald-300/30 rounded-full blur-[80px]" />
-  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-teal-300/30 rounded-full blur-[80px]" />
-</div>
-
-
-
-
-      {/* MAIN LAYOUT */}
-      <div className="flex flex-col lg:flex-row w-full relative lg:h-[75vh]">
-
-        {/* MAP (responsive full width on mobile) */}
-        <div className="w-full lg:w-full h-[45vh] md:h-[55vh] lg:h-full">
-          <MapView
-            stops={[{ location: currentLocation }, { location: destination }]}
-            onRouteReady={handleRouteCalculated}
-          />
-        </div>
-
-        {/* LEFT CARD: INPUTS */}
-        <motion.div
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          className={`
-            ${glass} rounded-2xl p-5 
-            w-[92%] mx-auto mt-6 lg:mt-0
-            lg:absolute lg:left-6 lg:top-6 lg:w-[350px]
-          `}
-        >
-          <h2 className="text-xl font-bold text-emerald-700">Trip Inputs</h2>
-
-          <div className="mt-4 space-y-4">
-
-            {/* Current Location */}
-            <div>
-              <label className="text-xs font-semibold text-emerald-800">Current Location</label>
-              <div className="mt-1 flex items-center gap-2">
-                <img src={pin} alt="" className="w-4 h-4 opacity-70" />
-                <input
-                  type="text"
-                  value={currentLocation}
-                  onChange={(e) => setCurrentLocation(e.target.value)}
-                  className="w-full rounded-xl border border-emerald-300 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400 bg-white/70 text-black"
-                  placeholder="Colombo, Sri Lanka"
-                />
-              </div>
-            </div>
-
-            {/* Destination */}
-            <div>
-              <label className="text-xs font-semibold text-emerald-800">Destination</label>
-              <div className="mt-1 flex items-center gap-2">
-                <img src={pin} alt="" className="w-4 h-4 opacity-70" />
-                <input
-                  type="text"
-                  value={destination}
-                  onChange={(e) => setDestination(e.target.value)}
-                  className="w-full rounded-xl border border-emerald-300 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400 bg-white/70 text-black"
-                  placeholder="Kandy, Sri Lanka"
-                />
-              </div>
-            </div>
-
-            {/* Battery */}
-            <div>
-              <label className="text-xs font-semibold text-emerald-800">Battery Level (%)</label>
-              <input
-                type="number"
-                value={battery}
-                onChange={(e) => setBattery(e.target.value)}
-                min="0"
-                max="100"
-                className="mt-1 w-full rounded-xl border border-emerald-300 px-3 py-2 outline-none focus:ring-2 focus:ring-emerald-400 bg-white/70 text-black"
-                placeholder="e.g., 62"
-              />
-
-              {/* Battery bar */}
-              <div className="mt-3">
-                <div className="h-2 rounded-full bg-emerald-100 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${batteryPct}%` }}
-                    className={`h-full ${batteryPct < 20
-                      ? "bg-red-400"
-                      : batteryPct < 50
-                        ? "bg-yellow-400"
-                        : "bg-emerald-500"
-                      }`}
-                  />
-                </div>
-                <p className="text-xs mt-1 text-emerald-800/80">
-                  Battery: <span className="font-semibold">{batteryPct}%</span>
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          <motion.button
-            whileTap={{ scale: 0.97 }}
-            className="mt-5 w-full px-5 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-md hover:shadow-lg"
-            onClick={() => handleRouteCalculated(routeData)}
+    <div className="w-screen min-h-screen mt-20 bg-gradient-to-b from-emerald-50 via-teal-50 to-white relative">
+      {/* THINKING OVERLAY */}
+      {loading && (
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-md z-50 flex items-center justify-center">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="bg-white/90 px-10 py-6 rounded-2xl shadow-xl text-center"
           >
-            Calculate Route
-          </motion.button>
-        </motion.div>
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
+              className="w-10 h-10 border-4 border-emerald-400 border-t-transparent rounded-full mx-auto"
+            />
+            <p className="mt-3 text-emerald-700 font-semibold text-lg">Thinking…</p>
+            <p className="text-xs text-emerald-600">
+              Calculating optimal route & charging stations
+            </p>
+          </motion.div>
+        </div>
+      )}
 
-        {/* RIGHT CARD: STATIONS (moves under map on mobile) */}
-        <motion.div
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          className={`
-            ${glass} rounded-2xl 
-            p-5 mt-6 w-[92%] mx-auto
-            lg:absolute lg:right-6 lg:top-6 lg:w-[350px] lg:mt-0
-            max-h-[40vh] lg:max-h-[60vh] overflow-y-auto
-          `}
-        >
-          <h2 className="text-xl font-bold text-emerald-700">Nearby Stations</h2>
-          <p className="text-xs text-emerald-900/70">Based on your route</p>
-
-          <div className="mt-4 space-y-4">
-            {stations.length === 0 ? (
-              <p className="text-center text-sm text-emerald-900/60 py-8">
-                Calculate a route to see stations.
-              </p>
-            ) : (
-              stations.map((s) => (
-                <motion.div
-                  key={s.id}
-                  whileHover={{ scale: 1.02 }}
-                  className="rounded-xl border border-emerald-200 bg-white/80 p-4 shadow hover:shadow-md"
-                >
-                  <p className="font-semibold text-emerald-900">{s.name}</p>
-                  <p className="text-xs text-emerald-800/70">{s.distance} km away</p>
-
-                  <div className="mt-2 flex justify-between text-sm">
-                    <span className="text-emerald-800/80">Price</span>
-                    <span className="font-semibold text-emerald-700">LKR {s.price}/kWh</span>
-                  </div>
-                </motion.div>
-              ))
+      {/* INPUTS */}
+      <div className="max-w-6xl mx-auto px-4 pt-6 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_auto] gap-3 items-end">
+          {/* START */}
+          <div className="bg-white/80 p-3 border border-emerald-200 rounded-xl">
+            <label className="text-xs font-semibold text-emerald-700">Start</label>
+            {isLoaded && (
+              <Autocomplete
+                onLoad={(ref) => (acStartRef.current = ref)}
+                onPlaceChanged={() =>
+                  onAutoComplete(acStartRef, setStartGeo, setStartText)
+                }
+              >
+                <input
+                  className="w-full px-2 py-2 rounded-lg outline-none text-black"
+                  placeholder="Colombo, Sri Lanka"
+                  value={startText}
+                  onChange={(e) => setStartText(e.target.value)}
+                />
+              </Autocomplete>
             )}
           </div>
-        </motion.div>
 
-        {/* ROUTE SUMMARY (bottom center on all screens) */}
-        {routeData && (
-          <motion.div
-            variants={fade}
-            initial="hidden"
-            animate="show"
-            className={`
-              absolute left-1/2 -translate-x-1/2 bottom-4 
-              ${glass} rounded-2xl p-4 w-[94%] md:w-[70%] lg:w-[820px]
-            `}
+          {/* DESTINATION */}
+          <div className="bg-white/80 p-3 border border-emerald-200 rounded-xl">
+            <label className="text-xs font-semibold text-emerald-700">
+              Destination
+            </label>
+            {isLoaded && (
+              <Autocomplete
+                onLoad={(ref) => (acEndRef.current = ref)}
+                onPlaceChanged={() =>
+                  onAutoComplete(acEndRef, setEndGeo, setEndText)
+                }
+              >
+                <input
+                  className="w-full px-2 py-2 rounded-lg outline-none text-black"
+                  placeholder="Kandy, Sri Lanka"
+                  value={endText}
+                  onChange={(e) => setEndText(e.target.value)}
+                />
+              </Autocomplete>
+            )}
+          </div>
+
+          <button
+            onClick={planRoute}
+            className="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow"
           >
-            <RouteSummary data={routeData} energy={energy} battery={battery} />
-          </motion.div>
-        )}
+            Plan Trip
+          </button>
+        </div>
 
+        {/* STOPS */}
+        <div className="bg-white/70 p-4 rounded-xl border border-emerald-200">
+          <div className="flex items-center justify-between">
+            <h3 className="font-semibold text-emerald-700 mb-2">Add More Stops</h3>
+
+            {/* Render mode toggle */}
+            <div className="flex items-center gap-2 text-sm">
+              <span className="text-emerald-800/80">Render:</span>
+              <button
+                onClick={() => setRenderMode("osrm")}
+                className={`px-3 py-1 rounded-lg border ${
+                  renderMode === "osrm"
+                    ? "bg-emerald-600 text-white border-emerald-600"
+                    : "border-emerald-300 text-emerald-700"
+                }`}
+              >
+                OSRM
+              </button>
+              <button
+                onClick={() => setRenderMode("google")}
+                className={`px-3 py-1 rounded-lg border ${
+                  renderMode === "google"
+                    ? "bg-emerald-600 text-white border-emerald-600"
+                    : "border-emerald-300 text-emerald-700"
+                }`}
+              >
+                Google
+              </button>
+            </div>
+          </div>
+
+          {stops.map((st, index) => (
+            <div key={st.id} className="flex items-center gap-2 mb-2">
+              <div className="flex-1 bg-white/80 p-2 border rounded-lg">
+                <Autocomplete
+                  onLoad={(ref) => (stopRefs.current[index] = ref)}
+                  onPlaceChanged={() => {
+                    const place = stopRefs.current[index].getPlace();
+                    if (place?.geometry) {
+                      const updated = [...stops];
+                      updated[index].location = {
+                        lat: place.geometry.location.lat(),
+                        lng: place.geometry.location.lng(),
+                      };
+                      updated[index].text =
+                        place.formatted_address || updated[index].text;
+                      setStops(updated);
+                    }
+                  }}
+                >
+                  <input
+                    className="w-full px-2 py-2 rounded-lg outline-none text-black"
+                    placeholder="Add stop…"
+                    value={st.text}
+                    onChange={(e) => {
+                      const updated = [...stops];
+                      updated[index].text = e.target.value;
+                      setStops(updated);
+                    }}
+                  />
+                </Autocomplete>
+              </div>
+
+              <button
+                onClick={() => removeStop(st.id)}
+                className="bg-red-500 text-white px-3 py-2 rounded-lg"
+                title="Remove stop"
+              >
+                ✕
+              </button>
+            </div>
+          ))}
+
+          <button
+            onClick={addStop}
+            className="mt-2 px-4 py-2 border border-emerald-400 text-emerald-700 rounded-lg hover:bg-emerald-100"
+          >
+            + Add Stop
+          </button>
+        </div>
       </div>
+
+      {/* MAP */}
+      <div
+        className={`max-w-6xl mx-auto h-[70vh] mt-4 rounded-2xl overflow-hidden border border-emerald-200 shadow ${
+          loading ? "blur-sm" : ""
+        }`}
+      >
+        {isLoaded && (
+          <GoogleMap
+            key={mapKey}               // 🔥 FORCE MAP RELOAD FIX
+            onLoad={onMapLoad}
+            mapContainerStyle={containerStyle}
+            center={startGeo || center}
+            zoom={7}
+            options={{
+              streetViewControl: false,
+              mapTypeControl: false,
+              fullscreenControl: false,
+            }}
+          >
+            {/* OSRM polyline OR Google Directions */}
+            {renderMode === "osrm" && osrmPath?.length > 0 && (
+              <Polyline
+                path={osrmPath.map(([lat, lon]) => ({ lat, lng: lon }))}
+                options={{
+                  geodesic: true,
+                  strokeColor: "#10B981", // emerald-500
+                  strokeOpacity: 0.95,
+                  strokeWeight: 6,
+                }}
+              />
+            )}
+
+            {renderMode === "google" && directions && (
+              <DirectionsRenderer
+                directions={directions}
+                options={{
+                  routeIndex: selectedRouteIndex,
+                  suppressMarkers: false,
+                  polylineOptions: {
+                    strokeOpacity: 0.9,
+                    strokeWeight: 6,
+                  },
+                }}
+              />
+            )}
+
+            {/* Station markers with modal trigger */}
+            {stations.map((s) => (
+              <Marker
+                key={s.station_id}
+                position={{ lat: s.lat, lng: s.lon }}
+                title={`${s.name} • ${s.max_power_kw || 0} kW`}
+                onClick={() => setSelectedStation(s)}
+              />
+            ))}
+          </GoogleMap>
+        )}
+      </div>
+
+      {/* STATION POPUP MODAL */}
+      {selectedStation && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-md z-[999] flex items-center justify-center">
+          <motion.div
+            initial={{ scale: 0.85, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="bg-white rounded-2xl shadow-xl p-6 w-[90%] max-w-md relative"
+          >
+            {/* Close */}
+            <button
+              onClick={() => setSelectedStation(null)}
+              className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
+              aria-label="Close"
+            >
+              ×
+            </button>
+
+            <h2 className="text-xl font-bold text-emerald-700">
+              {selectedStation.name}
+            </h2>
+
+            <p className="text-sm text-gray-700 mt-1">
+              {selectedStation.address || "No address available"}
+            </p>
+
+            <div className="mt-4 space-y-2 text-gray-800 text-sm">
+              <p><b>Max Power:</b> {selectedStation.max_power_kw || 0} kW</p>
+              {selectedStation.distance_to_route_km != null && (
+                <p><b>Distance from route:</b> {selectedStation.distance_to_route_km} km</p>
+              )}
+              <p><b>Latitude:</b> {selectedStation.lat}</p>
+              <p><b>Longitude:</b> {selectedStation.lon}</p>
+            </div>
+
+            <div className="mt-5 flex gap-3">
+              <button
+                onClick={() => addStopFromStation(selectedStation)}
+                className="flex-1 bg-emerald-600 text-white py-2 rounded-lg shadow hover:bg-emerald-700"
+              >
+                Add as Stop
+              </button>
+
+              <button
+                onClick={() => {
+                  window.open(
+                    `https://www.google.com/maps/dir/?api=1&destination=${selectedStation.lat},${selectedStation.lon}`,
+                    "_blank"
+                  );
+                }}
+                className="flex-1 bg-gray-200 text-gray-900 py-2 rounded-lg shadow hover:bg-gray-300"
+              >
+                Navigate
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* SUMMARY */}
+      {routeInfo && (
+        <div className="max-w-6xl mx-auto mt-6 grid md:grid-cols-3 gap-4 px-4 pb-10">
+          <div className="bg-white/80 backdrop-blur p-4 rounded-xl border border-emerald-200">
+            <h3 className="font-bold text-emerald-700">Route Summary</h3>
+            <p className="mt-2 text-sm text-emerald-900/80">
+              Distance: <b>{routeInfo.distance_km} km</b>
+            </p>
+            <p className="text-sm text-emerald-900/80">
+              Duration: <b>{routeInfo.duration_min} min</b>
+            </p>
+          </div>
+          <div className="md:col-span-2 bg-white/80 backdrop-blur p-4 rounded-xl border border-emerald-200">
+            <h3 className="font-bold text-emerald-700">Nearby Stations</h3>
+            <div className="mt-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {stations.map((s) => (
+                <div key={s.station_id} className="rounded-xl border border-emerald-200 bg-white p-3">
+                  <p className="font-semibold">{s.name}</p>
+                  <p className="text-xs text-emerald-900/70">{s.address || "—"}</p>
+                  <div className="text-xs mt-1 text-emerald-900/80">
+                    <div>Max Power: <b>{s.max_power_kw || 0} kW</b></div>
+                    {s.distance_to_route_km != null && (
+                      <div>Distance to route: <b>{s.distance_to_route_km} km</b></div>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => setSelectedStation(s)}
+                    className="mt-2 w-full text-sm px-3 py-2 rounded-lg border border-emerald-300 text-emerald-700 hover:bg-emerald-50"
+                  >
+                    View details
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-};
-
-export default TripPlanner;
+}

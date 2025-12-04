@@ -1,327 +1,218 @@
-# enhanced_ev_planner.py - Fixed version with all charging stations
-import requests
-import folium
+# ml-service/enhanced_ev_planner.py
+import json
+import math
 import os
-from geopy.distance import geodesic
-from datetime import datetime
+from typing import List, Tuple, Dict, Any
 
+import requests
+from geopy.distance import geodesic
+from flask import current_app
+from sqlalchemy import func
+
+from models import db, Station, Charger
+
+OSRM_URL = "https://router.project-osrm.org/route/v1/driving"
+
+def _haversine_km(a: Tuple[float, float], b: Tuple[float, float]) -> float:
+  # quick haversine in km
+  return geodesic(a, b).km
+
+def _decode_polyline5(polyline_str: str) -> List[Tuple[float, float]]:
+    # Polyline algorithm (Google, precision 1e-5)
+    index, lat, lng, coordinates = 0, 0, 0, []
+    while index < len(polyline_str):
+        result, shift = 0, 0
+        while True:
+            b = ord(polyline_str[index]) - 63
+            index += 1
+            result |= (b & 0x1f) << shift
+            shift += 5
+            if b < 0x20:
+                break
+        dlat = ~(result >> 1) if result & 1 else (result >> 1)
+        lat += dlat
+
+        result, shift = 0, 0
+        while True:
+            b = ord(polyline_str[index]) - 63
+            index += 1
+            result |= (b & 0x1f) << shift
+            shift += 5
+            if b < 0x20:
+                break
+        dlng = ~(result >> 1) if result & 1 else (result >> 1)
+        lng += dlng
+
+        coordinates.append((lat / 1e5, lng / 1e5))
+    return coordinates
+
+def _point_segment_distance_km(p: Tuple[float, float], a: Tuple[float, float], b: Tuple[float, float]) -> float:
+    # distance from point p to segment ab by sampling — use geodesic for accuracy
+    # project approximately by subdividing segment if very long; here direct min of endpoints + midpoint is fine for short polylines
+    d_pa = _haversine_km(p, a)
+    d_pb = _haversine_km(p, b)
+    mid = ((a[0] + b[0]) / 2.0, (a[1] + b[1]) / 2.0)
+    d_pm = _haversine_km(p, mid)
+    return min(d_pa, d_pb, d_pm)
 
 class EnhancedEVPlanner:
-    def __init__(self):
-        self.osrm_url = "http://router.project-osrm.org/route/v1/driving/"
+    def __init__(self, max_station_distance_km: float = 5.0):
+        self.max_station_distance_km = max_station_distance_km
 
-        # Major cities in Sri Lanka
-        self.cities = {
-            'Colombo': (6.9271, 79.8612),
-            'Kandy': (7.2906, 80.6337),
-            'Galle': (6.0535, 80.2210),
-            'Jaffna': (9.6615, 80.0255),
-            'Anuradhapura': (8.3114, 80.4037),
-            'Matara': (5.9480, 80.5353),
-            'Trincomalee': (8.5874, 81.2152),
-            'Negombo': (7.2086, 79.8357),
-            'Kurunegala': (7.4865, 80.3649),
-            'Ratnapura': (6.6804, 80.4026),
-            'Badulla': (6.9895, 81.0557),
-            'Nuwara Eliya': (6.9497, 80.7891),
-            'Batticaloa': (7.7167, 81.7000),
-            'Puttalam': (8.0333, 79.8333),
-            'Kalutara': (6.5833, 79.9667),
-            'Gampaha': (7.0917, 79.9997),
-            'Kegalle': (7.2533, 80.3464),
-            'Polonnaruwa': (7.9329, 81.0080),
-            'Hambantota': (6.1248, 81.1185),
-            'Ampara': (7.2975, 81.6820),
-            'Monaragala': (6.8728, 81.3507),
-            'Vavuniya': (8.7522, 80.4983),
-            'Mannar': (8.9776, 79.9093),
-            'Kilinochchi': (9.3802, 80.3990),
-            'Mullaitivu': (9.2671, 80.8142)
+    # ---------- ROUTING (OSRM) ----------
+    def get_routes_from_osrm(
+        self,
+        start: Tuple[float, float],
+        end: Tuple[float, float],
+        waypoints: List[Tuple[float, float]] = None,
+        alternatives: int = 2
+    ) -> List[Dict[str, Any]]:
+        """
+        Returns a list of alternative routes sorted by duration (ascending).
+        Each route: { distance_km, duration_min, path: [(lat,lon), ...] }
+        """
+        coords_chain = [f"{start[1]},{start[0]}"]
+        waypoints = waypoints or []
+        for w in waypoints:
+            coords_chain.append(f"{w[1]},{w[0]}")
+        coords_chain.append(f"{end[1]},{end[0]}")
+
+        url = f"{OSRM_URL}/{';'.join(coords_chain)}"
+        params = {
+            "overview": "full",
+            "alternatives": str(alternatives).lower(),  # 'true' or 'false'
+            "geometries": "polyline",
+            "steps": "false",
+            "annotations": "false",
         }
 
-        # Charging stations - More comprehensive
-        self.charging_stations = {
-            'Colombo': [
-                {'name': 'Colombo Central Charging Station', 'type': 'fast', 'power': '50kW', 'operator': 'CEB',
-                 'lat': 6.9271, 'lon': 79.8612, 'city': 'Colombo'},
-                {'name': 'Galle Road Charging Station', 'type': 'fast', 'power': '50kW',
-                 'operator': 'Lanka Electricity',
-                 'lat': 6.9105, 'lon': 79.8708, 'city': 'Colombo'},
-                {'name': 'Bambalapitiya Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 6.9002, 'lon': 79.8594, 'city': 'Colombo'},
-                {'name': 'Nugegoda Charging Station', 'type': 'fast', 'power': '50kW', 'operator': 'Dialog',
-                 'lat': 6.8637, 'lon': 79.8996, 'city': 'Colombo'}
-            ],
-            'Kandy': [
-                {'name': 'Kandy Central Charging Station', 'type': 'fast', 'power': '50kW', 'operator': 'CEB',
-                 'lat': 7.2906, 'lon': 80.6337, 'city': 'Kandy'},
-                {'name': 'Peradeniya University Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 7.2547, 'lon': 80.5972, 'city': 'Kandy'}
-            ],
-            'Galle': [
-                {'name': 'Galle Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 6.0535, 'lon': 80.2210, 'city': 'Galle'},
-                {'name': 'Hikkaduwa Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 6.0923, 'lon': 80.1662, 'city': 'Galle'}
-            ],
-            'Kurunegala': [
-                {'name': 'Kurunegala Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 7.4865, 'lon': 80.3649, 'city': 'Kurunegala'}
-            ],
-            'Ratnapura': [
-                {'name': 'Ratnapura Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 6.6804, 'lon': 80.4026, 'city': 'Ratnapura'}
-            ],
-            'Negombo': [
-                {'name': 'Negombo Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 7.2086, 'lon': 79.8357, 'city': 'Negombo'}
-            ],
-            'Matara': [
-                {'name': 'Matara Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 5.9480, 'lon': 80.5353, 'city': 'Matara'}
-            ],
-            'Anuradhapura': [
-                {'name': 'Anuradhapura Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 8.3114, 'lon': 80.4037, 'city': 'Anuradhapura'}
-            ],
-            'Jaffna': [
-                {'name': 'Jaffna Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 9.6615, 'lon': 80.0255, 'city': 'Jaffna'}
-            ],
-            'Badulla': [
-                {'name': 'Badulla Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 6.9895, 'lon': 81.0557, 'city': 'Badulla'}
-            ],
-            'Nuwara Eliya': [
-                {'name': 'Nuwara Eliya Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 6.9497, 'lon': 80.7891, 'city': 'Nuwara Eliya'}
-            ],
-            'Trincomalee': [
-                {'name': 'Trincomalee Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 8.5874, 'lon': 81.2152, 'city': 'Trincomalee'}
-            ],
-            'Batticaloa': [
-                {'name': 'Batticaloa Central Charging Station', 'type': 'medium', 'power': '22kW', 'operator': 'CEB',
-                 'lat': 7.7167, 'lon': 81.7000, 'city': 'Batticaloa'}
-            ]
-        }
+        # NOTE: OSRM's 'alternatives' param accepts true/false. We emulate multiple by
+        # requesting 'true' and OSRM returns up to 3. Set 'alternatives=true'.
+        params["alternatives"] = "true" if alternatives and alternatives > 0 else "false"
 
-    def get_route_from_osrm(self, start_coords, end_coords, alternatives=3):
-        """Get multiple route alternatives from OSRM API"""
-        try:
-            waypoints = f"{start_coords[1]},{start_coords[0]};{end_coords[1]},{end_coords[0]}"
+        r = requests.get(url, params=params, timeout=20)
+        r.raise_for_status()
+        data = r.json()
+        if data.get("code") != "Ok" or not data.get("routes"):
+            return []
 
-            url = f"{self.osrm_url}{waypoints}"
-            params = {
-                "overview": "full",
-                "geometries": "geojson",
-                "steps": "true",
-                "alternatives": "true"
-            }
+        routes = []
+        for rt in data["routes"]:
+            dist_km = (rt["distance"] or 0) / 1000.0
+            dur_min = (rt["duration"] or 0) / 60.0
+            path = _decode_polyline5(rt["geometry"])
+            routes.append({
+                "distance_km": dist_km,
+                "duration_min": dur_min,
+                "path": path
+            })
 
-            print(f"🔗 Finding {alternatives} route alternatives...")
-            response = requests.get(url, params=params, timeout=15)
+        # Sort by duration ascending, shortest first
+        routes.sort(key=lambda x: x["duration_min"])
+        return routes
 
-            if response.status_code == 200:
-                data = response.json()
-                if data['code'] == 'Ok' and len(data['routes']) > 0:
-                    routes = []
-                    max_routes = min(alternatives, len(data['routes']))
+    # ---------- STATIONS ----------
+    def load_stations(self) -> List[Dict[str, Any]]:
+        """
+        Load all stations + their charger info (max power, status counts).
+        """
+        # Pull stations
+        stations = db.session.query(Station).all()
 
-                    print(f"✅ Found {len(data['routes'])} route(s)")
-
-                    for i in range(max_routes):
-                        route = data['routes'][i]
-
-                        coordinates = [[coord[1], coord[0]] for coord in route['geometry']['coordinates']]
-
-                        route_info = {
-                            'route_number': i + 1,
-                            'coordinates': coordinates,
-                            'distance': route['distance'] / 1000,
-                            'duration': route['duration'] / 60,
-                        }
-
-                        routes.append(route_info)
-                        print(f"   Route {i + 1}: {route_info['distance']:.1f} km, {route_info['duration']:.1f} min")
-
-                    routes.sort(key=lambda x: x['distance'])
-                    return routes
-
-            print("❌ Could not fetch routes from OSRM")
-            return None
-
-        except Exception as e:
-            print(f"❌ OSRM error: {e}")
-            return None
-
-    def find_charging_stations_near_route(self, route_coords, max_distance_km=10):
-        """Find charging stations near the route"""
-        nearby_stations = []
-
-        for city, stations in self.charging_stations.items():
-            for station in stations:
-                station_coords = (station['lat'], station['lon'])
-
-                min_distance = float('inf')
-                # Check sample points along the route for performance
-                for i in range(0, len(route_coords), max(1, len(route_coords) // 50)):
-                    route_point = route_coords[i]
-                    point_coords = (route_point[0], route_point[1])
-                    try:
-                        distance = geodesic(station_coords, point_coords).kilometers
-                        if distance < min_distance:
-                            min_distance = distance
-                    except:
-                        continue
-
-                if min_distance <= max_distance_km:
-                    # Create a copy of the station with distance info
-                    station_with_distance = station.copy()
-                    station_with_distance['distance_to_route'] = round(min_distance, 2)
-                    nearby_stations.append(station_with_distance)
-
-        return nearby_stations
-
-    # enhanced_ev_planner.py - Fixed version with ALL charging stations displayed
-    def create_route_with_charging_map(self, start_city, end_city):
-        """Create map with routes and ALL charging stations - FIXED VERSION"""
-        if start_city not in self.cities or end_city not in self.cities:
-            print("❌ Invalid city names")
-            return None
-
-        print(f"🗺️ Creating routes from {start_city} to {end_city}")
-
-        # Get route alternatives
-        start_coords = self.cities[start_city]
-        end_coords = self.cities[end_city]
-
-        routes_data = self.get_route_from_osrm(start_coords, end_coords, 3)
-
-        if not routes_data:
-            print("❌ No routes found")
-            return None
-
-        # Create map
-        center_lat = (start_coords[0] + end_coords[0]) / 2
-        center_lon = (start_coords[1] + end_coords[1]) / 2
-
-        m = folium.Map(
-            location=[center_lat, center_lon],
-            zoom_start=8,
-            tiles='OpenStreetMap'
+        # Build map for chargers grouped by station
+        chargers = (
+            db.session.query(
+                Charger.station_id,
+                func.max(Charger.power_kw).label("max_power_kw"),
+                func.count(Charger.charger_id).label("charger_count")
+            )
+            .group_by(Charger.station_id)
+            .all()
         )
+        chargers_by_station = {c.station_id: {"max_power_kw": float(c.max_power_kw or 0.0),
+                                              "charger_count": int(c.charger_count or 0)}
+                               for c in chargers}
 
-        # Colors for different routes
-        route_colors = ['#3498db', '#e74c3c', '#2ecc71']
+        out = []
+        for st in stations:
+            meta = chargers_by_station.get(st.station_id, {"max_power_kw": 0.0, "charger_count": 0})
+            out.append({
+                "station_id": st.station_id,
+                "name": st.name,
+                "address": st.address,
+                "lat": float(st.latitude),
+                "lon": float(st.longitude),
+                "max_power_kw": meta["max_power_kw"],
+                "charger_count": meta["charger_count"],
+            })
+        return out
 
-        # Draw all routes
-        on_route_stations = set()
+    def stations_near_route(self, route_polyline: List[Tuple[float, float]], stations: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """
+        Returns stations within self.max_station_distance_km from the route polyline.
+        Adds distance_to_route_km to each matched station and sorts by it.
+        """
+        near = []
+        for s in stations:
+            p = (s["lat"], s["lon"])
+            # min distance to any route segment (sample endpoints + midpoint)
+            best = float("inf")
+            for i in range(len(route_polyline) - 1):
+                a = route_polyline[i]
+                b = route_polyline[i + 1]
+                d = _point_segment_distance_km(p, a, b)
+                if d < best:
+                    best = d
+                    if best <= self.max_station_distance_km:
+                        # small optimization: if already inside threshold and very close, break early
+                        if best < 0.1:
+                            break
+            if best <= self.max_station_distance_km:
+                s2 = dict(s)
+                s2["distance_to_route_km"] = round(best, 2)
+                near.append(s2)
+        near.sort(key=lambda x: x["distance_to_route_km"])
+        return near
 
-        for i, route in enumerate(routes_data):
-            route_coords = route.get('coordinates', [])
+    # ---------- Optional map builder (Folium) ----------
+    def build_map(self, start, end, routes, stations, filename=None):
+        """
+        If you want a shareable HTML map, enable Folium in your env and use this.
+        """
+        try:
+            import folium
+        except ImportError:
+            return None
 
-            if len(route_coords) > 1:
-                color = route_colors[i % len(route_colors)]
-                folium.PolyLine(
-                    route_coords,
-                    color=color,
-                    weight=6,
-                    opacity=0.8,
-                    popup=f"Route {i + 1}: {route.get('distance', 0):.1f} km, {route.get('duration', 0):.1f} min",
-                    tooltip=f"Route {i + 1} - {route.get('distance', 0):.1f} km"
-                ).add_to(m)
+        m = folium.Map(location=start, zoom_start=7, control_scale=True)
 
-            # Find charging stations for shortest route only (for on-route classification)
-            if i == 0:  # Only for shortest route
-                charging_stations = self.find_charging_stations_near_route(route_coords)
-                for station in charging_stations:
-                    # Use tuple of (lat, lon) as unique identifier
-                    on_route_stations.add((station['lat'], station['lon']))
+        # Markers
+        folium.Marker(start, tooltip="Start", icon=folium.Icon(color="green")).add_to(m)
+        folium.Marker(end, tooltip="Destination", icon=folium.Icon(color="red")).add_to(m)
 
-        # Mark ALL charging stations - FIXED: Show ALL stations regardless of route
-        total_stations = 0
-        stations_on_route = 0
-
-        print(f"🔍 Marking ALL charging stations on map...")
-
-        # First, collect ALL stations from all cities
-        all_stations = []
-        for city, stations in self.charging_stations.items():
-            all_stations.extend(stations)
-
-        print(f"📊 Total stations in database: {len(all_stations)}")
-
-        # Now mark ALL stations on the map
-        for station in all_stations:
-            total_stations += 1
-            station_coords = (station['lat'], station['lon'])
-            is_on_route = station_coords in on_route_stations
-
-            if is_on_route:
-                stations_on_route += 1
-
-            # Determine color and popup text
-            color = 'orange' if is_on_route else 'blue'
-            popup_text = f"🔌 <b>{station['name']}</b><br>City: {station['city']}<br>Type: {station['type']}<br>Power: {station['power']}<br>Operator: {station['operator']}"
-
-            if is_on_route:
-                # Find the actual distance for this station
-                for nearby_station in self.find_charging_stations_near_route(routes_data[0]['coordinates']):
-                    if (nearby_station['lat'] == station['lat'] and
-                            nearby_station['lon'] == station['lon']):
-                        popup_text += f"<br>Distance from route: {nearby_station.get('distance_to_route', 'N/A')} km"
-                        break
-
-            # Always add the marker to the map - NO CONDITIONS
-            folium.Marker(
-                [station['lat'], station['lon']],
-                popup=folium.Popup(popup_text, max_width=300),
-                icon=folium.Icon(color=color, icon='bolt', prefix='fa'),
-                tooltip=f"{station['name']} ({'On Route' if is_on_route else 'Other'})"
+        # Routes
+        colors = ["#3498db", "#e74c3c", "#2ecc71"]
+        for idx, r in enumerate(routes[:3]):
+            folium.PolyLine(
+                r["path"],
+                color=colors[idx % len(colors)],
+                weight=5,
+                opacity=0.8,
             ).add_to(m)
 
-        # Mark start and end points
-        folium.Marker(
-            start_coords,
-            popup=folium.Popup(f"🚗 <b>Start: {start_city}</b>", max_width=200),
-            icon=folium.Icon(color='green', icon='play', prefix='fa'),
-            tooltip=f"Start: {start_city}"
-        ).add_to(m)
+        # Stations (near)
+        for s in stations:
+            folium.CircleMarker(
+                location=(s["lat"], s["lon"]),
+                radius=4,
+                color="#ff8c00",
+                fill=True,
+                fill_opacity=0.9,
+                tooltip=f'{s["name"]} • {s.get("max_power_kw",0)} kW',
+            ).add_to(m)
 
-        folium.Marker(
-            end_coords,
-            popup=folium.Popup(f"🏁 <b>Destination: {end_city}</b>", max_width=200),
-            icon=folium.Icon(color='red', icon='flag-checkered', prefix='fa'),
-            tooltip=f"Destination: {end_city}"
-        ).add_to(m)
-
-        # Create legend HTML
-        legend_html = f'''
-        <div style="position: fixed; top: 10px; left: 50px; z-index: 1000; background-color: white; padding: 10px; border: 2px solid grey; border-radius: 5px;">
-            <h4>Routes: {start_city} → {end_city}</h4>
-        '''
-
-        for i, route in enumerate(routes_data):
-            color_circle = '🔵' if i == 0 else '🔴' if i == 1 else '🟢'
-            legend_html += f'<p>{color_circle} Route {i + 1} {"(Shortest)" if i == 0 else ""} - {route["distance"]:.1f} km</p>'
-
-        legend_html += f'''
-            <p>⚡ Charging Stations: {stations_on_route} on route</p>
-            <p>⚡ Total Stations: {total_stations}</p>
-            <p><small>Orange = On Route | Blue = Other Stations</small></p>
-        </div>
-        '''
-
-        m.get_root().html.add_child(folium.Element(legend_html))
-
-        # Save map
         os.makedirs("maps", exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-        map_filename = f"route_{start_city}_to_{end_city}_{timestamp}.html"
-        map_filepath = os.path.join("maps", map_filename)
-        m.save(map_filepath)
-
-        print(f"✅ Map created: {map_filepath}")
-        print(f"📊 Stations: {stations_on_route} on route, {total_stations} total")
-        return map_filename
+        name = filename or f"route_{abs(hash((start, end))) % 10**8}.html"
+        path = os.path.join("maps", name)
+        m.save(path)
+        return name
