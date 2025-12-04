@@ -1,3 +1,5 @@
+// src/components/TripPlanner/TripPlanner.jsx
+/* global google */
 import React, { useMemo, useRef, useState } from "react";
 import {
   GoogleMap,
@@ -26,6 +28,7 @@ async function geocodeText(text, key) {
   return { lat: loc.lat, lng: loc.lng };
 }
 
+// Pick the shortest (by distance, then duration) route from a Google DirectionsResult
 function pickShortestRouteIndex(dirResult) {
   if (!dirResult?.routes?.length) return 0;
   let idxBest = 0;
@@ -52,9 +55,9 @@ export default function TripPlanner() {
 
   // UI
   const [loading, setLoading] = useState(false);
-  const [renderMode, setRenderMode] = useState("osrm");
+  const [renderMode, setRenderMode] = useState("osrm"); // 'osrm' | 'google'
 
-  // 🔥 NEW — Force map reload
+  // 🔥 Force map reload between plans
   const [mapKey, setMapKey] = useState(0);
 
   // Inputs
@@ -62,7 +65,7 @@ export default function TripPlanner() {
   const [endText, setEndText] = useState("");
   const [startGeo, setStartGeo] = useState(null);
   const [endGeo, setEndGeo] = useState(null);
-  const [stops, setStops] = useState([]);
+  const [stops, setStops] = useState([]); // {id, text, location?}
 
   // Google route
   const [directions, setDirections] = useState(null);
@@ -70,9 +73,13 @@ export default function TripPlanner() {
 
   // OSRM / backend
   const [stations, setStations] = useState([]);
-  const [osrmPath, setOsrmPath] = useState([]);
+  const [osrmPath, setOsrmPath] = useState([]); // [[lat,lon], ...]
   const [routeInfo, setRouteInfo] = useState(null);
 
+  // Station modal
+  const [selectedStation, setSelectedStation] = useState(null);
+
+  // refs
   const acStartRef = useRef(null);
   const acEndRef = useRef(null);
   const stopRefs = useRef([]);
@@ -99,6 +106,19 @@ export default function TripPlanner() {
   const removeStop = (id) =>
     setStops((prev) => prev.filter((s) => s.id !== id));
 
+  // Add stop directly from modal (marker click)
+  const addStopFromStation = (station) => {
+    setStops((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        text: station.name || `${station.lat}, ${station.lon}`,
+        location: { lat: station.lat, lng: station.lon },
+      },
+    ]);
+    setSelectedStation(null);
+  };
+
   function fitToOsrmPath(coords) {
     if (!mapRef.current || !coords?.length) return;
     const bounds = new google.maps.LatLngBounds();
@@ -113,15 +133,16 @@ export default function TripPlanner() {
 
     setLoading(true);
 
-    // 🔥 RESET MAP COMPLETELY — FIX BUG
-    setMapKey((k) => k + 1); // <--- THE IMPORTANT FIX
+    // 🔥 RESET MAP COMPLETELY — fixes leftover overlays after second/third plan
+    setMapKey((k) => k + 1);
 
-    // Reset old route data
+    // Reset old data
     setDirections(null);
     setSelectedRouteIndex(0);
     setOsrmPath([]);
     setStations([]);
     setRouteInfo(null);
+    setSelectedStation(null);
     stopRefs.current = [];
 
     try {
@@ -144,6 +165,7 @@ export default function TripPlanner() {
         }
       }
 
+      // Google route (for optional comparison / rendering)
       const svc = new google.maps.DirectionsService();
       const gResult = await svc.route({
         origin: s,
@@ -154,10 +176,10 @@ export default function TripPlanner() {
       });
 
       const bestIdx = pickShortestRouteIndex(gResult);
-
       setDirections(gResult);
       setSelectedRouteIndex(bestIdx);
 
+      // OSRM route via backend
       const resp = await fetch(`${API_BASE}/api/route`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -175,6 +197,7 @@ export default function TripPlanner() {
         setStations(data.nearby_stations || []);
         setRouteInfo(data.routes?.[0] || null);
 
+        // Fit map to OSRM polyline (the one backend used for stations/distance)
         fitToOsrmPath(path);
       }
 
@@ -199,7 +222,7 @@ export default function TripPlanner() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
-              className="w-10 h-10 border-4 border-emerald-400 border-top border-t-transparent rounded-full mx-auto"
+              className="w-10 h-10 border-4 border-emerald-400 border-t-transparent rounded-full mx-auto"
             />
             <p className="mt-3 text-emerald-700 font-semibold text-lg">Thinking…</p>
             <p className="text-xs text-emerald-600">
@@ -267,7 +290,7 @@ export default function TripPlanner() {
           <div className="flex items-center justify-between">
             <h3 className="font-semibold text-emerald-700 mb-2">Add More Stops</h3>
 
-            {/* Render mode toggle (debug/QA) */}
+            {/* Render mode toggle */}
             <div className="flex items-center gap-2 text-sm">
               <span className="text-emerald-800/80">Render:</span>
               <button
@@ -363,12 +386,13 @@ export default function TripPlanner() {
               fullscreenControl: false,
             }}
           >
+            {/* OSRM polyline OR Google Directions */}
             {renderMode === "osrm" && osrmPath?.length > 0 && (
               <Polyline
                 path={osrmPath.map(([lat, lon]) => ({ lat, lng: lon }))}
                 options={{
                   geodesic: true,
-                  strokeColor: "#10B981",
+                  strokeColor: "#10B981", // emerald-500
                   strokeOpacity: 0.95,
                   strokeWeight: 6,
                 }}
@@ -389,16 +413,76 @@ export default function TripPlanner() {
               />
             )}
 
+            {/* Station markers with modal trigger */}
             {stations.map((s) => (
               <Marker
                 key={s.station_id}
                 position={{ lat: s.lat, lng: s.lon }}
                 title={`${s.name} • ${s.max_power_kw || 0} kW`}
+                onClick={() => setSelectedStation(s)}
               />
             ))}
           </GoogleMap>
         )}
       </div>
+
+      {/* STATION POPUP MODAL */}
+      {selectedStation && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-md z-[999] flex items-center justify-center">
+          <motion.div
+            initial={{ scale: 0.85, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="bg-white rounded-2xl shadow-xl p-6 w-[90%] max-w-md relative"
+          >
+            {/* Close */}
+            <button
+              onClick={() => setSelectedStation(null)}
+              className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
+              aria-label="Close"
+            >
+              ×
+            </button>
+
+            <h2 className="text-xl font-bold text-emerald-700">
+              {selectedStation.name}
+            </h2>
+
+            <p className="text-sm text-gray-700 mt-1">
+              {selectedStation.address || "No address available"}
+            </p>
+
+            <div className="mt-4 space-y-2 text-gray-800 text-sm">
+              <p><b>Max Power:</b> {selectedStation.max_power_kw || 0} kW</p>
+              {selectedStation.distance_to_route_km != null && (
+                <p><b>Distance from route:</b> {selectedStation.distance_to_route_km} km</p>
+              )}
+              <p><b>Latitude:</b> {selectedStation.lat}</p>
+              <p><b>Longitude:</b> {selectedStation.lon}</p>
+            </div>
+
+            <div className="mt-5 flex gap-3">
+              <button
+                onClick={() => addStopFromStation(selectedStation)}
+                className="flex-1 bg-emerald-600 text-white py-2 rounded-lg shadow hover:bg-emerald-700"
+              >
+                Add as Stop
+              </button>
+
+              <button
+                onClick={() => {
+                  window.open(
+                    `https://www.google.com/maps/dir/?api=1&destination=${selectedStation.lat},${selectedStation.lon}`,
+                    "_blank"
+                  );
+                }}
+                className="flex-1 bg-gray-200 text-gray-900 py-2 rounded-lg shadow hover:bg-gray-300"
+              >
+                Navigate
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
 
       {/* SUMMARY */}
       {routeInfo && (
@@ -425,6 +509,12 @@ export default function TripPlanner() {
                       <div>Distance to route: <b>{s.distance_to_route_km} km</b></div>
                     )}
                   </div>
+                  <button
+                    onClick={() => setSelectedStation(s)}
+                    className="mt-2 w-full text-sm px-3 py-2 rounded-lg border border-emerald-300 text-emerald-700 hover:bg-emerald-50"
+                  >
+                    View details
+                  </button>
                 </div>
               ))}
             </div>
