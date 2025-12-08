@@ -1,93 +1,146 @@
-import { useState } from "react";
-import { Users, Search, UserPlus, X, Pencil, Trash2 } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { UserPlus, X, Pencil, Trash2 } from "lucide-react";
+import {
+  fetchUser,
+  createUser,
+  updateUser,
+  deleteUser,
+} from "./api/userService";
 
 export default function UserPage() {
-  const [users, setUsers] = useState([
-    {
-      userId: "U01",
-      fullName: "Adam Silva",
-      email: "adam@gmail.com",
-      phone: "0771234567",
-      role: "Admin",
-    },
-    {
-      userId: "U02",
-      fullName: "Nishan Perera",
-      email: "nishan@gmail.com",
-      phone: "0779876543",
-      role: "User",
-    },
-    {
-      userId: "U03",
-      fullName: "Kavindu Jay",
-      email: "kavi@gmail.com",
-      phone: "0714567890",
-      role: "Manager",
-    },
-  ]);
-
+  const [users, setUsers] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [editIndex, setEditIndex] = useState(null);
+  const [editingUserId, setEditingUserId] = useState(null); // store userId instead of index
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [saving, setSaving] = useState(false);
 
   const [form, setForm] = useState({
-    userId: "",
     fullName: "",
     email: "",
+    password: "",
     phone: "",
-    role: "",
   });
 
-  const filteredUsers = users.filter(
-    (u) =>
-      u.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      u.userId.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      u.email.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  useEffect(() => {
+    const load = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const data = await fetchUser();
+        setUsers(data || []);
+      } catch (err) {
+        console.error(err);
+        setError(err.message || "Failed to load users");
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
+  }, []);
 
   const totalUsers = users.length;
-  const uniqueRoles = new Set(users.map((u) => u.role)).size;
 
-  const getRoleBadgeColor = (role) => {
-    switch (role) {
-      case "Admin":
-        return "bg-red-100 text-red-700 border-red-200";
-      case "Manager":
-        return "bg-blue-100 text-blue-700 border-blue-200";
-      case "User":
-        return "bg-green-100 text-green-700 border-green-200";
-      default:
-        return "bg-gray-100 text-gray-700 border-gray-200";
-    }
+  const filteredUsers = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase();
+    if (!term) return users;
+    return users.filter((u) => {
+      return (
+        u.userId?.toLowerCase().includes(term) ||
+        u.fullName?.toLowerCase().includes(term) ||
+        u.email?.toLowerCase().includes(term) ||
+        u.phone?.toLowerCase().includes(term) ||
+        u.role?.toLowerCase().includes(term)
+      );
+    });
+  }, [searchTerm, users]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
-
-  const handleChange = (e) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
 
   const openAddModal = () => {
-    setForm({ userId: "", fullName: "", email: "", phone: "", role: "" });
-    setEditIndex(null);
+    setEditingUserId(null);
+    setForm({
+      fullName: "",
+      email: "",
+      password: "",
+      phone: "",
+    });
     setShowModal(true);
   };
 
-  const openEditModal = (index) => {
-    setForm(users[index]);
-    setEditIndex(index);
+  const openEditModal = (user) => {
+    setEditingUserId(user.userId);
+    setForm({
+      fullName: user.fullName || "",
+      email: user.email || "",
+      password: "",
+      phone: user.phone || "",
+    });
     setShowModal(true);
   };
 
-  const saveUser = () => {
-    if (editIndex !== null) {
-      const updated = [...users];
-      updated[editIndex] = form;
-      setUsers(updated);
-    } else {
-      setUsers([...users, form]);
+  const saveUser = async () => {
+    try {
+      setSaving(true);
+      setError(null);
+
+      const payload = {
+        fullName: form.fullName,
+        email: form.email,
+        password: form.password,
+        phone: form.phone,
+      };
+
+      if (editingUserId === null) {
+        await createUser(payload);
+      } else {
+        await updateUser(editingUserId, payload);
+      }
+
+      const data = await fetchUser();
+      setUsers(data || []);
+
+      setShowModal(false);
+      setEditingUserId(null);
+    } catch (err) {
+      console.error(err);
+      setError(err.message || "Failed to save user");
+    } finally {
+      setSaving(false);
     }
-    setShowModal(false);
   };
 
-  const deleteUser = (index) => setUsers(users.filter((_, i) => i !== index));
+  const handleDelete = async (userId) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this user?"
+    );
+    if (!confirmed) return;
+
+    try {
+      await deleteUser(userId);
+      setUsers((prev) => prev.filter((v) => v.userId !== userId));
+    } catch (err) {
+      console.error(err);
+      setError(err.message || "Failed to delete user");
+    }
+  };
+
+  function getRoleBadgeColor(role) {
+    switch (role) {
+      case "Admin":
+        return "bg-purple-50 text-purple-700 border-purple-200";
+      case "Operater":
+        return "bg-green-50 text-green-700 border-green-200";
+      case "User":
+        return "bg-blue-50 text-blue-700 border-blue-200";
+      default:
+        return "bg-gray-50 text-gray-700 border-gray-200";
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-16 m-12">
@@ -112,11 +165,9 @@ export default function UserPage() {
                 <div className="w-6 h-6 bg-green-500 rounded-lg"></div>
               </div>
               <div>
-                <p className="text-xs text-gray-500 font-medium">
-                  Unique Roles
-                </p>
+                <p className="text-xs text-gray-500 font-medium">Oprarer</p>
                 <p className="text-2xl font-bold text-gray-800">
-                  {uniqueRoles}
+                  {users.filter((u) => u.role === "Operater").length}
                 </p>
               </div>
             </div>
@@ -144,14 +195,14 @@ export default function UserPage() {
               <div>
                 <p className="text-xs text-gray-500 font-medium">Users</p>
                 <p className="text-2xl font-bold text-gray-800">
-                  {users.filter((u) => u.role === "User").length}
+                  {users.filter((u) => u.role === "USER").length}
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Table Section */}
+        {/* Table Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100">
           <div className="p-6 border-b border-gray-100 flex justify-between items-center">
             <h2 className="text-xl font-semibold text-gray-800">
@@ -174,6 +225,11 @@ export default function UserPage() {
               </button>
             </div>
           </div>
+
+          {loading && (
+            <div className="p-4 text-sm text-gray-500">Loading users...</div>
+          )}
+          {error && <div className="p-4 text-sm text-red-500">{error}</div>}
 
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -200,7 +256,7 @@ export default function UserPage() {
                 </tr>
               </thead>
               <tbody>
-                {filteredUsers.map((u, index) => (
+                {filteredUsers.map((u) => (
                   <tr
                     key={u.userId}
                     className="border-b border-gray-50 hover:bg-gray-50 transition"
@@ -229,13 +285,13 @@ export default function UserPage() {
                     <td className="px-6 py-4">
                       <div className="flex items-center justify-center gap-2">
                         <button
-                          onClick={() => openEditModal(index)}
+                          onClick={() => openEditModal(u)}
                           className="p-2 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition"
                         >
                           <Pencil size={16} />
                         </button>
                         <button
-                          onClick={() => deleteUser(index)}
+                          onClick={() => handleDelete(u.userId)}
                           className="p-2 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition"
                         >
                           <Trash2 size={16} />
@@ -244,6 +300,17 @@ export default function UserPage() {
                     </td>
                   </tr>
                 ))}
+
+                {!loading && filteredUsers.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan={6}
+                      className="px-6 py-6 text-center text-sm text-gray-500"
+                    >
+                      No users found.
+                    </td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
@@ -255,7 +322,7 @@ export default function UserPage() {
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md">
               <div className="p-6 border-b border-gray-100 flex justify-between items-center">
                 <h2 className="text-xl font-semibold text-gray-800">
-                  {editIndex !== null ? "Edit User" : "Add New User"}
+                  {editingUserId !== null ? "Edit User" : "Add New User"}
                 </h2>
                 <button
                   onClick={() => setShowModal(false)}
@@ -266,13 +333,6 @@ export default function UserPage() {
               </div>
 
               <div className="p-6 space-y-4">
-                <input
-                  name="userId"
-                  placeholder="User ID"
-                  value={form.userId}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition"
-                />
                 <input
                   name="fullName"
                   placeholder="Full Name"
@@ -288,16 +348,16 @@ export default function UserPage() {
                   className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition"
                 />
                 <input
-                  name="phone"
-                  placeholder="Phone"
-                  value={form.phone}
+                  name="password"
+                  placeholder="Password"
+                  value={form.password}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition"
                 />
                 <input
-                  name="role"
-                  placeholder="Role"
-                  value={form.role}
+                  name="phone"
+                  placeholder="phone"
+                  value={form.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition"
                 />
@@ -307,14 +367,20 @@ export default function UserPage() {
                 <button
                   onClick={() => setShowModal(false)}
                   className="flex-1 px-4 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 transition font-medium"
+                  disabled={saving}
                 >
                   Cancel
                 </button>
                 <button
                   onClick={saveUser}
-                  className="flex-1 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition font-medium shadow-sm"
+                  className="flex-1 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition font-medium shadow-sm disabled:opacity-60"
+                  disabled={saving}
                 >
-                  {editIndex !== null ? "Update" : "Add"} User
+                  {saving
+                    ? "Saving..."
+                    : editingUserId !== null
+                    ? "Update User"
+                    : "Add User"}
                 </button>
               </div>
             </div>

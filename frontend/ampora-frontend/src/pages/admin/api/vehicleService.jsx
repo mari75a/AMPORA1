@@ -1,16 +1,12 @@
-// src/api/vehicleApi.js
-
 const BASE_URL =
   import.meta.env.VITE_VEHICLE_API_URL || "http://localhost:8083/api/vehicles";
 
-// Small helper to handle errors + JSON parsing
 async function handleResponse(res) {
   if (!res.ok) {
     const text = await res.text();
     throw new Error(text || `Request failed with status ${res.status}`);
   }
 
-  // 204 No Content (DELETE etc.)
   if (res.status === 204) return null;
 
   return res.json();
