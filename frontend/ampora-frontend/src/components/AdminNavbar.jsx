@@ -18,7 +18,6 @@ import logo from "../assets/logo.png"; //
 
 const letters = ["A", "M", "P", "O", "R", "A"];
 
-// Now "Charging" is a parent with dropdown items
 const menuItems = [
   { label: "Dashboard", path: "/admin" },
   { label: "Vehicle", path: "/admin/vehicle" },
@@ -31,6 +30,7 @@ const menuItems = [
       { label: "Subscriptions", path: "/admin/subscriptions" },
     ],
   },
+  { label: "Charging Session", path: "/admin/charger-session" },
 ];
 
 export default function AdminNavbar() {

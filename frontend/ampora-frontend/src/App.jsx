@@ -25,7 +25,7 @@ import Footer from "./components/Footer.jsx";
 import Register from "./pages/Register.jsx";
 import Forget from "./pages/Forget.jsx";
 import LoaderProvider from "./components/LoaderProvider.jsx";
-
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AdminChargerStationPage from "./pages/admin/ChargerStation.jsx";
 import AdminDashboardpage from "./pages/admin/Dashboard.jsx";
 import AdminChargerSessionpage from "./pages/admin/ChargerSession.jsx";
@@ -47,6 +47,8 @@ function AppLayout() {
 
   return (
     <>
+
+    
       {!isAuthPage && !isAdminPage && <Navbar />}
 
       <LoaderProvider>
@@ -86,6 +88,7 @@ function AppLayout() {
             <Route path="subscriptions" element={<Subscription />} />
           </Route>
         </Routes>
+
       </LoaderProvider>
       {!isAuthPage && !isAdminPage && <Footer />}
     </>

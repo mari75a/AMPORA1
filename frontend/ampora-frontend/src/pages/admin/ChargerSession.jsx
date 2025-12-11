@@ -471,8 +471,8 @@ export default function Payment() {
               >
                 <option value="">Select Charger</option>
 
-                {uniqueStations.map((c) => (
-                  <option key={c.chargerId} value={c.chargerId}>
+                {chargers.map((c) => (
+                  <option key={c.chargerID} value={c.chargerID}>
                     {c.stationName}
                   </option>
                 ))}
