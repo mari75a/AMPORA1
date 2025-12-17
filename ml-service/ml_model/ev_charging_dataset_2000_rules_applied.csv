@@ -1,0 +1,2001 @@
+free_time,station_name,time,city,label
+4.0,Eheliyagoda DC,14:00,Eheliyagoda,"watch film, visit beautiful place"
+2.0,Matara Town Hall,11:30,Matara,lunch
+2.75,Veyangoda Station,08:45,Veyangoda,"breakfast, visit beautiful place"
+3.5,Kinniya AC,11:00,Kinniya,visit beautiful place
+1.0,Ahangama AC,08:30,Ahangama,breakfast
+3.0,Mahiyanganaya AC,21:30,Mahiyanganaya,"dinner, shopping"
+0.5,Maharagama City,06:16,Maharagama,tea/coffee shop
+2.5,Hikkaduwa AC,20:45,Hikkaduwa,"dinner, shopping"
+1.5,Kosgama DC,13:00,Kosgama,lunch
+0.75,Warakapola AC,13:30,Warakapola,lunch
+2.0,Kalmunai Center,07:30,Kalmunai,breakfast
+1.0,Biyagama Factory,20:45,Biyagama,dinner
+3.0,Kandana DC,19:30,Kandana,"dinner, shopping"
+0.5,Batticaloa City,22:46,Batticaloa,tea/coffee shop
+3.0,Gampaha Town,14:00,Gampaha,"lunch, shopping"
+4.0,Matara Town Hall,10:15,Matara,visit beautiful place
+3.5,Horana Town,12:45,Horana,visit beautiful place
+2.0,Hikkaduwa AC,14:15,Hikkaduwa,lunch
+3.5,Kandy City Center,16:45,Kandy,visit beautiful place
+1.0,Trincomalee Town,13:30,Trincomalee,lunch
+1.5,Rambukkana DC,13:15,Rambukkana,lunch
+0.5,Kadugannawa AC,01:03,Kadugannawa,tea/coffee shop
+3.0,Kandana DC,10:15,Kandana,visit beautiful place
+0.25,Matara Town Hall,20:15,Matara,none
+0.75,Dambulla DC,12:00,Dambulla,lunch
+0.5,Teldeniya AC,03:45,Teldeniya,tea/coffee shop
+1.5,Gampola Center,13:30,Gampola,lunch
+3.5,Arugam Bay AC,18:45,Arugam Bay,visit beautiful place
+2.5,Eheliyagoda DC,16:30,Eheliyagoda,watch film
+2.75,Ampara DC,08:30,Ampara,"breakfast, visit beautiful place"
+1.5,Sigiriya Jn,07:00,Sigiriya,breakfast
+0.5,Tangalle Town,06:09,Tangalle,tea/coffee shop
+0.25,Kinniya AC,09:45,Kinniya,none
+2.75,Thalahena DC,08:00,Thalahena,"breakfast, visit beautiful place"
+3.0,Warakapola AC,21:30,Warakapola,"dinner, shopping"
+3.5,Habarana DC,16:00,Habarana,visit beautiful place
+0.5,Tissamaharama DC,15:06,Tissamaharama,tea/coffee shop
+3.0,Maskeliya Town,11:00,Maskeliya,"lunch, shopping"
+0.5,CCC Fast Charge,22:23,Colombo,tea/coffee shop
+5.0,Hikkaduwa AC,11:30,Hikkaduwa,visit beautiful place
+0.25,Gampaha Town,17:45,Gampaha,none
+2.0,Mihintale AC,07:30,Mihintale,breakfast
+0.75,Aluthgama Bridge,12:15,Aluthgama,lunch
+1.0,Nawalapitiya Town,14:45,Nawalapitiya,lunch
+2.5,Station B,20:15,Colombo,"dinner, shopping"
+5.0,Kilinochchi Center,17:30,Kilinochchi,visit beautiful place
+1.0,Hikkaduwa AC,07:00,Hikkaduwa,breakfast
+0.75,Ruwanwella AC,07:45,Ruwanwella,"breakfast, tea/coffee shop"
+1.5,Hatton Bus Stand,11:00,Hatton,lunch
+4.0,Matara Town Hall,16:30,Matara,"watch film, visit beautiful place"
+0.5,Warakapola AC,16:05,Warakapola,tea/coffee shop
+3.0,Matara Town Hall,11:45,Matara,"lunch, shopping"
+5.0,Kataragama Center,12:15,Kataragama,visit beautiful place
+2.5,Dutch Hospital,16:30,Colombo,watch film
+3.5,Bambalapitiya RZ,21:45,Bambalapitiya,visit beautiful place
+2.0,Dambulla DC,22:45,Dambulla,shopping
+4.0,Hanwella AC,20:00,Hanwella,visit beautiful place
+1.5,Anuradhapura DC,20:45,Anuradhapura,dinner
+3.0,Tambuttegama DC,19:00,Tambuttegama,"dinner, shopping"
+3.0,Vavuniya Town DC,19:15,Vavuniya,"dinner, shopping"
+0.5,Teldeniya AC,06:52,Teldeniya,tea/coffee shop
+2.75,Habarana DC,08:15,Habarana,"breakfast, visit beautiful place"
+0.5,Kandy Gatambe,22:41,Kandy,tea/coffee shop
+2.5,Ratmalana DC,21:30,Ratmalana,"dinner, shopping"
+4.5,Galle Fort AC,08:30,Galle,visit beautiful place
+2.5,Nugegoda High Level,13:45,Nugegoda,"lunch, shopping"
+0.5,Horana Town,22:22,Horana,tea/coffee shop
+0.5,Mannar AC,06:22,Mannar,tea/coffee shop
+1.0,Galle Fort AC,08:00,Galle,breakfast
+4.5,Dickwella DC,11:45,Dickwella,"watch film, visit beautiful place"
+0.75,Pottuvil DC,21:30,Pottuvil,dinner
+3.0,Kattankudy AC,21:30,Kattankudy,"dinner, shopping"
+2.5,Kalmunai Center,21:30,Kalmunai,"dinner, shopping"
+3.0,Talawakele DC,15:45,Talawakele,visit beautiful place
+0.25,Balangoda AC,10:15,Balangoda,none
+3.0,Kilinochchi Center,21:15,Kilinochchi,"dinner, shopping"
+5.0,Wattala K Zone,19:00,Wattala,"watch film, visit beautiful place"
+0.5,Kurunegala Lake Rd,06:11,Kurunegala,tea/coffee shop
+0.25,Batticaloa City,08:00,Batticaloa,none
+0.5,Peradeniya Junction,16:43,Peradeniya,tea/coffee shop
+1.5,Padukka Center,12:00,Padukka,lunch
+0.5,Kadawatha Highway,15:31,Kadawatha,tea/coffee shop
+3.0,Sigiriya Jn,09:30,Sigiriya,visit beautiful place
+1.0,Rajagiriya Flyover,07:45,Rajagiriya,breakfast
+2.5,Arugam Bay AC,06:45,Arugam Bay,visit beautiful place
+2.0,Haputale View,11:45,Haputale,lunch
+2.5,Galle Fort AC,12:30,Galle,"lunch, shopping"
+3.0,Nikaweratiya AC,18:45,Nikaweratiya,visit beautiful place
+2.5,Tissamaharama DC,09:45,Tissamaharama,visit beautiful place
+4.0,Balangoda AC,14:00,Balangoda,"watch film, visit beautiful place"
+0.75,Habarana DC,07:45,Habarana,"breakfast, tea/coffee shop"
+2.0,Digana DC,20:30,Digana,dinner
+5.0,Kegalle Town,10:00,Kegalle,visit beautiful place
+0.25,Kalutara South,13:30,Kalutara,none
+2.0,Mullaitivu DC,07:45,Mullaitivu,breakfast
+3.0,Ella Station,11:15,Ella,"lunch, shopping"
+4.5,Habarana DC,19:00,Habarana,"watch film, visit beautiful place"
+0.75,Kurunegala Lake Rd,08:00,Kurunegala,"breakfast, tea/coffee shop"
+2.5,Weligama Bay,11:30,Weligama,"lunch, shopping"
+2.5,Kosgama DC,15:30,Kosgama,visit beautiful place
+1.0,Ampara DC,12:45,Ampara,lunch
+3.5,Tissamaharama DC,08:00,Tissamaharama,visit beautiful place
+2.5,Kurunegala Lake Rd,16:30,Kurunegala,watch film
+0.75,Matara Town Hall,19:15,Matara,dinner
+0.5,Bandarawela Town,06:02,Bandarawela,tea/coffee shop
+0.25,Passara DC,13:00,Passara,none
+3.5,Kurunegala Town,09:15,Kurunegala,visit beautiful place
+4.0,Mirissa Beach,09:15,Mirissa,visit beautiful place
+1.5,Kadawatha Highway,12:45,Kadawatha,lunch
+4.0,Station B,09:15,Colombo,visit beautiful place
+5.0,Kataragama Center,16:30,Kataragama,"watch film, visit beautiful place"
+2.5,Hatton Bus Stand,11:15,Hatton,"lunch, shopping"
+4.5,Aluthgama Bridge,19:45,Aluthgama,visit beautiful place
+2.75,Batticaloa City,09:45,Batticaloa,visit beautiful place
+3.0,Balangoda AC,19:00,Balangoda,"dinner, shopping"
+3.0,Hatton Bus Stand,13:30,Hatton,"lunch, shopping"
+4.0,Kottawa Interchange,20:45,Kottawa,visit beautiful place
+0.5,Pannipitiya Station,15:47,Pannipitiya,tea/coffee shop
+0.25,Liberty Plaza AC,05:00,Colombo,none
+1.5,Station B,11:00,Colombo,lunch
+2.75,Kosgama DC,15:15,Kosgama,visit beautiful place
+5.0,Nawalapitiya Town,21:30,Nawalapitiya,"watch film, visit beautiful place"
+0.5,Hambantota Port,06:48,Hambantota,tea/coffee shop
+2.5,Badulla Main DC,14:00,Badulla,"lunch, shopping"
+2.75,Tambuttegama DC,11:45,Tambuttegama,"lunch, visit beautiful place"
+0.5,Piliyandala Town,22:12,Piliyandala,tea/coffee shop
+1.5,Weligama Bay,11:45,Weligama,lunch
+2.5,Weligama Bay,21:15,Weligama,"dinner, shopping"
+3.0,Dutch Hospital,14:30,Colombo,"lunch, shopping"
+1.5,Station B,12:15,Colombo,lunch
+5.0,Trincomalee Town,08:15,Trincomalee,visit beautiful place
+2.0,Hikkaduwa AC,14:30,Hikkaduwa,lunch
+2.0,Liberty Plaza AC,11:15,Colombo,lunch
+0.75,Maharagama City,07:00,Maharagama,"breakfast, tea/coffee shop"
+1.5,Aluthgama Bridge,11:00,Aluthgama,lunch
+5.0,Bandarawela Town,11:45,Bandarawela,"watch film, visit beautiful place"
+2.0,Avissawella Center,15:30,Avissawella,shopping
+1.0,Kandy Gatambe,07:45,Kandy,breakfast
+0.25,Station A,14:45,Colombo,none
+1.5,Kalmunai Center,09:15,Kalmunai,shopping
+4.0,Mannar AC,16:00,Mannar,visit beautiful place
+4.0,Pussellawa AC,19:00,Pussellawa,"watch film, visit beautiful place"
+2.0,Digana DC,12:30,Digana,lunch
+2.5,Teldeniya AC,20:45,Teldeniya,"dinner, shopping"
+3.0,Veyangoda Station,13:30,Veyangoda,"lunch, shopping"
+2.5,Kalutara South,11:15,Kalutara,"lunch, shopping"
+1.0,Galle Fort AC,16:00,Galle,shopping
+2.75,Beruwala Beach,14:00,Beruwala,"lunch, visit beautiful place"
+0.25,Nuwara Eliya Grand,19:15,Nuwara Eliya,none
+2.0,Kinniya AC,07:30,Kinniya,breakfast
+1.5,Galle Bus Stand,12:00,Galle,lunch
+2.75,Avissawella Center,14:00,Avissawella,"lunch, visit beautiful place"
+0.25,Piliyandala Town,05:15,Piliyandala,none
+4.5,Hanwella AC,21:30,Hanwella,"watch film, visit beautiful place"
+1.0,Nivitigala AC,20:45,Nivitigala,dinner
+2.0,Polonnaruwa Center,14:45,Polonnaruwa,lunch
+0.5,Kalmunai Center,22:33,Kalmunai,tea/coffee shop
+3.5,Kottawa Interchange,21:30,Kottawa,"watch film, visit beautiful place"
+0.25,Horana Town,18:00,Horana,none
+2.0,Matara Town Hall,14:15,Matara,lunch
+2.5,Biyagama Factory,19:15,Biyagama,"dinner, shopping"
+2.5,Liberty Plaza AC,17:30,Colombo,visit beautiful place
+0.25,Dutch Hospital,12:30,Colombo,none
+4.0,Homagama Center,16:30,Homagama,"watch film, visit beautiful place"
+1.0,Gampaha Town,14:00,Gampaha,lunch
+1.5,Horana Town,07:15,Horana,breakfast
+3.0,Monaragala DC,16:30,Monaragala,watch film
+5.0,Matara Town Hall,16:30,Matara,"watch film, visit beautiful place"
+0.25,Talawakele DC,22:45,Talawakele,none
+3.0,Galle Bus Stand,19:00,Galle,"dinner, shopping"
+0.5,Maharagama City,22:19,Maharagama,tea/coffee shop
+1.0,Hatton Bus Stand,12:30,Hatton,lunch
+4.0,Passara DC,13:00,Passara,visit beautiful place
+0.5,Puttalam Lagoon,06:46,Puttalam,tea/coffee shop
+0.5,Jaffna Library AC,06:15,Jaffna,tea/coffee shop
+2.75,Piliyandala Town,06:45,Piliyandala,visit beautiful place
+4.0,Dehiwala Junction,15:30,Dehiwala,visit beautiful place
+3.0,Nikaweratiya AC,13:45,Nikaweratiya,"lunch, shopping"
+0.5,Homagama Godagama,01:01,Homagama,tea/coffee shop
+1.5,Arugam Bay AC,13:45,Arugam Bay,lunch
+0.75,Arugam Bay AC,12:00,Arugam Bay,lunch
+2.5,Chavakachcheri AC,12:45,Chavakachcheri,"lunch, shopping"
+0.75,Wattala K Zone,19:15,Wattala,dinner
+0.75,Muttur DC,14:45,Muttur,lunch
+2.0,Rajagiriya Flyover,13:45,Rajagiriya,lunch
+2.75,Balangoda AC,07:00,Balangoda,"breakfast, visit beautiful place"
+0.75,Godakawela AC,21:45,Godakawela,dinner
+2.5,Chilaw City,14:00,Chilaw,"lunch, shopping"
+1.5,Embilipitiya DC,11:30,Embilipitiya,lunch
+3.5,Mihintale AC,21:15,Mihintale,visit beautiful place
+5.0,Anamaduwa DC,12:30,Anamaduwa,visit beautiful place
+2.75,Gampaha Town,14:45,Gampaha,"lunch, visit beautiful place"
+1.0,Negombo Beach Road,16:45,Negombo,shopping
+0.75,Matara Town Hall,08:45,Matara,"breakfast, tea/coffee shop"
+0.75,Hatton Bus Stand,07:30,Hatton,"breakfast, tea/coffee shop"
+3.0,Kataragama Center,08:00,Kataragama,visit beautiful place
+3.0,Kinniya AC,08:45,Kinniya,visit beautiful place
+0.5,Maharagama City,16:37,Maharagama,tea/coffee shop
+3.5,Tambuttegama DC,10:30,Tambuttegama,visit beautiful place
+2.5,Shangri La DC,20:00,Colombo,"dinner, shopping"
+1.5,Avissawella Center,12:15,Avissawella,lunch
+0.75,Bandarawela Town,13:00,Bandarawela,lunch
+1.5,Anuradhapura New Town,22:15,Anuradhapura,shopping
+1.5,Station A,20:15,Colombo,dinner
+2.5,Mirissa Beach,07:15,Mirissa,visit beautiful place
+3.5,Gampaha Town,07:45,Gampaha,visit beautiful place
+4.0,Kandy Gatambe,16:45,Kandy,visit beautiful place
+4.5,Anamaduwa DC,10:15,Anamaduwa,visit beautiful place
+2.5,Kinniya AC,21:45,Kinniya,"dinner, shopping"
+3.0,Ratnapura DC,12:45,Ratnapura,"lunch, shopping"
+2.75,Veyangoda Station,12:30,Veyangoda,"lunch, visit beautiful place"
+1.5,Warakapola AC,14:30,Warakapola,lunch
+0.5,Wattala K Zone,22:38,Wattala,tea/coffee shop
+0.25,Galenbindunuwewa AC,12:15,Galenbindunuwewa,none
+3.5,Pottuvil DC,20:30,Pottuvil,visit beautiful place
+0.25,Haputale View,06:00,Haputale,none
+0.5,Wattala K Zone,22:37,Wattala,tea/coffee shop
+1.5,Vavuniya Town DC,18:45,Vavuniya,shopping
+2.5,Anuradhapura New Town,12:30,Anuradhapura,"lunch, shopping"
+2.0,Hanwella AC,08:30,Hanwella,breakfast
+3.5,Gampola Center,10:15,Gampola,visit beautiful place
+2.0,Wennappuwa DC,12:30,Wennappuwa,lunch
+5.0,Monaragala DC,20:45,Monaragala,visit beautiful place
+1.5,Godakawela AC,11:15,Godakawela,lunch
+0.5,Kalutara South,22:58,Kalutara,tea/coffee shop
+1.5,Wellawaya AC,13:30,Wellawaya,lunch
+0.5,Matale Town,02:44,Matale,tea/coffee shop
+2.5,Moratuwa Junction,21:30,Moratuwa,"dinner, shopping"
+1.0,Passara DC,07:00,Passara,breakfast
+2.75,Panadura Depot,17:45,Panadura,visit beautiful place
+2.0,Weligama Bay,12:30,Weligama,lunch
+2.75,Ratnapura DC,21:30,Ratnapura,visit beautiful place
+0.5,Hanwella AC,06:20,Hanwella,tea/coffee shop
+1.0,Jaffna Central DC,08:00,Jaffna,breakfast
+0.25,Kalutara South,09:45,Kalutara,none
+1.0,Katunayake Airport,12:00,Katunayake,lunch
+2.0,Tanamalwila AC,11:30,Tanamalwila,lunch
+3.0,Katunayake Airport,13:15,Katunayake,"lunch, shopping"
+0.75,Mirissa Beach,21:15,Mirissa,dinner
+0.75,Nikaweratiya AC,20:30,Nikaweratiya,dinner
+1.5,Marawila AC,18:45,Marawila,shopping
+2.0,Wennappuwa DC,13:15,Wennappuwa,lunch
+3.5,Kurunegala Town,07:45,Kurunegala,visit beautiful place
+1.5,Bandarawela Town,08:00,Bandarawela,breakfast
+1.5,Homagama Center,14:00,Homagama,lunch
+4.5,Marawila AC,21:30,Marawila,"watch film, visit beautiful place"
+2.0,Ratmalana DC,14:30,Ratmalana,lunch
+0.5,Wattala K Zone,16:26,Wattala,tea/coffee shop
+4.5,Dutch Hospital,14:00,Colombo,"watch film, visit beautiful place"
+2.0,Hikkaduwa AC,07:00,Hikkaduwa,breakfast
+2.5,Kataragama Center,14:45,Kataragama,"lunch, shopping"
+1.0,Ella Station,11:45,Ella,lunch
+2.75,Galenbindunuwewa AC,06:30,Galenbindunuwewa,visit beautiful place
+0.75,Tambuttegama DC,13:15,Tambuttegama,lunch
+1.0,Kinniya AC,13:30,Kinniya,lunch
+2.0,Kilinochchi Center,08:00,Kilinochchi,breakfast
+2.0,Deniyaya AC,08:15,Deniyaya,breakfast
+3.0,Tissamaharama DC,22:45,Tissamaharama,visit beautiful place
+2.75,Homagama Center,11:15,Homagama,"lunch, visit beautiful place"
+1.0,Nugegoda High Level,08:15,Nugegoda,breakfast
+0.75,Marawila AC,21:15,Marawila,dinner
+1.0,Talawakele DC,12:45,Talawakele,lunch
+4.0,Digana DC,17:15,Digana,visit beautiful place
+0.25,Haputale View,05:15,Haputale,none
+2.75,Ella Station,11:45,Ella,"lunch, visit beautiful place"
+2.5,Rambukkana DC,11:45,Rambukkana,"lunch, shopping"
+0.25,Nedunkeni AC,08:15,Nedunkeni,none
+2.0,Nivitigala AC,11:00,Nivitigala,lunch
+3.0,Padukka Center,15:00,Padukka,visit beautiful place
+0.5,Kadawatha Highway,16:51,Kadawatha,tea/coffee shop
+2.75,Ella Station,07:30,Ella,"breakfast, visit beautiful place"
+0.5,Hambantota Port,16:28,Hambantota,tea/coffee shop
+3.0,Moratuwa Junction,11:15,Moratuwa,"lunch, shopping"
+2.5,Galle Bus Stand,10:00,Galle,visit beautiful place
+1.5,Dambulla DC,12:15,Dambulla,lunch
+1.0,Aluthgama Bridge,12:15,Aluthgama,lunch
+2.75,Batticaloa City,14:00,Batticaloa,"lunch, visit beautiful place"
+2.5,Biyagama Factory,13:45,Biyagama,"lunch, shopping"
+0.25,Rambukkana DC,08:45,Rambukkana,none
+2.0,Anuradhapura New Town,08:30,Anuradhapura,breakfast
+1.5,Bambalapitiya RZ,08:30,Bambalapitiya,breakfast
+2.0,Bambalapitiya RZ,13:30,Bambalapitiya,lunch
+2.0,Kurunegala Town,12:30,Kurunegala,lunch
+1.5,Hatton Bus Stand,09:45,Hatton,shopping
+2.75,Panadura Depot,08:45,Panadura,"breakfast, visit beautiful place"
+2.0,Nedunkeni AC,14:45,Nedunkeni,lunch
+2.5,Homagama Center,21:30,Homagama,"dinner, shopping"
+3.0,Maskeliya Town,14:00,Maskeliya,"lunch, shopping"
+1.5,Bandarawela Town,14:15,Bandarawela,lunch
+3.0,Tissamaharama DC,17:45,Tissamaharama,visit beautiful place
+3.0,Unawatuna DC,14:30,Unawatuna,"lunch, shopping"
+2.75,Kadugannawa AC,05:30,Kadugannawa,visit beautiful place
+1.0,Pussellawa AC,07:15,Pussellawa,breakfast
+0.5,Arugam Bay AC,06:13,Arugam Bay,tea/coffee shop
+2.5,Vavuniya Town DC,21:45,Vavuniya,"dinner, shopping"
+0.75,Station A,08:00,Colombo,"breakfast, tea/coffee shop"
+4.0,Kottawa Interchange,21:30,Kottawa,"watch film, visit beautiful place"
+3.0,Galle Fort AC,19:45,Galle,"dinner, shopping"
+2.5,Warakapola AC,11:30,Warakapola,"lunch, shopping"
+4.0,Maho Station,18:30,Maho,visit beautiful place
+3.0,Jaffna Library AC,16:30,Jaffna,watch film
+2.5,Kosgama DC,14:45,Kosgama,"lunch, shopping"
+2.0,Anamaduwa DC,08:00,Anamaduwa,breakfast
+0.5,Trincomalee Town,06:44,Trincomalee,tea/coffee shop
+1.5,Habarana DC,14:15,Habarana,lunch
+4.5,Kuliyapitiya Center,20:45,Kuliyapitiya,visit beautiful place
+0.5,Wennappuwa DC,06:41,Wennappuwa,tea/coffee shop
+3.0,Ambalangoda DC,16:30,Ambalangoda,watch film
+0.25,Kuliyapitiya Center,19:15,Kuliyapitiya,none
+3.5,Katunayake Airport,19:00,Katunayake,"watch film, visit beautiful place"
+1.5,Kandy City Center,08:45,Kandy,breakfast
+2.75,Kandy Gatambe,13:15,Kandy,"lunch, visit beautiful place"
+4.0,Teldeniya AC,19:00,Teldeniya,"watch film, visit beautiful place"
+3.5,Station A,20:30,Colombo,visit beautiful place
+0.75,Ampara DC,14:00,Ampara,lunch
+2.75,Station C,14:15,Kandy,"lunch, visit beautiful place"
+1.5,Beliatta Highway,08:15,Beliatta,breakfast
+0.5,Kalmunai Center,06:30,Kalmunai,tea/coffee shop
+2.75,Talawakele DC,12:45,Talawakele,"lunch, visit beautiful place"
+4.0,Maho Station,15:45,Maho,visit beautiful place
+1.0,Kadawatha Highway,06:30,Kadawatha,shopping
+2.5,Gampola Center,09:30,Gampola,visit beautiful place
+4.0,Kuliyapitiya Center,20:30,Kuliyapitiya,visit beautiful place
+0.75,Eheliyagoda DC,08:00,Eheliyagoda,"breakfast, tea/coffee shop"
+2.0,Trincomalee Town,13:30,Trincomalee,lunch
+1.0,Katunayake Airport,08:15,Katunayake,breakfast
+3.0,Unawatuna DC,21:15,Unawatuna,"dinner, shopping"
+2.75,Nuwara Eliya Grand,18:30,Nuwara Eliya,visit beautiful place
+5.0,Eheliyagoda DC,07:30,Eheliyagoda,visit beautiful place
+0.5,Mullaitivu DC,06:43,Mullaitivu,tea/coffee shop
+0.5,Kekirawa AC,15:32,Kekirawa,tea/coffee shop
+5.0,Panadura Depot,21:30,Panadura,"watch film, visit beautiful place"
+2.0,Dambulla DC,08:15,Dambulla,breakfast
+0.5,Kottawa Interchange,04:50,Kottawa,tea/coffee shop
+1.0,Kurunegala Lake Rd,19:15,Kurunegala,dinner
+2.75,Kataragama Center,08:15,Kataragama,"breakfast, visit beautiful place"
+1.5,Kalmunai Center,13:15,Kalmunai,lunch
+4.5,Pussellawa AC,09:00,Pussellawa,visit beautiful place
+1.0,Anuradhapura DC,07:30,Anuradhapura,breakfast
+1.5,Wellawaya AC,19:15,Wellawaya,dinner
+1.5,Kottawa Interchange,12:30,Kottawa,lunch
+4.5,Moratuwa Junction,07:15,Moratuwa,visit beautiful place
+2.5,Nugegoda High Level,22:00,Nugegoda,visit beautiful place
+3.0,Anamaduwa DC,22:15,Anamaduwa,visit beautiful place
+0.25,Akuressa Center,12:30,Akuressa,none
+1.0,Kuliyapitiya Center,13:30,Kuliyapitiya,lunch
+0.25,Gampola Center,17:30,Gampola,none
+2.75,Ratmalana DC,18:15,Ratmalana,visit beautiful place
+3.0,Monaragala DC,16:30,Monaragala,watch film
+3.0,Chilaw City,14:00,Chilaw,"lunch, shopping"
+0.75,Kosgama DC,13:30,Kosgama,lunch
+2.5,Kottawa Interchange,19:00,Kottawa,"dinner, shopping"
+3.0,Rajagiriya Flyover,11:15,Rajagiriya,"lunch, shopping"
+3.0,Godakawela AC,06:15,Godakawela,visit beautiful place
+3.0,Gampaha Town,13:45,Gampaha,"lunch, shopping"
+3.0,Batticaloa City,16:30,Batticaloa,watch film
+1.0,Bambalapitiya RZ,08:15,Bambalapitiya,breakfast
+0.5,Shangri La DC,22:46,Colombo,tea/coffee shop
+2.0,Mirissa Beach,21:15,Mirissa,dinner
+0.25,Ratmalana DC,06:30,Ratmalana,none
+3.5,Aluthgama Bridge,08:30,Aluthgama,visit beautiful place
+0.75,Pussellawa AC,20:15,Pussellawa,dinner
+0.5,Ambalangoda DC,17:31,Ambalangoda,tea/coffee shop
+0.5,Polonnaruwa Center,16:24,Polonnaruwa,tea/coffee shop
+0.5,Kadawatha Highway,06:06,Kadawatha,tea/coffee shop
+1.0,Hanwella AC,08:00,Hanwella,breakfast
+3.0,Digana DC,16:30,Digana,watch film
+1.5,Passara DC,07:00,Passara,breakfast
+1.5,CCC Fast Charge,07:45,Colombo,breakfast
+3.0,Ella Station,21:30,Ella,"dinner, shopping"
+1.0,Talawakele DC,07:00,Talawakele,breakfast
+5.0,Maho Station,21:30,Maho,"watch film, visit beautiful place"
+2.5,Kurunegala Town,21:30,Kurunegala,"dinner, shopping"
+4.0,Kegalle Town,21:15,Kegalle,visit beautiful place
+2.75,Muttur DC,13:30,Muttur,"lunch, visit beautiful place"
+3.0,Kurunegala Lake Rd,22:15,Kurunegala,visit beautiful place
+3.0,Peradeniya Junction,07:00,Peradeniya,visit beautiful place
+2.5,Homagama Center,16:30,Homagama,watch film
+2.0,Biyagama Factory,12:30,Biyagama,lunch
+2.75,Godakawela AC,11:00,Godakawela,"lunch, visit beautiful place"
+2.5,Mahiyanganaya AC,14:45,Mahiyanganaya,"lunch, shopping"
+0.5,Arugam Bay AC,04:06,Arugam Bay,tea/coffee shop
+1.0,Vavuniya Town DC,08:00,Vavuniya,breakfast
+0.75,Kinniya AC,11:30,Kinniya,lunch
+3.0,Chilaw City,16:15,Chilaw,visit beautiful place
+2.75,Muttur DC,13:30,Muttur,"lunch, visit beautiful place"
+3.5,Kattankudy AC,13:45,Kattankudy,visit beautiful place
+1.0,Eheliyagoda DC,13:45,Eheliyagoda,lunch
+1.0,Arugam Bay AC,12:45,Arugam Bay,lunch
+2.5,Bambalapitiya RZ,11:00,Bambalapitiya,"lunch, shopping"
+1.0,Dickwella DC,11:45,Dickwella,lunch
+0.25,Beliatta Highway,17:00,Beliatta,none
+3.0,Kandy City Center,16:30,Kandy,watch film
+2.0,Mihintale AC,13:15,Mihintale,lunch
+0.25,Ratnapura DC,08:00,Ratnapura,none
+0.75,Godakawela AC,19:45,Godakawela,dinner
+0.5,Peradeniya Junction,15:12,Peradeniya,tea/coffee shop
+2.0,Haputale View,21:15,Haputale,dinner
+2.0,Pannipitiya Station,07:45,Pannipitiya,breakfast
+1.5,Mannar AC,12:45,Mannar,lunch
+0.5,Kilinochchi Center,01:33,Kilinochchi,tea/coffee shop
+4.0,Marawila AC,16:45,Marawila,visit beautiful place
+1.5,Rajagiriya Flyover,14:45,Rajagiriya,lunch
+0.75,Mirissa Beach,19:00,Mirissa,dinner
+1.0,Badulla Main DC,11:45,Badulla,lunch
+4.0,CCC Fast Charge,21:00,Colombo,visit beautiful place
+3.0,Hambantota Port,21:30,Hambantota,"dinner, shopping"
+2.0,Dehiwala Junction,12:00,Dehiwala,lunch
+4.0,Avissawella Center,15:45,Avissawella,visit beautiful place
+0.5,Dehiwala Junction,22:55,Dehiwala,tea/coffee shop
+2.5,Anuradhapura DC,21:30,Anuradhapura,"dinner, shopping"
+4.5,Monaragala DC,21:30,Monaragala,"watch film, visit beautiful place"
+1.5,Avissawella Center,11:45,Avissawella,lunch
+0.75,Ratmalana DC,13:45,Ratmalana,lunch
+3.0,Chilaw City,05:15,Chilaw,visit beautiful place
+2.0,Puttalam Lagoon,07:15,Puttalam,breakfast
+2.0,Homagama Godagama,13:30,Homagama,lunch
+4.0,Nugegoda High Level,19:00,Nugegoda,"watch film, visit beautiful place"
+1.5,Pannipitiya Station,20:15,Pannipitiya,dinner
+2.5,Shangri La DC,11:00,Colombo,"lunch, shopping"
+0.5,Piliyandala Town,00:23,Piliyandala,tea/coffee shop
+1.5,Godakawela AC,11:15,Godakawela,lunch
+2.75,Sigiriya Jn,13:00,Sigiriya,"lunch, visit beautiful place"
+3.5,Dambulla DC,17:30,Dambulla,visit beautiful place
+5.0,Shangri La DC,16:30,Colombo,"watch film, visit beautiful place"
+5.0,Chilaw City,09:00,Chilaw,visit beautiful place
+1.0,Jaffna Central DC,20:15,Jaffna,dinner
+2.0,Katunayake Airport,07:00,Katunayake,breakfast
+0.5,Mahiyanganaya AC,06:57,Mahiyanganaya,tea/coffee shop
+1.5,Dickwella DC,08:45,Dickwella,breakfast
+1.5,Negombo Beach Road,21:45,Negombo,dinner
+2.0,Kegalle Town,12:15,Kegalle,lunch
+3.0,Nuwara Eliya Grand,20:15,Nuwara Eliya,"dinner, shopping"
+3.0,Avissawella Center,11:45,Avissawella,"lunch, shopping"
+2.75,Kilinochchi Center,14:00,Kilinochchi,"lunch, visit beautiful place"
+0.75,CCC Fast Charge,07:45,Colombo,"breakfast, tea/coffee shop"
+0.75,Poonakary AC,20:30,Poonakary,dinner
+0.75,Dickwella DC,12:30,Dickwella,lunch
+4.0,Mahiyanganaya AC,21:30,Mahiyanganaya,"watch film, visit beautiful place"
+0.25,Warakapola AC,17:00,Warakapola,none
+2.75,Marawila AC,08:15,Marawila,"breakfast, visit beautiful place"
+2.75,Kurunegala Lake Rd,08:45,Kurunegala,"breakfast, visit beautiful place"
+5.0,Kilinochchi Center,11:15,Kilinochchi,visit beautiful place
+0.75,Unawatuna DC,12:00,Unawatuna,lunch
+2.75,Nedunkeni AC,08:00,Nedunkeni,"breakfast, visit beautiful place"
+5.0,Homagama Center,20:15,Homagama,visit beautiful place
+2.75,Kadawatha Highway,11:30,Kadawatha,"lunch, visit beautiful place"
+3.0,Nivitigala AC,19:15,Nivitigala,"dinner, shopping"
+2.0,Eheliyagoda DC,14:00,Eheliyagoda,lunch
+2.5,Gampola Center,08:15,Gampola,visit beautiful place
+1.5,Matara Town Hall,14:45,Matara,lunch
+3.5,Ella Station,20:30,Ella,visit beautiful place
+1.0,Kattankudy AC,18:30,Kattankudy,shopping
+0.25,Talawakele DC,10:45,Talawakele,none
+5.0,Mirissa Beach,21:30,Mirissa,"watch film, visit beautiful place"
+1.0,Galenbindunuwewa AC,07:30,Galenbindunuwewa,breakfast
+0.75,Matale Town,12:45,Matale,lunch
+0.5,Chilaw City,03:09,Chilaw,tea/coffee shop
+4.0,Nugegoda High Level,19:45,Nugegoda,visit beautiful place
+2.5,Nawalapitiya Town,12:45,Nawalapitiya,"lunch, shopping"
+2.0,Mihintale AC,07:15,Mihintale,breakfast
+2.5,Ruwanwella AC,13:45,Ruwanwella,"lunch, shopping"
+3.0,Galle Fort AC,16:30,Galle,watch film
+0.25,Thalahena DC,19:30,Thalahena,none
+0.5,Galle Fort AC,06:40,Galle,tea/coffee shop
+0.75,Ahangama AC,20:45,Ahangama,dinner
+1.5,Matale Town,08:30,Matale,breakfast
+1.5,Kegalle Town,13:15,Kegalle,lunch
+0.75,Marawila AC,08:00,Marawila,"breakfast, tea/coffee shop"
+1.0,Ruwanwella AC,14:45,Ruwanwella,lunch
+2.5,Galenbindunuwewa AC,14:00,Galenbindunuwewa,"lunch, shopping"
+1.0,Moratuwa Junction,20:15,Moratuwa,dinner
+3.0,Nuwara Eliya Grand,19:45,Nuwara Eliya,"dinner, shopping"
+1.0,Kalmunai Center,13:15,Kalmunai,lunch
+0.25,Maskeliya Town,13:30,Maskeliya,none
+3.5,Rambukkana DC,11:45,Rambukkana,"watch film, visit beautiful place"
+1.5,Eheliyagoda DC,21:15,Eheliyagoda,dinner
+2.5,Warakapola AC,13:00,Warakapola,"lunch, shopping"
+2.0,Teldeniya AC,13:00,Teldeniya,lunch
+1.0,Anamaduwa DC,17:00,Anamaduwa,shopping
+0.75,Kottawa Interchange,08:15,Kottawa,"breakfast, tea/coffee shop"
+0.5,Haputale View,22:28,Haputale,tea/coffee shop
+2.5,Tambuttegama DC,22:45,Tambuttegama,visit beautiful place
+0.5,Batticaloa City,22:12,Batticaloa,tea/coffee shop
+1.0,Pannipitiya Station,11:00,Pannipitiya,lunch
+5.0,Kataragama Center,19:00,Kataragama,"watch film, visit beautiful place"
+2.75,Anamaduwa DC,11:00,Anamaduwa,"lunch, visit beautiful place"
+3.0,Mirissa Beach,11:30,Mirissa,"lunch, shopping"
+2.5,Matale Town,13:15,Matale,"lunch, shopping"
+3.0,Dambulla DC,16:30,Dambulla,watch film
+4.0,Anuradhapura DC,19:00,Anuradhapura,"watch film, visit beautiful place"
+2.75,Mihintale AC,12:15,Mihintale,"lunch, visit beautiful place"
+2.0,Kurunegala Lake Rd,12:15,Kurunegala,lunch
+2.75,Rambukkana DC,13:00,Rambukkana,"lunch, visit beautiful place"
+0.5,Mihintale AC,02:26,Mihintale,tea/coffee shop
+3.5,Tissamaharama DC,16:30,Tissamaharama,"watch film, visit beautiful place"
+1.5,Shangri La DC,07:15,Colombo,breakfast
+0.75,Dehiwala Junction,10:30,Dehiwala,shopping
+0.5,Mullaitivu DC,06:01,Mullaitivu,tea/coffee shop
+2.75,Kurunegala Town,14:15,Kurunegala,"lunch, visit beautiful place"
+3.0,Wellawaya AC,07:45,Wellawaya,visit beautiful place
+2.0,Digana DC,08:00,Digana,breakfast
+1.0,Pannipitiya Station,11:30,Pannipitiya,lunch
+1.0,Negombo Beach Road,08:15,Negombo,breakfast
+0.5,Pussellawa AC,15:17,Pussellawa,tea/coffee shop
+0.75,Matara Town Hall,13:30,Matara,lunch
+2.5,Weligama Bay,11:15,Weligama,"lunch, shopping"
+3.0,Beruwala Beach,12:45,Beruwala,"lunch, shopping"
+4.0,Veyangoda Station,14:00,Veyangoda,"watch film, visit beautiful place"
+0.5,Rajagiriya Flyover,06:11,Rajagiriya,tea/coffee shop
+3.0,Dickwella DC,22:30,Dickwella,visit beautiful place
+0.25,Kadawatha Highway,19:00,Kadawatha,none
+2.0,Sigiriya Jn,14:30,Sigiriya,lunch
+0.5,Hanwella AC,06:28,Hanwella,tea/coffee shop
+3.5,Hatton Bus Stand,21:30,Hatton,"watch film, visit beautiful place"
+1.0,Embilipitiya DC,19:00,Embilipitiya,dinner
+2.0,Pannipitiya Station,13:30,Pannipitiya,lunch
+0.75,Nawalapitiya Town,14:45,Nawalapitiya,lunch
+0.5,Akuressa Center,02:48,Akuressa,tea/coffee shop
+3.5,Chilaw City,08:00,Chilaw,visit beautiful place
+1.5,Talawakele DC,07:00,Talawakele,breakfast
+1.0,Teldeniya AC,07:15,Teldeniya,breakfast
+0.5,Galenbindunuwewa AC,06:53,Galenbindunuwewa,tea/coffee shop
+4.0,Kataragama Center,16:30,Kataragama,"watch film, visit beautiful place"
+0.75,Katunayake Airport,11:15,Katunayake,lunch
+0.5,Nuwara Eliya Grand,15:29,Nuwara Eliya,tea/coffee shop
+3.0,Kinniya AC,19:30,Kinniya,"dinner, shopping"
+1.0,Pottuvil DC,07:45,Pottuvil,breakfast
+0.75,Dickwella DC,08:45,Dickwella,"breakfast, tea/coffee shop"
+3.0,Warakapola AC,13:30,Warakapola,"lunch, shopping"
+3.0,Avissawella Center,19:00,Avissawella,"dinner, shopping"
+0.75,Dutch Hospital,14:45,Colombo,lunch
+0.5,Homagama Center,06:55,Homagama,tea/coffee shop
+1.5,Padukka Center,11:15,Padukka,lunch
+0.75,Deniyaya AC,14:15,Deniyaya,lunch
+0.25,Chilaw City,13:30,Chilaw,none
+0.5,Homagama Center,17:41,Homagama,tea/coffee shop
+4.0,Nedunkeni AC,18:15,Nedunkeni,visit beautiful place
+2.75,Digana DC,13:15,Digana,"lunch, visit beautiful place"
+0.25,Biyagama Factory,16:45,Biyagama,none
+1.0,Kadawatha Highway,08:00,Kadawatha,breakfast
+3.0,Station B,12:30,Colombo,"lunch, shopping"
+0.5,Aluthgama Bridge,22:43,Aluthgama,tea/coffee shop
+2.0,Tambuttegama DC,20:15,Tambuttegama,dinner
+4.5,Hikkaduwa AC,15:30,Hikkaduwa,visit beautiful place
+2.0,Biyagama Factory,11:30,Biyagama,lunch
+0.5,Passara DC,04:22,Passara,tea/coffee shop
+2.75,Ampara DC,13:15,Ampara,"lunch, visit beautiful place"
+5.0,Ahangama AC,11:45,Ahangama,"watch film, visit beautiful place"
+5.0,Homagama Godagama,21:30,Homagama,"watch film, visit beautiful place"
+0.75,Weligama Bay,12:30,Weligama,lunch
+1.5,Hambantota Port,17:45,Hambantota,shopping
+2.5,Ella Station,11:45,Ella,"lunch, shopping"
+2.75,Polonnaruwa Center,11:45,Polonnaruwa,"lunch, visit beautiful place"
+0.5,Rambukkana DC,16:07,Rambukkana,tea/coffee shop
+3.5,Galle Bus Stand,15:15,Galle,visit beautiful place
+0.25,Talawakele DC,17:30,Talawakele,none
+2.75,Horana Town,07:30,Horana,"breakfast, visit beautiful place"
+0.5,Akuressa Center,00:26,Akuressa,tea/coffee shop
+2.75,Kandy Gatambe,15:45,Kandy,visit beautiful place
+1.5,Tissamaharama DC,07:15,Tissamaharama,breakfast
+4.0,Padukka Center,22:30,Padukka,visit beautiful place
+1.0,Godakawela AC,07:15,Godakawela,breakfast
+1.5,Digana DC,11:30,Digana,lunch
+2.5,Chavakachcheri AC,13:00,Chavakachcheri,"lunch, shopping"
+2.0,Mullaitivu DC,12:30,Mullaitivu,lunch
+3.0,Homagama Godagama,19:15,Homagama,"dinner, shopping"
+2.0,Nikaweratiya AC,07:45,Nikaweratiya,breakfast
+3.5,Wellawaya AC,20:30,Wellawaya,visit beautiful place
+4.5,Anuradhapura New Town,08:00,Anuradhapura,visit beautiful place
+2.0,Pussellawa AC,20:30,Pussellawa,dinner
+4.5,Talawakele DC,19:00,Talawakele,"watch film, visit beautiful place"
+1.5,Ratmalana DC,08:00,Ratmalana,breakfast
+4.0,Station B,18:30,Colombo,visit beautiful place
+0.25,Sigiriya Jn,21:30,Sigiriya,none
+0.5,Homagama Center,06:51,Homagama,tea/coffee shop
+1.5,Thalahena DC,07:15,Thalahena,breakfast
+1.0,Veyangoda Station,11:00,Veyangoda,lunch
+3.0,Nawalapitiya Town,19:45,Nawalapitiya,"dinner, shopping"
+0.75,Pannipitiya Station,21:30,Pannipitiya,dinner
+3.5,Tanamalwila AC,14:00,Tanamalwila,"watch film, visit beautiful place"
+3.0,Ratnapura DC,14:00,Ratnapura,"lunch, shopping"
+0.75,Ahangama AC,05:30,Ahangama,shopping
+1.0,Beruwala Beach,16:30,Beruwala,shopping
+2.5,Bandarawela Town,08:15,Bandarawela,visit beautiful place
+4.5,Kadawatha Highway,19:00,Kadawatha,"watch film, visit beautiful place"
+2.0,Maharagama City,07:30,Maharagama,breakfast
+0.75,Nedunkeni AC,08:30,Nedunkeni,"breakfast, tea/coffee shop"
+3.0,Homagama Center,22:00,Homagama,visit beautiful place
+3.0,Dehiwala Junction,21:15,Dehiwala,"dinner, shopping"
+1.5,Station B,11:45,Colombo,lunch
+1.5,Gampola Center,07:45,Gampola,breakfast
+3.0,Sigiriya Jn,13:15,Sigiriya,"lunch, shopping"
+2.5,Polonnaruwa Center,07:15,Polonnaruwa,visit beautiful place
+2.0,Ampara DC,08:30,Ampara,breakfast
+3.5,Ratnapura DC,12:15,Ratnapura,visit beautiful place
+3.0,Tangalle Town,19:45,Tangalle,"dinner, shopping"
+0.75,Trincomalee Town,07:00,Trincomalee,"breakfast, tea/coffee shop"
+0.25,Monaragala DC,05:45,Monaragala,none
+2.0,Nuwara Eliya Grand,22:45,Nuwara Eliya,shopping
+1.0,Beliatta Highway,07:30,Beliatta,breakfast
+0.25,Kosgama DC,20:15,Kosgama,none
+0.75,Nugegoda High Level,07:45,Nugegoda,"breakfast, tea/coffee shop"
+1.5,Kattankudy AC,06:00,Kattankudy,shopping
+1.5,Avissawella Center,14:45,Avissawella,lunch
+0.75,Kekirawa AC,08:15,Kekirawa,"breakfast, tea/coffee shop"
+3.0,Kekirawa AC,21:00,Kekirawa,"dinner, shopping"
+2.75,Kadawatha Highway,08:45,Kadawatha,"breakfast, visit beautiful place"
+3.0,Kinniya AC,11:45,Kinniya,"lunch, shopping"
+2.0,Muttur DC,08:15,Muttur,breakfast
+2.0,Dehiwala Junction,12:15,Dehiwala,lunch
+1.5,Chavakachcheri AC,13:00,Chavakachcheri,lunch
+3.5,Chavakachcheri AC,13:45,Chavakachcheri,visit beautiful place
+2.75,Kegalle Town,05:15,Kegalle,visit beautiful place
+2.5,Kattankudy AC,19:45,Kattankudy,"dinner, shopping"
+0.75,Katunayake Airport,20:00,Katunayake,dinner
+0.5,Talawakele DC,17:14,Talawakele,tea/coffee shop
+2.0,Weligama Bay,07:00,Weligama,breakfast
+1.0,Piliyandala Town,14:00,Piliyandala,lunch
+0.75,Digana DC,13:30,Digana,lunch
+2.0,Dickwella DC,14:45,Dickwella,lunch
+1.0,Kataragama Center,08:30,Kataragama,breakfast
+2.75,Arugam Bay AC,07:45,Arugam Bay,"breakfast, visit beautiful place"
+1.0,Dickwella DC,14:30,Dickwella,lunch
+3.0,Gampola Center,17:30,Gampola,visit beautiful place
+0.75,Nikaweratiya AC,16:15,Nikaweratiya,shopping
+2.5,Homagama Center,13:30,Homagama,"lunch, shopping"
+2.75,Kalutara South,07:15,Kalutara,"breakfast, visit beautiful place"
+2.0,Kandy City Center,20:30,Kandy,dinner
+0.5,Horana Town,22:01,Horana,tea/coffee shop
+0.5,Nivitigala AC,00:51,Nivitigala,tea/coffee shop
+0.75,Pannipitiya Station,21:45,Pannipitiya,dinner
+0.5,Pannipitiya Station,06:50,Pannipitiya,tea/coffee shop
+5.0,Ratnapura DC,14:00,Ratnapura,"watch film, visit beautiful place"
+1.0,Eheliyagoda DC,12:15,Eheliyagoda,lunch
+0.5,Maho Station,17:51,Maho,tea/coffee shop
+2.0,Padukka Center,07:45,Padukka,breakfast
+0.5,Rambukkana DC,15:19,Rambukkana,tea/coffee shop
+3.0,Maho Station,11:15,Maho,"lunch, shopping"
+4.5,Anuradhapura DC,13:00,Anuradhapura,visit beautiful place
+1.5,Ahangama AC,06:30,Ahangama,shopping
+4.0,Dickwella DC,15:00,Dickwella,visit beautiful place
+1.0,Muttur DC,13:45,Muttur,lunch
+3.0,Badulla Main DC,16:30,Badulla,watch film
+2.75,Hanwella AC,12:45,Hanwella,"lunch, visit beautiful place"
+0.5,Marawila AC,16:24,Marawila,tea/coffee shop
+2.0,Kadugannawa AC,14:45,Kadugannawa,lunch
+3.0,Tanamalwila AC,20:30,Tanamalwila,"dinner, shopping"
+1.5,Tanamalwila AC,13:15,Tanamalwila,lunch
+4.0,Weligama Bay,15:30,Weligama,visit beautiful place
+1.5,Galenbindunuwewa AC,10:30,Galenbindunuwewa,shopping
+2.0,Kurunegala Lake Rd,11:15,Kurunegala,lunch
+4.5,Kandy City Center,12:15,Kandy,visit beautiful place
+2.5,Warakapola AC,10:15,Warakapola,visit beautiful place
+1.0,Ruwanwella AC,11:00,Ruwanwella,lunch
+2.0,Balangoda AC,13:15,Balangoda,lunch
+0.5,Ratmalana DC,22:19,Ratmalana,tea/coffee shop
+0.25,Kataragama Center,18:30,Kataragama,none
+2.5,Shangri La DC,16:30,Colombo,watch film
+3.5,Sigiriya Jn,11:00,Sigiriya,visit beautiful place
+1.0,Homagama Center,07:00,Homagama,breakfast
+3.5,Wennappuwa DC,19:00,Wennappuwa,"watch film, visit beautiful place"
+2.75,Mihintale AC,08:45,Mihintale,"breakfast, visit beautiful place"
+3.0,Ambalangoda DC,09:45,Ambalangoda,visit beautiful place
+2.75,Tanamalwila AC,08:00,Tanamalwila,"breakfast, visit beautiful place"
+0.75,Wellawaya AC,11:00,Wellawaya,lunch
+2.75,Rambukkana DC,12:45,Rambukkana,"lunch, visit beautiful place"
+2.0,Thalahena DC,13:15,Thalahena,lunch
+2.0,Nikaweratiya AC,14:30,Nikaweratiya,lunch
+2.75,Deniyaya AC,08:15,Deniyaya,"breakfast, visit beautiful place"
+2.5,Thalahena DC,20:15,Thalahena,"dinner, shopping"
+1.5,Hanwella AC,07:15,Hanwella,breakfast
+2.0,Mahiyanganaya AC,14:15,Mahiyanganaya,lunch
+2.5,Peradeniya Junction,13:00,Peradeniya,"lunch, shopping"
+3.0,Pottuvil DC,14:45,Pottuvil,"lunch, shopping"
+1.5,Kottawa Interchange,07:45,Kottawa,breakfast
+1.5,Biyagama Factory,21:30,Biyagama,dinner
+2.5,Kadawatha Highway,11:45,Kadawatha,"lunch, shopping"
+5.0,Pannipitiya Station,11:45,Pannipitiya,"watch film, visit beautiful place"
+2.0,Kalmunai Center,12:00,Kalmunai,lunch
+3.5,Akuressa Center,17:00,Akuressa,visit beautiful place
+1.5,Teldeniya AC,07:00,Teldeniya,breakfast
+0.5,Sigiriya Jn,06:49,Sigiriya,tea/coffee shop
+0.5,Bambalapitiya RZ,22:30,Bambalapitiya,tea/coffee shop
+2.5,Balangoda AC,19:00,Balangoda,"dinner, shopping"
+4.5,Hatton Bus Stand,14:00,Hatton,"watch film, visit beautiful place"
+4.0,Station A,14:15,Colombo,visit beautiful place
+4.0,Maskeliya Town,18:30,Maskeliya,visit beautiful place
+3.0,Passara DC,21:30,Passara,"dinner, shopping"
+2.0,Liberty Plaza AC,07:45,Colombo,breakfast
+2.0,Wennappuwa DC,07:45,Wennappuwa,breakfast
+2.75,Ahangama AC,11:00,Ahangama,"lunch, visit beautiful place"
+0.5,Dambulla DC,03:46,Dambulla,tea/coffee shop
+1.5,Sigiriya Jn,12:30,Sigiriya,lunch
+2.0,Sigiriya Jn,13:45,Sigiriya,lunch
+0.5,Nikaweratiya AC,22:10,Nikaweratiya,tea/coffee shop
+3.0,Maho Station,12:45,Maho,"lunch, shopping"
+0.25,Veyangoda Station,11:15,Veyangoda,none
+1.5,Homagama Center,08:00,Homagama,breakfast
+2.0,Hikkaduwa AC,22:45,Hikkaduwa,shopping
+2.5,Matara Town Hall,15:45,Matara,visit beautiful place
+4.0,Matara Town Hall,20:15,Matara,visit beautiful place
+4.0,Badulla Main DC,11:45,Badulla,"watch film, visit beautiful place"
+0.5,Aluthgama Bridge,04:19,Aluthgama,tea/coffee shop
+1.5,Kosgama DC,14:00,Kosgama,lunch
+3.5,Nikaweratiya AC,12:15,Nikaweratiya,visit beautiful place
+0.75,Chavakachcheri AC,14:15,Chavakachcheri,lunch
+1.5,Badulla Main DC,08:00,Badulla,breakfast
+0.5,Kilinochchi Center,06:03,Kilinochchi,tea/coffee shop
+0.25,Dambulla DC,08:00,Dambulla,none
+0.5,Passara DC,06:26,Passara,tea/coffee shop
+2.75,Veyangoda Station,19:30,Veyangoda,visit beautiful place
+0.5,Ratmalana DC,22:12,Ratmalana,tea/coffee shop
+2.5,Avissawella Center,20:15,Avissawella,"dinner, shopping"
+1.5,Bandarawela Town,13:00,Bandarawela,lunch
+5.0,Eheliyagoda DC,06:00,Eheliyagoda,visit beautiful place
+4.5,Negombo Beach Road,22:30,Negombo,visit beautiful place
+0.75,Hatton Bus Stand,21:15,Hatton,dinner
+0.5,Dickwella DC,04:51,Dickwella,tea/coffee shop
+4.0,Padukka Center,19:00,Padukka,"watch film, visit beautiful place"
+3.0,Thalahena DC,08:30,Thalahena,visit beautiful place
+2.0,Kuliyapitiya Center,18:15,Kuliyapitiya,shopping
+1.0,Piliyandala Town,13:30,Piliyandala,lunch
+1.5,Beliatta Highway,22:45,Beliatta,shopping
+1.0,Marawila AC,19:45,Marawila,dinner
+1.5,Homagama Godagama,08:00,Homagama,breakfast
+0.75,Eheliyagoda DC,13:00,Eheliyagoda,lunch
+2.75,Wennappuwa DC,21:00,Wennappuwa,visit beautiful place
+1.0,Teldeniya AC,07:30,Teldeniya,breakfast
+0.25,Ruwanwella AC,08:15,Ruwanwella,none
+2.75,Deniyaya AC,08:45,Deniyaya,"breakfast, visit beautiful place"
+3.5,Horana Town,16:00,Horana,visit beautiful place
+2.0,Kegalle Town,14:15,Kegalle,lunch
+3.5,Rambukkana DC,20:00,Rambukkana,visit beautiful place
+4.0,Station A,09:45,Colombo,visit beautiful place
+1.0,Trincomalee Town,12:45,Trincomalee,lunch
+1.5,Matale Town,13:00,Matale,lunch
+1.0,Mihintale AC,12:15,Mihintale,lunch
+2.75,Galenbindunuwewa AC,11:30,Galenbindunuwewa,"lunch, visit beautiful place"
+4.0,Poonakary AC,20:45,Poonakary,visit beautiful place
+3.0,Kottawa Interchange,11:45,Kottawa,"lunch, shopping"
+5.0,Kosgama DC,17:15,Kosgama,visit beautiful place
+2.5,Anuradhapura DC,15:30,Anuradhapura,visit beautiful place
+2.75,Kalmunai Center,13:00,Kalmunai,"lunch, visit beautiful place"
+2.75,Embilipitiya DC,09:15,Embilipitiya,visit beautiful place
+0.5,Ahangama AC,17:33,Ahangama,tea/coffee shop
+2.0,Tissamaharama DC,12:45,Tissamaharama,lunch
+3.0,Beliatta Highway,13:15,Beliatta,"lunch, shopping"
+3.5,Kandana DC,18:00,Kandana,visit beautiful place
+3.5,Bambalapitiya RZ,16:00,Bambalapitiya,visit beautiful place
+1.0,Digana DC,18:00,Digana,shopping
+4.0,Marawila AC,19:15,Marawila,visit beautiful place
+3.0,Kottawa Interchange,21:00,Kottawa,"dinner, shopping"
+0.75,Anuradhapura New Town,14:30,Anuradhapura,lunch
+1.5,Matara Town Hall,19:30,Matara,dinner
+1.0,Habarana DC,11:30,Habarana,lunch
+2.5,Talawakele DC,18:45,Talawakele,visit beautiful place
+1.0,Unawatuna DC,09:15,Unawatuna,shopping
+1.0,Ambalangoda DC,07:15,Ambalangoda,breakfast
+3.5,Station B,10:15,Colombo,visit beautiful place
+3.0,Biyagama Factory,20:45,Biyagama,"dinner, shopping"
+2.75,Hanwella AC,19:00,Hanwella,visit beautiful place
+1.0,Maskeliya Town,19:00,Maskeliya,dinner
+2.0,Peradeniya Junction,07:45,Peradeniya,breakfast
+1.0,Tambuttegama DC,08:45,Tambuttegama,breakfast
+2.5,Kadugannawa AC,07:00,Kadugannawa,visit beautiful place
+2.0,Warakapola AC,13:15,Warakapola,lunch
+0.5,Tangalle Town,22:38,Tangalle,tea/coffee shop
+0.5,Nivitigala AC,17:08,Nivitigala,tea/coffee shop
+2.75,Nuwara Eliya Grand,20:00,Nuwara Eliya,visit beautiful place
+0.75,Pussellawa AC,19:15,Pussellawa,dinner
+2.5,Dutch Hospital,21:30,Colombo,"dinner, shopping"
+0.25,Warakapola AC,09:00,Warakapola,none
+1.5,Pannipitiya Station,05:45,Pannipitiya,shopping
+3.0,Biyagama Factory,20:00,Biyagama,"dinner, shopping"
+2.75,Katunayake Airport,12:15,Katunayake,"lunch, visit beautiful place"
+2.75,Dambulla DC,07:15,Dambulla,"breakfast, visit beautiful place"
+2.5,Nawalapitiya Town,14:30,Nawalapitiya,"lunch, shopping"
+0.25,Ampara DC,15:00,Ampara,none
+0.75,Mirissa Beach,13:45,Mirissa,lunch
+1.0,Balangoda AC,13:00,Balangoda,lunch
+1.5,Mullaitivu DC,17:45,Mullaitivu,shopping
+1.0,Moratuwa Junction,11:00,Moratuwa,lunch
+1.5,Mannar AC,11:15,Mannar,lunch
+3.0,Poonakary AC,21:00,Poonakary,"dinner, shopping"
+2.5,Kegalle Town,11:45,Kegalle,"lunch, shopping"
+3.5,Horana Town,07:00,Horana,visit beautiful place
+2.75,Haputale View,08:15,Haputale,"breakfast, visit beautiful place"
+1.5,Anamaduwa DC,07:00,Anamaduwa,breakfast
+2.5,Ratnapura DC,12:00,Ratnapura,"lunch, shopping"
+3.5,Peradeniya Junction,19:15,Peradeniya,visit beautiful place
+1.5,Anuradhapura DC,07:30,Anuradhapura,breakfast
+0.5,Galle Bus Stand,00:02,Galle,tea/coffee shop
+2.5,Wellawaya AC,12:45,Wellawaya,"lunch, shopping"
+2.75,Ambalangoda DC,14:45,Ambalangoda,"lunch, visit beautiful place"
+1.5,Gampola Center,13:00,Gampola,lunch
+4.0,Anamaduwa DC,19:45,Anamaduwa,visit beautiful place
+2.5,Chilaw City,10:00,Chilaw,visit beautiful place
+1.0,Hatton Bus Stand,11:45,Hatton,lunch
+0.25,Kadugannawa AC,10:45,Kadugannawa,none
+1.0,Rajagiriya Flyover,13:30,Rajagiriya,lunch
+3.5,Kekirawa AC,06:00,Kekirawa,visit beautiful place
+2.75,Avissawella Center,12:30,Avissawella,"lunch, visit beautiful place"
+1.5,Anamaduwa DC,10:15,Anamaduwa,shopping
+0.5,Wennappuwa DC,16:32,Wennappuwa,tea/coffee shop
+1.0,Maharagama City,07:15,Maharagama,breakfast
+0.75,Tissamaharama DC,08:15,Tissamaharama,"breakfast, tea/coffee shop"
+0.5,Thalahena DC,03:44,Thalahena,tea/coffee shop
+0.75,Dickwella DC,11:30,Dickwella,lunch
+0.5,Batticaloa City,01:53,Batticaloa,tea/coffee shop
+2.0,Chavakachcheri AC,07:15,Chavakachcheri,breakfast
+3.0,Passara DC,13:00,Passara,"lunch, shopping"
+0.5,Station C,02:48,Kandy,tea/coffee shop
+0.5,Badulla Main DC,00:20,Badulla,tea/coffee shop
+2.0,Katunayake Airport,12:30,Katunayake,lunch
+2.0,Veyangoda Station,08:15,Veyangoda,breakfast
+3.5,Arugam Bay AC,19:45,Arugam Bay,visit beautiful place
+3.5,Balangoda AC,10:45,Balangoda,visit beautiful place
+2.75,Kalmunai Center,12:45,Kalmunai,"lunch, visit beautiful place"
+4.0,Kalmunai Center,13:15,Kalmunai,visit beautiful place
+1.0,Thalahena DC,08:30,Thalahena,breakfast
+1.0,Ruwanwella AC,08:45,Ruwanwella,breakfast
+2.0,Peradeniya Junction,12:15,Peradeniya,lunch
+0.75,Matale Town,22:00,Matale,shopping
+0.25,Unawatuna DC,20:30,Unawatuna,none
+2.0,Moratuwa Junction,15:00,Moratuwa,shopping
+0.25,Ambalangoda DC,14:30,Ambalangoda,none
+0.25,Mannar AC,14:45,Mannar,none
+3.0,Chilaw City,19:00,Chilaw,"dinner, shopping"
+2.5,Wennappuwa DC,09:30,Wennappuwa,visit beautiful place
+4.0,Kadawatha Highway,17:15,Kadawatha,visit beautiful place
+4.0,Matale Town,19:00,Matale,"watch film, visit beautiful place"
+3.0,Kuliyapitiya Center,09:00,Kuliyapitiya,visit beautiful place
+1.0,Rambukkana DC,11:00,Rambukkana,lunch
+4.0,Kuliyapitiya Center,16:30,Kuliyapitiya,"watch film, visit beautiful place"
+2.75,Mannar AC,13:45,Mannar,"lunch, visit beautiful place"
+2.0,Hikkaduwa AC,08:15,Hikkaduwa,breakfast
+1.0,Kosgama DC,11:45,Kosgama,lunch
+0.25,Kattankudy AC,15:00,Kattankudy,none
+2.0,Digana DC,07:45,Digana,breakfast
+4.5,Thalahena DC,10:00,Thalahena,visit beautiful place
+2.0,Pannipitiya Station,08:00,Pannipitiya,breakfast
+0.75,Puttalam Lagoon,12:45,Puttalam,lunch
+2.0,Matara Town Hall,08:30,Matara,breakfast
+1.5,Negombo Beach Road,22:45,Negombo,shopping
+3.5,Weligama Bay,19:00,Weligama,"watch film, visit beautiful place"
+0.5,Nikaweratiya AC,03:11,Nikaweratiya,tea/coffee shop
+3.0,Station A,11:45,Colombo,"lunch, shopping"
+2.75,Point Pedro DC,07:15,Point Pedro,"breakfast, visit beautiful place"
+3.0,Rambukkana DC,15:30,Rambukkana,visit beautiful place
+0.75,Matara Town Hall,21:30,Matara,dinner
+3.0,Galle Bus Stand,15:00,Galle,visit beautiful place
+0.75,Kandy Gatambe,14:30,Kandy,lunch
+0.5,Balangoda AC,01:51,Balangoda,tea/coffee shop
+2.75,Bandarawela Town,16:15,Bandarawela,visit beautiful place
+2.5,Ella Station,11:45,Ella,"lunch, shopping"
+1.5,Ruwanwella AC,11:15,Ruwanwella,lunch
+1.0,Mullaitivu DC,09:00,Mullaitivu,shopping
+0.5,Tangalle Town,00:47,Tangalle,tea/coffee shop
+1.0,Ratnapura DC,21:30,Ratnapura,dinner
+3.5,Puttalam Lagoon,12:45,Puttalam,visit beautiful place
+4.0,Homagama Center,12:15,Homagama,visit beautiful place
+3.0,Sigiriya Jn,11:45,Sigiriya,"lunch, shopping"
+0.25,Mannar AC,22:15,Mannar,none
+1.0,Ruwanwella AC,19:45,Ruwanwella,dinner
+3.0,Maskeliya Town,11:45,Maskeliya,"lunch, shopping"
+2.75,Mahiyanganaya AC,07:30,Mahiyanganaya,"breakfast, visit beautiful place"
+1.5,Talawakele DC,12:00,Talawakele,lunch
+0.75,Matara Town Hall,07:45,Matara,"breakfast, tea/coffee shop"
+1.0,Kegalle Town,12:15,Kegalle,lunch
+3.5,Station C,19:00,Kandy,"watch film, visit beautiful place"
+1.0,Biyagama Factory,07:15,Biyagama,breakfast
+1.5,Digana DC,07:00,Digana,breakfast
+0.5,Galenbindunuwewa AC,22:02,Galenbindunuwewa,tea/coffee shop
+3.0,Kurunegala Town,13:30,Kurunegala,"lunch, shopping"
+0.75,Kuliyapitiya Center,08:45,Kuliyapitiya,"breakfast, tea/coffee shop"
+3.5,Monaragala DC,13:30,Monaragala,visit beautiful place
+1.0,Negombo Beach Road,13:30,Negombo,lunch
+3.5,Maskeliya Town,12:30,Maskeliya,visit beautiful place
+1.5,Kadawatha Highway,13:00,Kadawatha,lunch
+1.0,Mannar AC,19:00,Mannar,dinner
+0.75,CCC Fast Charge,19:30,Colombo,dinner
+3.0,Kandy City Center,16:15,Kandy,visit beautiful place
+3.0,Tissamaharama DC,12:30,Tissamaharama,"lunch, shopping"
+2.75,Tissamaharama DC,14:15,Tissamaharama,"lunch, visit beautiful place"
+4.0,Embilipitiya DC,15:00,Embilipitiya,visit beautiful place
+0.5,Panadura Depot,00:14,Panadura,tea/coffee shop
+1.5,Negombo Beach Road,08:45,Negombo,breakfast
+2.75,Talawakele DC,09:45,Talawakele,visit beautiful place
+0.75,Anuradhapura DC,19:45,Anuradhapura,dinner
+4.0,Veyangoda Station,21:30,Veyangoda,"watch film, visit beautiful place"
+0.75,Piliyandala Town,09:30,Piliyandala,shopping
+0.25,Thalahena DC,15:00,Thalahena,none
+2.75,Mullaitivu DC,11:45,Mullaitivu,"lunch, visit beautiful place"
+2.0,Tanamalwila AC,13:45,Tanamalwila,lunch
+2.75,Hambantota Port,14:00,Hambantota,"lunch, visit beautiful place"
+2.5,Shangri La DC,22:30,Colombo,visit beautiful place
+3.5,Rajagiriya Flyover,18:00,Rajagiriya,visit beautiful place
+4.0,Kandy City Center,20:00,Kandy,visit beautiful place
+0.75,Jaffna Library AC,07:15,Jaffna,"breakfast, tea/coffee shop"
+0.75,Tangalle Town,08:00,Tangalle,"breakfast, tea/coffee shop"
+3.5,Gampola Center,21:15,Gampola,visit beautiful place
+2.5,Hanwella AC,21:30,Hanwella,"dinner, shopping"
+2.75,Chavakachcheri AC,08:45,Chavakachcheri,"breakfast, visit beautiful place"
+1.0,Marawila AC,12:30,Marawila,lunch
+2.5,Liberty Plaza AC,13:45,Colombo,"lunch, shopping"
+2.5,Kandy Gatambe,11:45,Kandy,"lunch, shopping"
+0.25,Padukka Center,10:15,Padukka,none
+2.0,Gampaha Town,08:15,Gampaha,breakfast
+2.75,Tissamaharama DC,08:45,Tissamaharama,"breakfast, visit beautiful place"
+3.0,Teldeniya AC,11:45,Teldeniya,"lunch, shopping"
+3.0,Kadugannawa AC,21:30,Kadugannawa,"dinner, shopping"
+4.5,Arugam Bay AC,16:15,Arugam Bay,visit beautiful place
+5.0,Maskeliya Town,21:30,Maskeliya,"watch film, visit beautiful place"
+3.0,Horana Town,22:30,Horana,visit beautiful place
+0.5,Maharagama City,02:12,Maharagama,tea/coffee shop
+0.5,Jaffna Central DC,06:34,Jaffna,tea/coffee shop
+1.5,Beliatta Highway,19:30,Beliatta,dinner
+4.5,Bandarawela Town,21:30,Bandarawela,"watch film, visit beautiful place"
+3.0,Rajagiriya Flyover,22:00,Rajagiriya,visit beautiful place
+4.0,Ratmalana DC,18:30,Ratmalana,visit beautiful place
+0.75,Avissawella Center,08:30,Avissawella,"breakfast, tea/coffee shop"
+0.5,Eheliyagoda DC,16:07,Eheliyagoda,tea/coffee shop
+2.0,Biyagama Factory,22:30,Biyagama,shopping
+2.75,Matara Town Hall,07:15,Matara,"breakfast, visit beautiful place"
+2.0,Anuradhapura New Town,13:00,Anuradhapura,lunch
+0.25,Embilipitiya DC,07:15,Embilipitiya,none
+2.0,Eheliyagoda DC,12:30,Eheliyagoda,lunch
+2.75,Kandana DC,21:45,Kandana,visit beautiful place
+3.0,Moratuwa Junction,20:15,Moratuwa,"dinner, shopping"
+1.5,Habarana DC,07:45,Habarana,breakfast
+1.5,Kalutara South,12:45,Kalutara,lunch
+0.25,Gampaha Town,22:30,Gampaha,none
+1.5,Maharagama City,22:15,Maharagama,shopping
+2.0,Peradeniya Junction,11:30,Peradeniya,lunch
+0.25,Point Pedro DC,17:45,Point Pedro,none
+0.75,Station A,13:00,Colombo,lunch
+1.5,Beliatta Highway,14:45,Beliatta,lunch
+0.5,Gampola Center,17:22,Gampola,tea/coffee shop
+3.0,Dehiwala Junction,16:30,Dehiwala,watch film
+3.5,Unawatuna DC,07:30,Unawatuna,visit beautiful place
+2.75,Monaragala DC,12:45,Monaragala,"lunch, visit beautiful place"
+4.0,Tambuttegama DC,19:00,Tambuttegama,"watch film, visit beautiful place"
+2.75,Moratuwa Junction,07:45,Moratuwa,"breakfast, visit beautiful place"
+0.75,Mihintale AC,20:15,Mihintale,dinner
+2.0,Peradeniya Junction,16:45,Peradeniya,shopping
+2.0,Kottawa Interchange,08:30,Kottawa,breakfast
+2.5,Matara Town Hall,14:00,Matara,"lunch, shopping"
+0.25,Thalahena DC,21:45,Thalahena,none
+1.5,Bandarawela Town,13:15,Bandarawela,lunch
+1.0,Ratnapura DC,09:30,Ratnapura,shopping
+4.5,Station C,22:00,Kandy,visit beautiful place
+1.0,Anuradhapura New Town,21:00,Anuradhapura,dinner
+2.0,Biyagama Factory,20:15,Biyagama,dinner
+3.5,Godakawela AC,05:45,Godakawela,visit beautiful place
+0.75,Negombo Beach Road,21:00,Negombo,dinner
+3.0,Ahangama AC,19:00,Ahangama,"dinner, shopping"
+2.75,Kataragama Center,11:30,Kataragama,"lunch, visit beautiful place"
+1.0,Akuressa Center,21:15,Akuressa,dinner
+1.0,Badulla Main DC,07:00,Badulla,breakfast
+0.25,Homagama Center,14:00,Homagama,none
+4.5,Mihintale AC,15:45,Mihintale,visit beautiful place
+2.0,Batticaloa City,19:30,Batticaloa,dinner
+1.0,Ruwanwella AC,11:30,Ruwanwella,lunch
+2.0,Kilinochchi Center,11:15,Kilinochchi,lunch
+2.0,Rajagiriya Flyover,14:00,Rajagiriya,lunch
+3.0,Nedunkeni AC,16:30,Nedunkeni,watch film
+1.5,Wennappuwa DC,18:00,Wennappuwa,shopping
+5.0,Kurunegala Town,17:15,Kurunegala,visit beautiful place
+0.5,Balangoda AC,03:16,Balangoda,tea/coffee shop
+3.0,Tambuttegama DC,14:00,Tambuttegama,"lunch, shopping"
+0.75,Marawila AC,07:15,Marawila,"breakfast, tea/coffee shop"
+2.0,CCC Fast Charge,07:15,Colombo,breakfast
+2.75,Embilipitiya DC,13:15,Embilipitiya,"lunch, visit beautiful place"
+1.5,Mahiyanganaya AC,08:45,Mahiyanganaya,breakfast
+2.0,Beruwala Beach,12:00,Beruwala,lunch
+1.0,Dutch Hospital,08:45,Colombo,breakfast
+2.5,Kilinochchi Center,14:00,Kilinochchi,"lunch, shopping"
+0.75,Kurunegala Town,07:15,Kurunegala,"breakfast, tea/coffee shop"
+2.75,Tanamalwila AC,14:30,Tanamalwila,"lunch, visit beautiful place"
+4.0,Mirissa Beach,22:30,Mirissa,visit beautiful place
+4.0,Negombo Beach Road,11:15,Negombo,visit beautiful place
+2.0,Dutch Hospital,05:00,Colombo,shopping
+5.0,Kuliyapitiya Center,14:00,Kuliyapitiya,"watch film, visit beautiful place"
+3.0,Warakapola AC,16:00,Warakapola,visit beautiful place
+2.0,Kadawatha Highway,08:45,Kadawatha,breakfast
+2.5,Pannipitiya Station,19:15,Pannipitiya,"dinner, shopping"
+0.75,Talawakele DC,07:15,Talawakele,"breakfast, tea/coffee shop"
+0.5,Kalutara South,22:14,Kalutara,tea/coffee shop
+2.0,Chilaw City,07:30,Chilaw,breakfast
+2.5,Kinniya AC,08:30,Kinniya,visit beautiful place
+0.75,Shangri La DC,07:45,Colombo,"breakfast, tea/coffee shop"
+1.5,Kinniya AC,14:00,Kinniya,lunch
+0.5,Tanamalwila AC,22:05,Tanamalwila,tea/coffee shop
+3.0,Horana Town,19:00,Horana,"dinner, shopping"
+0.75,Hatton Bus Stand,07:00,Hatton,"breakfast, tea/coffee shop"
+2.5,Galle Fort AC,21:30,Galle,"dinner, shopping"
+0.75,Kandy City Center,07:15,Kandy,"breakfast, tea/coffee shop"
+2.5,Tissamaharama DC,21:15,Tissamaharama,"dinner, shopping"
+0.25,Anuradhapura New Town,17:30,Anuradhapura,none
+1.5,Avissawella Center,07:45,Avissawella,breakfast
+1.0,Kekirawa AC,14:15,Kekirawa,lunch
+5.0,Kandana DC,12:00,Kandana,visit beautiful place
+1.5,Beruwala Beach,08:00,Beruwala,breakfast
+2.5,Vavuniya Town DC,19:00,Vavuniya,"dinner, shopping"
+0.75,Ratnapura DC,20:15,Ratnapura,dinner
+2.5,Mirissa Beach,11:45,Mirissa,"lunch, shopping"
+0.75,Mahiyanganaya AC,21:15,Mahiyanganaya,dinner
+0.5,Kosgama DC,22:23,Kosgama,tea/coffee shop
+1.0,Aluthgama Bridge,07:15,Aluthgama,breakfast
+2.5,Balangoda AC,13:45,Balangoda,"lunch, shopping"
+2.75,Matara Town Hall,12:45,Matara,"lunch, visit beautiful place"
+0.25,Dehiwala Junction,21:15,Dehiwala,none
+1.5,Panadura Depot,13:45,Panadura,lunch
+0.25,Poonakary AC,12:15,Poonakary,none
+0.75,Hikkaduwa AC,12:00,Hikkaduwa,lunch
+3.5,Kataragama Center,16:30,Kataragama,"watch film, visit beautiful place"
+1.5,Habarana DC,08:30,Habarana,breakfast
+2.5,Station A,16:30,Colombo,watch film
+4.0,Avissawella Center,09:00,Avissawella,visit beautiful place
+2.75,CCC Fast Charge,22:15,Colombo,visit beautiful place
+2.5,Godakawela AC,12:45,Godakawela,"lunch, shopping"
+2.0,Galle Fort AC,08:00,Galle,breakfast
+0.75,Trincomalee Town,14:15,Trincomalee,lunch
+4.0,Jaffna Central DC,17:30,Jaffna,visit beautiful place
+3.0,Kandy City Center,17:15,Kandy,visit beautiful place
+1.5,Mannar AC,14:00,Mannar,lunch
+0.5,Teldeniya AC,00:47,Teldeniya,tea/coffee shop
+1.0,Padukka Center,20:45,Padukka,dinner
+1.5,Mannar AC,12:00,Mannar,lunch
+0.75,Matara Town Hall,21:15,Matara,dinner
+1.5,Dickwella DC,08:15,Dickwella,breakfast
+3.0,Trincomalee Town,13:15,Trincomalee,"lunch, shopping"
+3.0,Hambantota Port,17:30,Hambantota,visit beautiful place
+3.5,Point Pedro DC,11:45,Point Pedro,"watch film, visit beautiful place"
+1.5,Galle Fort AC,21:15,Galle,dinner
+3.0,Warakapola AC,16:30,Warakapola,watch film
+4.0,Talawakele DC,19:00,Talawakele,"watch film, visit beautiful place"
+3.0,Kalmunai Center,21:30,Kalmunai,"dinner, shopping"
+1.5,Kosgama DC,12:30,Kosgama,lunch
+2.75,Kottawa Interchange,07:45,Kottawa,"breakfast, visit beautiful place"
+2.0,Dickwella DC,07:45,Dickwella,breakfast
+0.75,Nawalapitiya Town,07:45,Nawalapitiya,"breakfast, tea/coffee shop"
+1.0,Kattankudy AC,20:00,Kattankudy,dinner
+0.5,Deniyaya AC,17:50,Deniyaya,tea/coffee shop
+0.25,Ruwanwella AC,10:00,Ruwanwella,none
+4.0,Padukka Center,05:00,Padukka,visit beautiful place
+1.0,Digana DC,07:45,Digana,breakfast
+2.5,Padukka Center,14:00,Padukka,"lunch, shopping"
+2.5,Hatton Bus Stand,13:15,Hatton,"lunch, shopping"
+0.5,Tangalle Town,22:37,Tangalle,tea/coffee shop
+2.75,Nedunkeni AC,08:45,Nedunkeni,"breakfast, visit beautiful place"
+0.75,Anuradhapura New Town,07:45,Anuradhapura,"breakfast, tea/coffee shop"
+3.0,Kurunegala Lake Rd,12:45,Kurunegala,"lunch, shopping"
+1.5,Peradeniya Junction,07:15,Peradeniya,breakfast
+2.5,Liberty Plaza AC,20:15,Colombo,"dinner, shopping"
+4.0,Eheliyagoda DC,21:30,Eheliyagoda,"watch film, visit beautiful place"
+2.0,Galle Bus Stand,14:00,Galle,lunch
+0.75,Anamaduwa DC,20:30,Anamaduwa,dinner
+0.75,Padukka Center,11:30,Padukka,lunch
+2.5,Piliyandala Town,16:30,Piliyandala,watch film
+1.0,Muttur DC,07:00,Muttur,breakfast
+2.5,Kilinochchi Center,08:30,Kilinochchi,visit beautiful place
+4.0,Shangri La DC,16:30,Colombo,"watch film, visit beautiful place"
+4.0,Kilinochchi Center,11:15,Kilinochchi,visit beautiful place
+2.5,Aluthgama Bridge,21:00,Aluthgama,"dinner, shopping"
+2.0,Puttalam Lagoon,16:15,Puttalam,shopping
+2.0,Passara DC,07:30,Passara,breakfast
+2.75,Hikkaduwa AC,14:00,Hikkaduwa,"lunch, visit beautiful place"
+1.5,Liberty Plaza AC,07:00,Colombo,breakfast
+4.0,Negombo Beach Road,08:45,Negombo,visit beautiful place
+3.0,Avissawella Center,19:30,Avissawella,"dinner, shopping"
+2.0,Bambalapitiya RZ,07:00,Bambalapitiya,breakfast
+3.5,Nivitigala AC,22:45,Nivitigala,visit beautiful place
+1.5,Wennappuwa DC,05:45,Wennappuwa,shopping
+0.5,Badulla Main DC,17:45,Badulla,tea/coffee shop
+1.0,Pannipitiya Station,13:15,Pannipitiya,lunch
+0.5,Tangalle Town,22:31,Tangalle,tea/coffee shop
+1.5,Polonnaruwa Center,09:00,Polonnaruwa,shopping
+2.75,Dickwella DC,12:00,Dickwella,"lunch, visit beautiful place"
+1.5,Homagama Godagama,07:15,Homagama,breakfast
+0.25,Warakapola AC,16:30,Warakapola,none
+1.0,Arugam Bay AC,08:00,Arugam Bay,breakfast
+1.5,Shangri La DC,08:15,Colombo,breakfast
+0.25,Kottawa Interchange,09:00,Kottawa,none
+2.0,Rambukkana DC,12:00,Rambukkana,lunch
+2.75,Hambantota Port,07:45,Hambantota,"breakfast, visit beautiful place"
+3.0,Muttur DC,21:30,Muttur,"dinner, shopping"
+0.75,Dickwella DC,20:15,Dickwella,dinner
+4.0,Digana DC,19:00,Digana,"watch film, visit beautiful place"
+1.5,Eheliyagoda DC,11:45,Eheliyagoda,lunch
+2.5,Kandy Gatambe,15:30,Kandy,visit beautiful place
+2.5,Bandarawela Town,08:30,Bandarawela,visit beautiful place
+1.5,Pussellawa AC,13:00,Pussellawa,lunch
+1.5,Nawalapitiya Town,18:00,Nawalapitiya,shopping
+1.5,Shangri La DC,10:00,Colombo,shopping
+3.0,CCC Fast Charge,11:45,Colombo,"lunch, shopping"
+0.75,Matale Town,13:00,Matale,lunch
+3.0,Station B,09:30,Colombo,visit beautiful place
+3.0,Mahiyanganaya AC,09:30,Mahiyanganaya,visit beautiful place
+3.5,Point Pedro DC,19:00,Point Pedro,"watch film, visit beautiful place"
+2.0,Gampaha Town,13:15,Gampaha,lunch
+2.75,Moratuwa Junction,13:00,Moratuwa,"lunch, visit beautiful place"
+3.0,Mahiyanganaya AC,16:30,Mahiyanganaya,watch film
+2.5,Biyagama Factory,19:00,Biyagama,"dinner, shopping"
+0.25,Liberty Plaza AC,09:30,Colombo,none
+2.5,Kattankudy AC,11:15,Kattankudy,"lunch, shopping"
+4.0,Jaffna Central DC,14:00,Jaffna,"watch film, visit beautiful place"
+0.25,Chavakachcheri AC,11:00,Chavakachcheri,none
+2.0,Tissamaharama DC,20:30,Tissamaharama,dinner
+1.5,Moratuwa Junction,08:15,Moratuwa,breakfast
+2.0,Ahangama AC,22:30,Ahangama,shopping
+4.0,Galle Fort AC,18:45,Galle,visit beautiful place
+0.75,Station C,14:45,Kandy,lunch
+0.75,Kadawatha Highway,08:00,Kadawatha,"breakfast, tea/coffee shop"
+0.25,Galle Fort AC,12:45,Galle,none
+3.0,Marawila AC,21:15,Marawila,"dinner, shopping"
+2.5,Rajagiriya Flyover,22:45,Rajagiriya,visit beautiful place
+3.0,Kekirawa AC,08:00,Kekirawa,visit beautiful place
+1.0,Akuressa Center,13:30,Akuressa,lunch
+1.0,Chilaw City,11:45,Chilaw,lunch
+3.5,Tangalle Town,14:00,Tangalle,"watch film, visit beautiful place"
+0.75,Ahangama AC,07:30,Ahangama,"breakfast, tea/coffee shop"
+0.75,Anamaduwa DC,19:00,Anamaduwa,dinner
+4.0,Homagama Center,08:15,Homagama,visit beautiful place
+0.5,Poonakary AC,22:15,Poonakary,tea/coffee shop
+2.0,Pussellawa AC,07:45,Pussellawa,breakfast
+1.0,Aluthgama Bridge,11:00,Aluthgama,lunch
+3.0,Kadugannawa AC,05:30,Kadugannawa,visit beautiful place
+2.5,Galle Fort AC,11:45,Galle,"lunch, shopping"
+2.5,Negombo Beach Road,14:00,Negombo,"lunch, shopping"
+2.5,Pannipitiya Station,20:15,Pannipitiya,"dinner, shopping"
+2.75,Trincomalee Town,19:30,Trincomalee,visit beautiful place
+1.5,Galle Bus Stand,13:15,Galle,lunch
+2.5,Station A,13:15,Colombo,"lunch, shopping"
+2.5,Kurunegala Town,13:00,Kurunegala,"lunch, shopping"
+4.0,Embilipitiya DC,19:00,Embilipitiya,"watch film, visit beautiful place"
+3.0,Tissamaharama DC,11:00,Tissamaharama,"lunch, shopping"
+2.75,Matale Town,07:00,Matale,"breakfast, visit beautiful place"
+2.5,Homagama Godagama,17:30,Homagama,visit beautiful place
+0.5,Galle Fort AC,22:51,Galle,tea/coffee shop
+1.0,Ratmalana DC,20:00,Ratmalana,dinner
+0.75,Veyangoda Station,21:30,Veyangoda,dinner
+2.0,Nedunkeni AC,07:15,Nedunkeni,breakfast
+4.0,Embilipitiya DC,17:30,Embilipitiya,visit beautiful place
+1.5,Mihintale AC,20:15,Mihintale,dinner
+1.0,Avissawella Center,20:15,Avissawella,dinner
+1.0,Trincomalee Town,14:45,Trincomalee,lunch
+3.0,Padukka Center,05:15,Padukka,visit beautiful place
+1.0,Pottuvil DC,21:15,Pottuvil,dinner
+2.5,Hikkaduwa AC,21:30,Hikkaduwa,"dinner, shopping"
+4.0,Monaragala DC,12:00,Monaragala,visit beautiful place
+3.0,Homagama Center,11:45,Homagama,"lunch, shopping"
+2.5,Nedunkeni AC,15:45,Nedunkeni,visit beautiful place
+2.75,Pussellawa AC,11:45,Pussellawa,"lunch, visit beautiful place"
+1.0,Kataragama Center,08:45,Kataragama,breakfast
+3.5,Veyangoda Station,11:45,Veyangoda,"watch film, visit beautiful place"
+2.5,Padukka Center,20:30,Padukka,"dinner, shopping"
+1.0,Embilipitiya DC,13:45,Embilipitiya,lunch
+2.0,Monaragala DC,12:15,Monaragala,lunch
+3.5,Tangalle Town,17:30,Tangalle,visit beautiful place
+1.0,Matara Town Hall,08:00,Matara,breakfast
+0.5,Polonnaruwa Center,16:19,Polonnaruwa,tea/coffee shop
+0.5,Ella Station,17:24,Ella,tea/coffee shop
+1.0,Dickwella DC,07:00,Dickwella,breakfast
+2.0,Liberty Plaza AC,13:15,Colombo,lunch
+3.5,Badulla Main DC,21:30,Badulla,"watch film, visit beautiful place"
+3.0,Nugegoda High Level,14:00,Nugegoda,"lunch, shopping"
+0.5,Vavuniya Town DC,02:58,Vavuniya,tea/coffee shop
+0.25,Embilipitiya DC,07:00,Embilipitiya,none
+2.75,Unawatuna DC,08:00,Unawatuna,"breakfast, visit beautiful place"
+1.0,Kurunegala Town,12:00,Kurunegala,lunch
+1.0,Dambulla DC,12:30,Dambulla,lunch
+0.5,Katunayake Airport,22:44,Katunayake,tea/coffee shop
+2.0,Nawalapitiya Town,08:15,Nawalapitiya,breakfast
+2.0,Galenbindunuwewa AC,21:00,Galenbindunuwewa,dinner
+1.0,Ratmalana DC,19:30,Ratmalana,dinner
+2.0,Rajagiriya Flyover,14:30,Rajagiriya,lunch
+2.75,Kegalle Town,08:30,Kegalle,"breakfast, visit beautiful place"
+2.75,Chavakachcheri AC,14:45,Chavakachcheri,"lunch, visit beautiful place"
+1.0,Wattala K Zone,11:00,Wattala,lunch
+2.0,Kandy City Center,11:15,Kandy,lunch
+4.0,Nivitigala AC,22:15,Nivitigala,visit beautiful place
+2.0,Ambalangoda DC,11:15,Ambalangoda,lunch
+2.5,Kandy Gatambe,19:15,Kandy,"dinner, shopping"
+1.5,Warakapola AC,11:45,Warakapola,lunch
+3.0,Ruwanwella AC,08:15,Ruwanwella,visit beautiful place
+0.75,Polonnaruwa Center,10:00,Polonnaruwa,shopping
+2.0,Kataragama Center,12:00,Kataragama,lunch
+3.0,Dehiwala Junction,16:30,Dehiwala,watch film
+1.0,Hikkaduwa AC,08:45,Hikkaduwa,breakfast
+3.0,Avissawella Center,20:30,Avissawella,"dinner, shopping"
+3.5,CCC Fast Charge,14:00,Colombo,"watch film, visit beautiful place"
+3.5,Kattankudy AC,20:15,Kattankudy,visit beautiful place
+0.75,Haputale View,19:00,Haputale,dinner
+2.0,Chavakachcheri AC,07:15,Chavakachcheri,breakfast
+0.75,Rajagiriya Flyover,22:00,Rajagiriya,shopping
+0.75,Dambulla DC,12:00,Dambulla,lunch
+3.0,Talawakele DC,19:15,Talawakele,"dinner, shopping"
+0.5,Nugegoda High Level,16:48,Nugegoda,tea/coffee shop
+3.0,Horana Town,16:30,Horana,watch film
+1.5,Kilinochchi Center,08:45,Kilinochchi,breakfast
+1.5,Tangalle Town,07:00,Tangalle,breakfast
+2.5,Anamaduwa DC,08:30,Anamaduwa,visit beautiful place
+2.5,Kurunegala Lake Rd,05:30,Kurunegala,visit beautiful place
+2.0,Passara DC,21:30,Passara,dinner
+0.75,Hatton Bus Stand,11:30,Hatton,lunch
+3.0,Pannipitiya Station,19:30,Pannipitiya,"dinner, shopping"
+3.0,CCC Fast Charge,12:45,Colombo,"lunch, shopping"
+3.0,Point Pedro DC,21:30,Point Pedro,"dinner, shopping"
+0.75,Shangri La DC,08:30,Colombo,"breakfast, tea/coffee shop"
+1.0,Ahangama AC,08:30,Ahangama,breakfast
+2.0,Mannar AC,08:00,Mannar,breakfast
+2.5,Haputale View,11:45,Haputale,"lunch, shopping"
+2.5,Kalutara South,19:00,Kalutara,"dinner, shopping"
+3.0,Nivitigala AC,21:30,Nivitigala,"dinner, shopping"
+0.75,Tanamalwila AC,13:45,Tanamalwila,lunch
+4.0,Dehiwala Junction,07:45,Dehiwala,visit beautiful place
+2.0,Unawatuna DC,19:00,Unawatuna,dinner
+0.5,Shangri La DC,01:45,Colombo,tea/coffee shop
+0.75,Peradeniya Junction,14:45,Peradeniya,lunch
+1.0,Kalmunai Center,08:45,Kalmunai,breakfast
+1.0,Thalahena DC,19:30,Thalahena,dinner
+2.75,Mihintale AC,08:00,Mihintale,"breakfast, visit beautiful place"
+4.0,Vavuniya Town DC,13:00,Vavuniya,visit beautiful place
+4.0,Dutch Hospital,17:45,Colombo,visit beautiful place
+0.5,Marawila AC,01:52,Marawila,tea/coffee shop
+2.0,Wennappuwa DC,21:30,Wennappuwa,dinner
+2.75,Weligama Bay,19:30,Weligama,visit beautiful place
+1.5,Badulla Main DC,14:30,Badulla,lunch
+1.0,Dambulla DC,19:15,Dambulla,dinner
+0.5,Negombo Beach Road,15:54,Negombo,tea/coffee shop
+2.0,Kattankudy AC,13:00,Kattankudy,lunch
+0.25,Ruwanwella AC,19:00,Ruwanwella,none
+4.5,Station C,14:00,Kandy,"watch film, visit beautiful place"
+3.0,Chilaw City,14:00,Chilaw,"lunch, shopping"
+4.5,Kilinochchi Center,17:30,Kilinochchi,visit beautiful place
+0.75,Eheliyagoda DC,12:15,Eheliyagoda,lunch
+0.5,Mullaitivu DC,06:44,Mullaitivu,tea/coffee shop
+3.0,Piliyandala Town,11:45,Piliyandala,"lunch, shopping"
+0.5,Matale Town,03:47,Matale,tea/coffee shop
+1.0,Beruwala Beach,12:00,Beruwala,lunch
+0.75,Dehiwala Junction,07:00,Dehiwala,"breakfast, tea/coffee shop"
+2.75,Gampaha Town,12:15,Gampaha,"lunch, visit beautiful place"
+3.0,Nugegoda High Level,20:15,Nugegoda,"dinner, shopping"
+3.5,Ratmalana DC,14:00,Ratmalana,"watch film, visit beautiful place"
+1.0,Mannar AC,08:45,Mannar,breakfast
+3.0,Rajagiriya Flyover,06:15,Rajagiriya,visit beautiful place
+4.0,Kottawa Interchange,14:00,Kottawa,"watch film, visit beautiful place"
+3.0,Vavuniya Town DC,19:00,Vavuniya,"dinner, shopping"
+3.0,Bandarawela Town,19:00,Bandarawela,"dinner, shopping"
+0.75,Maharagama City,11:45,Maharagama,lunch
+1.5,Nawalapitiya Town,08:45,Nawalapitiya,breakfast
+3.0,Digana DC,11:30,Digana,"lunch, shopping"
+0.75,Godakawela AC,08:30,Godakawela,"breakfast, tea/coffee shop"
+1.0,Avissawella Center,07:30,Avissawella,breakfast
+0.25,Gampola Center,20:30,Gampola,none
+2.5,Balangoda AC,14:30,Balangoda,"lunch, shopping"
+3.0,Jaffna Central DC,14:15,Jaffna,"lunch, shopping"
+1.0,Panadura Depot,09:15,Panadura,shopping
+2.0,Tambuttegama DC,18:30,Tambuttegama,shopping
+3.0,Maho Station,10:30,Maho,visit beautiful place
+4.0,Biyagama Factory,18:00,Biyagama,visit beautiful place
+0.75,Matara Town Hall,12:45,Matara,lunch
+4.0,Avissawella Center,14:30,Avissawella,visit beautiful place
+0.25,Aluthgama Bridge,17:30,Aluthgama,none
+1.5,Nawalapitiya Town,13:15,Nawalapitiya,lunch
+0.75,Piliyandala Town,12:15,Piliyandala,lunch
+3.0,Gampola Center,11:45,Gampola,"lunch, shopping"
+2.0,Biyagama Factory,11:30,Biyagama,lunch
+3.5,Biyagama Factory,16:30,Biyagama,"watch film, visit beautiful place"
+0.75,Poonakary AC,19:15,Poonakary,dinner
+0.75,Ratnapura DC,07:15,Ratnapura,"breakfast, tea/coffee shop"
+0.25,Mirissa Beach,08:45,Mirissa,none
+3.0,Biyagama Factory,14:45,Biyagama,"lunch, shopping"
+1.5,Aluthgama Bridge,08:15,Aluthgama,breakfast
+2.0,Station B,13:45,Colombo,lunch
+2.5,Galle Bus Stand,20:30,Galle,"dinner, shopping"
+0.5,Eheliyagoda DC,22:14,Eheliyagoda,tea/coffee shop
+3.5,Kadawatha Highway,19:00,Kadawatha,"watch film, visit beautiful place"
+0.75,Galle Bus Stand,18:30,Galle,shopping
+0.75,Kurunegala Lake Rd,13:00,Kurunegala,lunch
+1.0,Habarana DC,08:15,Habarana,breakfast
+3.0,Station B,09:00,Colombo,visit beautiful place
+5.0,Dehiwala Junction,20:15,Dehiwala,visit beautiful place
+1.0,Kandy City Center,13:45,Kandy,lunch
+3.0,Avissawella Center,20:30,Avissawella,"dinner, shopping"
+1.0,Arugam Bay AC,07:30,Arugam Bay,breakfast
+0.75,Chavakachcheri AC,14:45,Chavakachcheri,lunch
+0.75,Kosgama DC,19:15,Kosgama,dinner
+1.5,Hikkaduwa AC,07:00,Hikkaduwa,breakfast
+0.75,Kekirawa AC,12:00,Kekirawa,lunch
+3.0,Anuradhapura DC,15:45,Anuradhapura,visit beautiful place
+0.75,Dutch Hospital,14:30,Colombo,lunch
+0.75,Galle Bus Stand,11:15,Galle,lunch
+2.75,Nugegoda High Level,11:00,Nugegoda,"lunch, visit beautiful place"
+4.0,Kalutara South,10:30,Kalutara,visit beautiful place
+0.75,Kataragama Center,08:15,Kataragama,"breakfast, tea/coffee shop"
+3.0,Kuliyapitiya Center,19:00,Kuliyapitiya,"dinner, shopping"
+0.5,Wellawaya AC,04:33,Wellawaya,tea/coffee shop
+0.75,Vavuniya Town DC,19:30,Vavuniya,dinner
+2.75,Kurunegala Town,06:15,Kurunegala,visit beautiful place
+2.75,Kandy City Center,13:30,Kandy,"lunch, visit beautiful place"
+0.75,Homagama Godagama,08:00,Homagama,"breakfast, tea/coffee shop"
+0.25,Thalahena DC,11:00,Thalahena,none
+2.75,Ella Station,13:00,Ella,"lunch, visit beautiful place"
+0.75,Anamaduwa DC,21:00,Anamaduwa,dinner
+0.5,Pussellawa AC,06:03,Pussellawa,tea/coffee shop
+3.0,Galenbindunuwewa AC,16:00,Galenbindunuwewa,visit beautiful place
+0.25,Wennappuwa DC,12:15,Wennappuwa,none
+2.5,Mullaitivu DC,12:00,Mullaitivu,"lunch, shopping"
+3.5,Hanwella AC,10:15,Hanwella,visit beautiful place
+4.5,Kegalle Town,11:00,Kegalle,visit beautiful place
+0.25,Poonakary AC,17:15,Poonakary,none
+0.5,Kalutara South,01:22,Kalutara,tea/coffee shop
+3.0,Kalmunai Center,21:45,Kalmunai,"dinner, shopping"
+3.5,Chilaw City,11:15,Chilaw,visit beautiful place
+2.0,Ratnapura DC,12:15,Ratnapura,lunch
+3.5,Beliatta Highway,07:30,Beliatta,visit beautiful place
+3.5,Station B,11:45,Colombo,"watch film, visit beautiful place"
+2.75,Station A,08:30,Colombo,"breakfast, visit beautiful place"
+2.75,Ratmalana DC,19:15,Ratmalana,visit beautiful place
+2.0,Unawatuna DC,08:00,Unawatuna,breakfast
+0.25,Tangalle Town,11:15,Tangalle,none
+1.5,Ratnapura DC,14:15,Ratnapura,lunch
+1.0,Digana DC,07:30,Digana,breakfast
+2.5,Weligama Bay,06:45,Weligama,visit beautiful place
+5.0,CCC Fast Charge,11:45,Colombo,"watch film, visit beautiful place"
+1.5,Galle Fort AC,08:30,Galle,breakfast
+0.75,Station C,20:45,Kandy,dinner
+0.75,Maskeliya Town,13:00,Maskeliya,lunch
+5.0,Kilinochchi Center,19:00,Kilinochchi,"watch film, visit beautiful place"
+0.75,Dickwella DC,11:15,Dickwella,lunch
+0.25,Veyangoda Station,20:15,Veyangoda,none
+0.5,Pussellawa AC,16:43,Pussellawa,tea/coffee shop
+0.75,Liberty Plaza AC,20:00,Colombo,dinner
+0.25,Tanamalwila AC,21:45,Tanamalwila,none
+1.5,Galenbindunuwewa AC,13:30,Galenbindunuwewa,lunch
+1.5,Kadawatha Highway,07:00,Kadawatha,breakfast
+1.5,Mahiyanganaya AC,08:45,Mahiyanganaya,breakfast
+1.5,Rambukkana DC,11:00,Rambukkana,lunch
+1.5,Rajagiriya Flyover,20:15,Rajagiriya,dinner
+2.5,Nawalapitiya Town,14:00,Nawalapitiya,"lunch, shopping"
+0.75,Maho Station,07:30,Maho,"breakfast, tea/coffee shop"
+2.75,Embilipitiya DC,13:45,Embilipitiya,"lunch, visit beautiful place"
+2.5,Station A,21:45,Colombo,"dinner, shopping"
+4.0,Moratuwa Junction,14:00,Moratuwa,"watch film, visit beautiful place"
+1.5,Marawila AC,11:00,Marawila,lunch
+3.5,Kandana DC,21:30,Kandana,"watch film, visit beautiful place"
+2.75,Sigiriya Jn,07:00,Sigiriya,"breakfast, visit beautiful place"
+0.5,Eheliyagoda DC,15:32,Eheliyagoda,tea/coffee shop
+1.0,Thalahena DC,20:30,Thalahena,dinner
+1.0,Beliatta Highway,19:45,Beliatta,dinner
+2.75,Horana Town,11:15,Horana,"lunch, visit beautiful place"
+2.0,Muttur DC,07:30,Muttur,breakfast
+3.5,Ella Station,21:30,Ella,"watch film, visit beautiful place"
+2.5,Hanwella AC,19:45,Hanwella,"dinner, shopping"
+1.0,Kandy City Center,07:30,Kandy,breakfast
+2.5,Point Pedro DC,09:30,Point Pedro,visit beautiful place
+3.0,Vavuniya Town DC,21:30,Vavuniya,"dinner, shopping"
+2.5,Godakawela AC,14:30,Godakawela,"lunch, shopping"
+5.0,Ratnapura DC,07:30,Ratnapura,visit beautiful place
+1.5,Kilinochchi Center,13:15,Kilinochchi,lunch
+1.0,Balangoda AC,08:30,Balangoda,breakfast
+2.0,Homagama Godagama,11:30,Homagama,lunch
+3.0,Hambantota Port,21:00,Hambantota,"dinner, shopping"
+1.5,Bambalapitiya RZ,07:30,Bambalapitiya,breakfast
+2.5,Haputale View,19:30,Haputale,"dinner, shopping"
+2.75,Point Pedro DC,06:15,Point Pedro,visit beautiful place
+2.75,Anuradhapura New Town,08:15,Anuradhapura,"breakfast, visit beautiful place"
+1.5,Kadawatha Highway,12:45,Kadawatha,lunch
+2.5,Kottawa Interchange,11:15,Kottawa,"lunch, shopping"
+0.75,Weligama Bay,19:00,Weligama,dinner
+0.75,Mahiyanganaya AC,13:15,Mahiyanganaya,lunch
+3.5,Hanwella AC,20:30,Hanwella,visit beautiful place
+2.0,Rajagiriya Flyover,11:45,Rajagiriya,lunch
+2.75,Kuliyapitiya Center,08:45,Kuliyapitiya,"breakfast, visit beautiful place"
+1.5,Dutch Hospital,08:30,Colombo,breakfast
+4.0,Hatton Bus Stand,11:45,Hatton,"watch film, visit beautiful place"
+1.5,Biyagama Factory,20:30,Biyagama,dinner
+1.0,Badulla Main DC,08:00,Badulla,breakfast
+2.5,Kekirawa AC,19:00,Kekirawa,"dinner, shopping"
+0.5,Kottawa Interchange,06:17,Kottawa,tea/coffee shop
+1.0,Kandy Gatambe,11:00,Kandy,lunch
+0.75,Negombo Beach Road,19:15,Negombo,dinner
+2.0,Batticaloa City,11:00,Batticaloa,lunch
+1.5,Avissawella Center,08:30,Avissawella,breakfast
+0.75,Anamaduwa DC,19:45,Anamaduwa,dinner
+0.25,Anuradhapura New Town,18:00,Anuradhapura,none
+2.5,Rambukkana DC,16:30,Rambukkana,watch film
+2.75,Katunayake Airport,07:00,Katunayake,"breakfast, visit beautiful place"
+3.0,Pottuvil DC,21:30,Pottuvil,"dinner, shopping"
+4.0,Tangalle Town,13:30,Tangalle,visit beautiful place
+1.0,Ratnapura DC,08:45,Ratnapura,breakfast
+0.5,Chilaw City,06:43,Chilaw,tea/coffee shop
+1.5,Muttur DC,13:45,Muttur,lunch
+0.5,Moratuwa Junction,04:57,Moratuwa,tea/coffee shop
+0.5,Kataragama Center,01:49,Kataragama,tea/coffee shop
+0.75,Hanwella AC,10:15,Hanwella,shopping
+3.0,Jaffna Library AC,16:30,Jaffna,watch film
+2.75,Anuradhapura New Town,07:30,Anuradhapura,"breakfast, visit beautiful place"
+1.0,Batticaloa City,08:00,Batticaloa,breakfast
+0.75,Rajagiriya Flyover,12:30,Rajagiriya,lunch
+2.5,Kadugannawa AC,19:00,Kadugannawa,"dinner, shopping"
+1.5,Poonakary AC,13:30,Poonakary,lunch
+4.0,Mannar AC,19:00,Mannar,"watch film, visit beautiful place"
+3.5,Kegalle Town,19:15,Kegalle,visit beautiful place
+0.25,Dehiwala Junction,13:15,Dehiwala,none
+0.5,Dutch Hospital,06:43,Colombo,tea/coffee shop
+3.5,Marawila AC,12:15,Marawila,visit beautiful place
+3.5,Passara DC,11:30,Passara,visit beautiful place
+2.0,Nivitigala AC,14:15,Nivitigala,lunch
+3.5,Warakapola AC,06:15,Warakapola,visit beautiful place
+3.5,Pussellawa AC,16:30,Pussellawa,"watch film, visit beautiful place"
+0.5,Monaragala DC,17:03,Monaragala,tea/coffee shop
+2.0,Kuliyapitiya Center,13:15,Kuliyapitiya,lunch
+2.0,Marawila AC,08:45,Marawila,breakfast
+0.5,Mirissa Beach,03:23,Mirissa,tea/coffee shop
+0.5,Homagama Godagama,22:08,Homagama,tea/coffee shop
+2.5,Rambukkana DC,22:45,Rambukkana,visit beautiful place
+1.0,Nedunkeni AC,11:45,Nedunkeni,lunch
+5.0,Rambukkana DC,12:45,Rambukkana,visit beautiful place
+2.0,Chavakachcheri AC,13:00,Chavakachcheri,lunch
+1.0,Tissamaharama DC,11:00,Tissamaharama,lunch
+1.0,CCC Fast Charge,21:00,Colombo,dinner
+0.75,Kekirawa AC,14:45,Kekirawa,lunch
+3.0,Kilinochchi Center,19:30,Kilinochchi,"dinner, shopping"
+2.5,Tangalle Town,19:15,Tangalle,"dinner, shopping"
+2.75,Pussellawa AC,14:45,Pussellawa,"lunch, visit beautiful place"
+2.0,Galenbindunuwewa AC,12:30,Galenbindunuwewa,lunch
+1.5,Matale Town,12:30,Matale,lunch
+2.75,Matara Town Hall,12:30,Matara,"lunch, visit beautiful place"
+2.75,Dickwella DC,07:30,Dickwella,"breakfast, visit beautiful place"
+1.0,Mirissa Beach,09:45,Mirissa,shopping
+2.0,Kekirawa AC,07:15,Kekirawa,breakfast
+0.75,Kalutara South,12:45,Kalutara,lunch
+2.5,Akuressa Center,12:45,Akuressa,"lunch, shopping"
+2.5,Padukka Center,22:00,Padukka,visit beautiful place
+1.0,Hatton Bus Stand,14:15,Hatton,lunch
+0.75,Moratuwa Junction,13:15,Moratuwa,lunch
+3.0,Negombo Beach Road,05:45,Negombo,visit beautiful place
+1.0,Kandana DC,19:15,Kandana,dinner
+0.25,Batticaloa City,15:15,Batticaloa,none
+0.75,Bambalapitiya RZ,17:45,Bambalapitiya,shopping
+0.5,Katunayake Airport,01:31,Katunayake,tea/coffee shop
+3.0,Kegalle Town,07:00,Kegalle,visit beautiful place
+3.5,Bambalapitiya RZ,22:30,Bambalapitiya,visit beautiful place
+0.5,Hanwella AC,02:15,Hanwella,tea/coffee shop
+0.5,Dutch Hospital,06:14,Colombo,tea/coffee shop
+0.5,Kandy City Center,22:14,Kandy,tea/coffee shop
+0.5,Warakapola AC,06:50,Warakapola,tea/coffee shop
+2.0,Tissamaharama DC,09:45,Tissamaharama,shopping
+1.5,Polonnaruwa Center,14:30,Polonnaruwa,lunch
+2.75,Mirissa Beach,14:00,Mirissa,"lunch, visit beautiful place"
+2.0,Galle Bus Stand,14:30,Galle,lunch
+2.5,Wellawaya AC,14:00,Wellawaya,"lunch, shopping"
+2.5,Dambulla DC,11:15,Dambulla,"lunch, shopping"
+0.5,Galenbindunuwewa AC,22:51,Galenbindunuwewa,tea/coffee shop
+2.75,Ratmalana DC,07:00,Ratmalana,"breakfast, visit beautiful place"
+0.75,Shangri La DC,13:00,Colombo,lunch
+2.0,Weligama Bay,13:00,Weligama,lunch
+3.5,Poonakary AC,21:30,Poonakary,"watch film, visit beautiful place"
+0.5,Pottuvil DC,22:37,Pottuvil,tea/coffee shop
+2.75,Shangri La DC,07:45,Colombo,"breakfast, visit beautiful place"
+0.5,Ruwanwella AC,22:16,Ruwanwella,tea/coffee shop
+1.5,Puttalam Lagoon,14:00,Puttalam,lunch
+1.5,Vavuniya Town DC,13:30,Vavuniya,lunch
+1.0,Avissawella Center,11:30,Avissawella,lunch
+1.0,Beliatta Highway,12:00,Beliatta,lunch
+0.75,Nivitigala AC,11:15,Nivitigala,lunch
+2.5,Mihintale AC,19:00,Mihintale,"dinner, shopping"
+2.5,Kinniya AC,09:15,Kinniya,visit beautiful place
+0.5,Homagama Godagama,06:52,Homagama,tea/coffee shop
+1.0,Dickwella DC,13:00,Dickwella,lunch
+1.0,Padukka Center,07:00,Padukka,breakfast
+1.0,Ratmalana DC,07:15,Ratmalana,breakfast
+2.5,Tangalle Town,19:15,Tangalle,"dinner, shopping"
+2.0,Kandana DC,10:30,Kandana,shopping
+1.0,Chavakachcheri AC,08:15,Chavakachcheri,breakfast
+1.0,Nikaweratiya AC,14:15,Nikaweratiya,lunch
+2.0,Maharagama City,13:15,Maharagama,lunch
+4.0,Gampola Center,16:30,Gampola,"watch film, visit beautiful place"
+0.5,Nivitigala AC,00:35,Nivitigala,tea/coffee shop
+2.75,Hatton Bus Stand,14:15,Hatton,"lunch, visit beautiful place"
+1.5,Bandarawela Town,17:00,Bandarawela,shopping
+0.5,Pannipitiya Station,06:37,Pannipitiya,tea/coffee shop
+2.5,Kilinochchi Center,21:30,Kilinochchi,"dinner, shopping"
+2.0,CCC Fast Charge,18:00,Colombo,shopping
+4.5,Akuressa Center,05:30,Akuressa,visit beautiful place
+0.75,Moratuwa Junction,12:15,Moratuwa,lunch
+3.5,Ella Station,14:30,Ella,visit beautiful place
+2.0,Pussellawa AC,19:45,Pussellawa,dinner
+1.0,Tambuttegama DC,08:30,Tambuttegama,breakfast
+0.75,Homagama Godagama,12:15,Homagama,lunch
+0.75,Shangri La DC,08:30,Colombo,"breakfast, tea/coffee shop"
+2.5,Ahangama AC,14:30,Ahangama,"lunch, shopping"
+2.0,Veyangoda Station,07:30,Veyangoda,breakfast
+3.5,Tangalle Town,06:00,Tangalle,visit beautiful place
+0.25,Negombo Beach Road,18:45,Negombo,none
+1.5,Kandy Gatambe,07:45,Kandy,breakfast
+0.25,Kurunegala Lake Rd,14:30,Kurunegala,none
+2.75,Veyangoda Station,08:30,Veyangoda,"breakfast, visit beautiful place"
+2.0,Ratnapura DC,12:45,Ratnapura,lunch
+0.75,Kottawa Interchange,21:45,Kottawa,dinner
+5.0,Kalutara South,19:30,Kalutara,visit beautiful place
+0.5,Aluthgama Bridge,06:48,Aluthgama,tea/coffee shop
+2.75,Hatton Bus Stand,09:30,Hatton,visit beautiful place
+2.0,Tambuttegama DC,20:00,Tambuttegama,dinner
+0.5,Matara Town Hall,01:28,Matara,tea/coffee shop
+0.5,Anuradhapura New Town,22:14,Anuradhapura,tea/coffee shop
+1.0,Gampaha Town,12:30,Gampaha,lunch
+1.5,Mahiyanganaya AC,08:15,Mahiyanganaya,breakfast
+2.0,Kilinochchi Center,08:00,Kilinochchi,breakfast
+1.5,Bambalapitiya RZ,14:15,Bambalapitiya,lunch
+2.0,Batticaloa City,08:45,Batticaloa,breakfast
+3.0,Panadura Depot,21:00,Panadura,"dinner, shopping"
+1.0,Peradeniya Junction,07:45,Peradeniya,breakfast
+3.5,Matale Town,12:30,Matale,visit beautiful place
+1.0,Beliatta Highway,07:30,Beliatta,breakfast
+0.5,Habarana DC,06:20,Habarana,tea/coffee shop
+0.5,Point Pedro DC,16:59,Point Pedro,tea/coffee shop
+3.5,Hikkaduwa AC,16:30,Hikkaduwa,"watch film, visit beautiful place"
+1.0,Puttalam Lagoon,14:45,Puttalam,lunch
+3.5,Avissawella Center,21:30,Avissawella,"watch film, visit beautiful place"
+3.5,Galenbindunuwewa AC,11:45,Galenbindunuwewa,"watch film, visit beautiful place"
+2.5,Kosgama DC,19:00,Kosgama,"dinner, shopping"
+1.0,Talawakele DC,19:45,Talawakele,dinner
+0.75,Nugegoda High Level,20:15,Nugegoda,dinner
+5.0,Batticaloa City,11:15,Batticaloa,visit beautiful place
+0.5,Station C,17:47,Kandy,tea/coffee shop
+1.0,Katunayake Airport,10:00,Katunayake,shopping
+3.0,Godakawela AC,11:45,Godakawela,"lunch, shopping"
+2.75,Ruwanwella AC,13:30,Ruwanwella,"lunch, visit beautiful place"
+0.25,Badulla Main DC,10:00,Badulla,none
+1.0,Kilinochchi Center,08:00,Kilinochchi,breakfast
+0.75,Ratmalana DC,20:15,Ratmalana,dinner
+5.0,Galle Fort AC,12:30,Galle,visit beautiful place
+1.0,Kadawatha Highway,08:15,Kadawatha,breakfast
+1.0,Pottuvil DC,12:30,Pottuvil,lunch
+2.5,Kandana DC,18:30,Kandana,visit beautiful place
+1.0,Thalahena DC,07:45,Thalahena,breakfast
+1.0,Nugegoda High Level,11:30,Nugegoda,lunch
+3.0,Muttur DC,16:30,Muttur,watch film
+3.0,Station A,21:45,Colombo,"dinner, shopping"
+1.5,Mihintale AC,11:45,Mihintale,lunch
+4.0,Batticaloa City,07:15,Batticaloa,visit beautiful place
+3.5,Nugegoda High Level,16:30,Nugegoda,"watch film, visit beautiful place"
+2.0,Avissawella Center,08:30,Avissawella,breakfast
+0.5,Kurunegala Lake Rd,22:42,Kurunegala,tea/coffee shop
+0.75,Teldeniya AC,07:00,Teldeniya,"breakfast, tea/coffee shop"
+2.5,Kadawatha Highway,11:45,Kadawatha,"lunch, shopping"
+2.5,Beruwala Beach,17:15,Beruwala,visit beautiful place
+3.0,Tissamaharama DC,09:45,Tissamaharama,visit beautiful place
+5.0,Talawakele DC,14:00,Talawakele,"watch film, visit beautiful place"
+2.75,Galenbindunuwewa AC,08:15,Galenbindunuwewa,"breakfast, visit beautiful place"
+0.75,Shangri La DC,07:00,Colombo,"breakfast, tea/coffee shop"
+3.0,Gampaha Town,11:45,Gampaha,"lunch, shopping"
+1.5,Padukka Center,07:30,Padukka,breakfast
+4.5,Talawakele DC,11:00,Talawakele,visit beautiful place
+2.0,Kurunegala Town,07:30,Kurunegala,breakfast
+2.5,Warakapola AC,18:15,Warakapola,visit beautiful place
+0.5,Kottawa Interchange,22:13,Kottawa,tea/coffee shop
+2.5,Hatton Bus Stand,12:00,Hatton,"lunch, shopping"
+1.0,Thalahena DC,08:00,Thalahena,breakfast
+3.5,Point Pedro DC,05:00,Point Pedro,visit beautiful place
+0.75,Ahangama AC,11:30,Ahangama,lunch
+2.75,Matale Town,07:30,Matale,"breakfast, visit beautiful place"
+0.75,Dickwella DC,19:15,Dickwella,dinner
+2.75,Polonnaruwa Center,07:00,Polonnaruwa,"breakfast, visit beautiful place"
+2.0,Kataragama Center,08:00,Kataragama,breakfast
+0.25,Moratuwa Junction,05:45,Moratuwa,none
+1.5,Arugam Bay AC,19:15,Arugam Bay,dinner
+2.0,Pottuvil DC,08:15,Pottuvil,breakfast
+3.0,Kataragama Center,15:15,Kataragama,visit beautiful place
+3.0,Sigiriya Jn,21:45,Sigiriya,"dinner, shopping"
+0.75,Bambalapitiya RZ,08:15,Bambalapitiya,"breakfast, tea/coffee shop"
+1.5,Mihintale AC,17:15,Mihintale,shopping
+1.5,Wennappuwa DC,08:30,Wennappuwa,breakfast
+0.25,Embilipitiya DC,15:30,Embilipitiya,none
+0.75,Nuwara Eliya Grand,17:00,Nuwara Eliya,shopping
+1.0,Deniyaya AC,13:30,Deniyaya,lunch
+1.5,Vavuniya Town DC,20:45,Vavuniya,dinner
+4.0,Horana Town,21:00,Horana,visit beautiful place
+0.5,Nikaweratiya AC,06:43,Nikaweratiya,tea/coffee shop
+2.0,Thalahena DC,11:00,Thalahena,lunch
+0.5,Polonnaruwa Center,02:32,Polonnaruwa,tea/coffee shop
+2.75,Mullaitivu DC,15:15,Mullaitivu,visit beautiful place
+1.5,Wattala K Zone,11:30,Wattala,lunch
+2.75,Katunayake Airport,08:15,Katunayake,"breakfast, visit beautiful place"
+1.0,Warakapola AC,08:30,Warakapola,breakfast
+4.0,Tanamalwila AC,15:45,Tanamalwila,visit beautiful place
+1.5,Hikkaduwa AC,21:00,Hikkaduwa,dinner
+1.0,Chavakachcheri AC,13:15,Chavakachcheri,lunch
+1.5,Mahiyanganaya AC,08:15,Mahiyanganaya,breakfast
+1.5,Tissamaharama DC,12:15,Tissamaharama,lunch
+0.5,Ratnapura DC,01:47,Ratnapura,tea/coffee shop
+0.5,Maho Station,04:32,Maho,tea/coffee shop
+4.5,Haputale View,17:15,Haputale,visit beautiful place
+0.25,Shangri La DC,06:00,Colombo,none
+0.75,Maho Station,10:45,Maho,shopping
+2.0,Kinniya AC,19:30,Kinniya,dinner
+1.5,Kilinochchi Center,07:00,Kilinochchi,breakfast
+0.75,Trincomalee Town,07:00,Trincomalee,"breakfast, tea/coffee shop"
+1.5,Kandy Gatambe,08:00,Kandy,breakfast
+5.0,Ahangama AC,21:30,Ahangama,"watch film, visit beautiful place"
+2.0,Negombo Beach Road,19:45,Negombo,dinner
+2.75,Mullaitivu DC,22:15,Mullaitivu,visit beautiful place
+4.5,Sigiriya Jn,18:00,Sigiriya,visit beautiful place
+2.75,Hanwella AC,22:30,Hanwella,visit beautiful place
+1.5,Balangoda AC,07:00,Balangoda,breakfast
+0.5,Kandy City Center,15:13,Kandy,tea/coffee shop
+4.0,Ratnapura DC,15:15,Ratnapura,visit beautiful place
+1.5,Habarana DC,08:15,Habarana,breakfast
+1.5,Muttur DC,14:30,Muttur,lunch
+0.75,Dickwella DC,21:30,Dickwella,dinner
+3.0,Aluthgama Bridge,21:30,Aluthgama,"dinner, shopping"
+2.75,Maskeliya Town,11:15,Maskeliya,"lunch, visit beautiful place"
+1.0,Hikkaduwa AC,11:00,Hikkaduwa,lunch
+1.5,Wellawaya AC,07:45,Wellawaya,breakfast
+1.0,Batticaloa City,08:45,Batticaloa,breakfast
+2.0,Anuradhapura DC,11:45,Anuradhapura,lunch
+4.0,Ratnapura DC,14:00,Ratnapura,"watch film, visit beautiful place"
+2.0,Haputale View,13:15,Haputale,lunch
+2.75,Hambantota Port,09:30,Hambantota,visit beautiful place
+2.5,Tangalle Town,10:45,Tangalle,visit beautiful place
+1.0,Pottuvil DC,08:15,Pottuvil,breakfast
+0.5,Warakapola AC,22:58,Warakapola,tea/coffee shop
+0.5,Eheliyagoda DC,03:55,Eheliyagoda,tea/coffee shop
+0.25,Kurunegala Town,07:30,Kurunegala,none
+1.0,Weligama Bay,20:45,Weligama,dinner
+0.75,Wennappuwa DC,08:45,Wennappuwa,"breakfast, tea/coffee shop"
+2.0,Point Pedro DC,11:00,Point Pedro,lunch
+1.0,Chilaw City,07:00,Chilaw,breakfast
+0.5,Kekirawa AC,22:12,Kekirawa,tea/coffee shop
+0.75,Station A,10:30,Colombo,shopping
+0.75,Nivitigala AC,19:45,Nivitigala,dinner
+0.5,CCC Fast Charge,22:01,Colombo,tea/coffee shop
+2.5,Veyangoda Station,14:30,Veyangoda,"lunch, shopping"
+0.25,Kuliyapitiya Center,19:00,Kuliyapitiya,none
+1.5,Kinniya AC,13:00,Kinniya,lunch
+4.0,Bandarawela Town,11:15,Bandarawela,visit beautiful place
+2.5,Galenbindunuwewa AC,19:45,Galenbindunuwewa,"dinner, shopping"
+2.5,Embilipitiya DC,11:00,Embilipitiya,"lunch, shopping"
+2.5,Kalutara South,12:30,Kalutara,"lunch, shopping"
+2.5,Horana Town,15:45,Horana,visit beautiful place
+2.5,Kilinochchi Center,11:45,Kilinochchi,"lunch, shopping"
+3.5,Anamaduwa DC,13:30,Anamaduwa,visit beautiful place
+2.5,Tangalle Town,11:30,Tangalle,"lunch, shopping"
+0.25,Embilipitiya DC,14:30,Embilipitiya,none
+2.75,Akuressa Center,07:15,Akuressa,"breakfast, visit beautiful place"
+0.75,Passara DC,17:15,Passara,shopping
+4.0,Galle Bus Stand,10:15,Galle,visit beautiful place
+1.5,Station B,08:15,Colombo,breakfast
+0.5,Wattala K Zone,06:07,Wattala,tea/coffee shop
+0.5,Anamaduwa DC,22:36,Anamaduwa,tea/coffee shop
+0.5,Matale Town,22:00,Matale,tea/coffee shop
+0.5,Nedunkeni AC,06:01,Nedunkeni,tea/coffee shop
+2.75,Kurunegala Lake Rd,08:30,Kurunegala,"breakfast, visit beautiful place"
+1.5,Station B,13:30,Colombo,lunch
+0.75,Kandana DC,12:45,Kandana,lunch
+0.5,Unawatuna DC,03:54,Unawatuna,tea/coffee shop
+3.0,Ruwanwella AC,20:15,Ruwanwella,"dinner, shopping"
+0.75,Panadura Depot,08:00,Panadura,"breakfast, tea/coffee shop"
+3.0,Sigiriya Jn,13:15,Sigiriya,"lunch, shopping"
+0.25,Hanwella AC,21:45,Hanwella,none
+2.0,Eheliyagoda DC,08:45,Eheliyagoda,breakfast
+0.75,Liberty Plaza AC,17:45,Colombo,shopping
+2.0,Aluthgama Bridge,13:30,Aluthgama,lunch
+2.75,Weligama Bay,13:00,Weligama,"lunch, visit beautiful place"
+0.25,Kegalle Town,09:30,Kegalle,none
+2.75,Homagama Center,18:15,Homagama,visit beautiful place
+3.0,Weligama Bay,21:30,Weligama,"dinner, shopping"
+3.0,Muttur DC,15:30,Muttur,visit beautiful place
+2.0,Piliyandala Town,13:45,Piliyandala,lunch
+0.75,Moratuwa Junction,20:00,Moratuwa,dinner
+0.5,Digana DC,22:32,Digana,tea/coffee shop
+2.5,Gampola Center,19:45,Gampola,"dinner, shopping"
+3.0,Tangalle Town,16:30,Tangalle,watch film
+2.5,Kandy Gatambe,12:45,Kandy,"lunch, shopping"
+1.0,Weligama Bay,19:30,Weligama,dinner
+0.75,Kegalle Town,13:30,Kegalle,lunch
+0.5,Haputale View,22:30,Haputale,tea/coffee shop
+2.75,Rambukkana DC,14:00,Rambukkana,"lunch, visit beautiful place"
+0.5,Kosgama DC,17:16,Kosgama,tea/coffee shop
+0.5,Kottawa Interchange,00:19,Kottawa,tea/coffee shop
+1.5,CCC Fast Charge,19:00,Colombo,dinner
+5.0,Wennappuwa DC,20:45,Wennappuwa,visit beautiful place
+2.0,Kandana DC,07:45,Kandana,breakfast
+4.5,Kurunegala Lake Rd,21:30,Kurunegala,"watch film, visit beautiful place"
+2.5,Chilaw City,11:45,Chilaw,"lunch, shopping"
+0.75,Dutch Hospital,22:30,Colombo,shopping
+3.5,Aluthgama Bridge,11:45,Aluthgama,"watch film, visit beautiful place"
+3.0,Teldeniya AC,12:00,Teldeniya,"lunch, shopping"
+0.5,Pussellawa AC,01:55,Pussellawa,tea/coffee shop
+3.0,Kurunegala Town,19:15,Kurunegala,"dinner, shopping"
+0.5,Eheliyagoda DC,22:31,Eheliyagoda,tea/coffee shop
+0.25,Kattankudy AC,12:30,Kattankudy,none
+2.0,Kalmunai Center,14:30,Kalmunai,lunch
+2.5,Digana DC,14:00,Digana,"lunch, shopping"
+2.5,Kadugannawa AC,18:45,Kadugannawa,visit beautiful place
+0.5,Rambukkana DC,03:42,Rambukkana,tea/coffee shop
+4.0,Pottuvil DC,18:15,Pottuvil,visit beautiful place
+0.5,Avissawella Center,17:04,Avissawella,tea/coffee shop
+2.5,Batticaloa City,11:45,Batticaloa,"lunch, shopping"
+0.75,Horana Town,21:15,Horana,dinner
+0.75,Dambulla DC,20:45,Dambulla,dinner
+0.25,Pannipitiya Station,13:30,Pannipitiya,none
+1.5,Ahangama AC,11:30,Ahangama,lunch
+1.5,Habarana DC,07:45,Habarana,breakfast
+2.0,Wellawaya AC,12:45,Wellawaya,lunch
+2.75,Kattankudy AC,08:00,Kattankudy,"breakfast, visit beautiful place"
+3.5,Pottuvil DC,21:30,Pottuvil,"watch film, visit beautiful place"
+0.5,Jaffna Central DC,06:18,Jaffna,tea/coffee shop
+3.0,Hambantota Port,21:15,Hambantota,"dinner, shopping"
+0.5,Dehiwala Junction,22:03,Dehiwala,tea/coffee shop
+3.0,Pottuvil DC,21:30,Pottuvil,"dinner, shopping"
+2.5,Muttur DC,11:45,Muttur,"lunch, shopping"
+4.0,Marawila AC,10:15,Marawila,visit beautiful place
+0.75,Galle Bus Stand,07:45,Galle,"breakfast, tea/coffee shop"
+0.5,Kilinochchi Center,22:48,Kilinochchi,tea/coffee shop
+2.75,Kataragama Center,08:45,Kataragama,"breakfast, visit beautiful place"
+4.0,Godakawela AC,20:15,Godakawela,visit beautiful place
+3.0,Homagama Godagama,11:15,Homagama,"lunch, shopping"
+4.0,Peradeniya Junction,09:00,Peradeniya,visit beautiful place
+1.5,Mirissa Beach,12:00,Mirissa,lunch
+2.0,Moratuwa Junction,08:45,Moratuwa,breakfast
+2.75,Point Pedro DC,14:15,Point Pedro,"lunch, visit beautiful place"
+2.75,Nedunkeni AC,15:45,Nedunkeni,visit beautiful place
+1.0,Badulla Main DC,19:45,Badulla,dinner
+0.75,Kadawatha Highway,11:45,Kadawatha,lunch
+1.0,Kottawa Interchange,19:45,Kottawa,dinner
+0.5,Marawila AC,06:21,Marawila,tea/coffee shop
+4.5,Passara DC,21:30,Passara,"watch film, visit beautiful place"
+1.0,Ratmalana DC,10:45,Ratmalana,shopping
+1.0,Galenbindunuwewa AC,12:00,Galenbindunuwewa,lunch
+2.0,Maskeliya Town,07:45,Maskeliya,breakfast
+0.25,Padukka Center,12:15,Padukka,none
+3.0,Katunayake Airport,19:00,Katunayake,"dinner, shopping"
+4.0,Puttalam Lagoon,11:15,Puttalam,visit beautiful place
+1.0,Puttalam Lagoon,08:45,Puttalam,breakfast
+2.75,Homagama Godagama,12:30,Homagama,"lunch, visit beautiful place"
+2.75,Station B,08:45,Colombo,"breakfast, visit beautiful place"
+2.75,Veyangoda Station,08:30,Veyangoda,"breakfast, visit beautiful place"
+2.75,Station A,14:30,Colombo,"lunch, visit beautiful place"
+0.75,Kattankudy AC,12:45,Kattankudy,lunch
+1.0,Muttur DC,08:15,Muttur,breakfast
+0.25,Embilipitiya DC,08:45,Embilipitiya,none
+1.0,Kadugannawa AC,07:30,Kadugannawa,breakfast
+2.0,Rajagiriya Flyover,08:15,Rajagiriya,breakfast
+2.5,Trincomalee Town,20:30,Trincomalee,"dinner, shopping"
+1.0,Kandy City Center,07:45,Kandy,breakfast
+4.0,Moratuwa Junction,22:30,Moratuwa,visit beautiful place
+2.0,Marawila AC,18:45,Marawila,shopping
+2.5,Rambukkana DC,19:00,Rambukkana,"dinner, shopping"
+4.0,Digana DC,19:30,Digana,visit beautiful place
+3.5,Kekirawa AC,16:30,Kekirawa,"watch film, visit beautiful place"
+1.5,Nuwara Eliya Grand,08:45,Nuwara Eliya,breakfast
+2.5,Negombo Beach Road,17:45,Negombo,visit beautiful place
+1.5,Hambantota Port,14:45,Hambantota,lunch
+3.0,Gampola Center,16:30,Gampola,watch film
+3.0,Rajagiriya Flyover,20:30,Rajagiriya,"dinner, shopping"
+3.0,Kattankudy AC,16:30,Kattankudy,watch film
+4.5,Gampola Center,16:30,Gampola,"watch film, visit beautiful place"
+0.25,Arugam Bay AC,11:30,Arugam Bay,none
+1.5,Digana DC,11:45,Digana,lunch
+0.75,Kuliyapitiya Center,07:45,Kuliyapitiya,"breakfast, tea/coffee shop"
+0.75,Hikkaduwa AC,19:30,Hikkaduwa,dinner
+2.75,Warakapola AC,07:00,Warakapola,"breakfast, visit beautiful place"
+1.5,Haputale View,07:15,Haputale,breakfast
+0.5,Poonakary AC,06:45,Poonakary,tea/coffee shop
+1.0,Kataragama Center,21:00,Kataragama,dinner
+0.75,Point Pedro DC,08:00,Point Pedro,"breakfast, tea/coffee shop"
+3.5,Ambalangoda DC,21:45,Ambalangoda,visit beautiful place
+0.75,Beliatta Highway,12:30,Beliatta,lunch
+0.5,Kuliyapitiya Center,17:49,Kuliyapitiya,tea/coffee shop
+3.0,Ruwanwella AC,18:45,Ruwanwella,visit beautiful place
+0.25,Kandy City Center,13:15,Kandy,none
+2.5,Weligama Bay,20:00,Weligama,"dinner, shopping"
+0.75,Homagama Center,08:15,Homagama,"breakfast, tea/coffee shop"
+3.0,Habarana DC,14:00,Habarana,"lunch, shopping"
+0.5,Anuradhapura DC,06:27,Anuradhapura,tea/coffee shop
+3.0,Embilipitiya DC,13:45,Embilipitiya,"lunch, shopping"
+2.75,Embilipitiya DC,17:30,Embilipitiya,visit beautiful place
+2.5,Anuradhapura New Town,11:30,Anuradhapura,"lunch, shopping"
+2.0,Marawila AC,13:00,Marawila,lunch
+4.0,Hatton Bus Stand,22:15,Hatton,visit beautiful place
+3.0,Nugegoda High Level,15:30,Nugegoda,visit beautiful place
+2.75,Kalmunai Center,12:00,Kalmunai,"lunch, visit beautiful place"
+2.0,Anuradhapura DC,14:15,Anuradhapura,lunch
+2.5,Nuwara Eliya Grand,13:45,Nuwara Eliya,"lunch, shopping"
+2.0,Katunayake Airport,13:00,Katunayake,lunch
+0.5,Marawila AC,17:09,Marawila,tea/coffee shop
+0.75,Nugegoda High Level,08:15,Nugegoda,"breakfast, tea/coffee shop"
+2.5,Station A,11:15,Colombo,"lunch, shopping"
+2.75,Talawakele DC,13:15,Talawakele,"lunch, visit beautiful place"
+2.0,Station B,07:00,Colombo,breakfast
+0.75,Padukka Center,09:00,Padukka,shopping
+4.0,Nivitigala AC,11:45,Nivitigala,"watch film, visit beautiful place"
+3.0,Maharagama City,09:00,Maharagama,visit beautiful place
+0.75,Maskeliya Town,08:45,Maskeliya,"breakfast, tea/coffee shop"
+2.0,Kilinochchi Center,08:30,Kilinochchi,breakfast
+1.0,Jaffna Library AC,22:45,Jaffna,shopping
+2.75,Panadura Depot,12:15,Panadura,"lunch, visit beautiful place"
+3.0,Homagama Godagama,19:00,Homagama,"dinner, shopping"
+2.0,Maharagama City,20:15,Maharagama,dinner
+2.5,Haputale View,13:45,Haputale,"lunch, shopping"
+1.0,Mullaitivu DC,19:00,Mullaitivu,dinner
+4.0,Kalutara South,14:30,Kalutara,visit beautiful place
+2.5,Kattankudy AC,17:00,Kattankudy,visit beautiful place
+2.0,Aluthgama Bridge,11:30,Aluthgama,lunch
+3.0,Ratnapura DC,11:45,Ratnapura,"lunch, shopping"
+5.0,Ella Station,11:45,Ella,"watch film, visit beautiful place"
+2.0,Warakapola AC,08:15,Warakapola,breakfast
+4.5,Veyangoda Station,16:45,Veyangoda,visit beautiful place
+2.0,Ahangama AC,11:30,Ahangama,lunch
+1.5,Biyagama Factory,08:30,Biyagama,breakfast
+3.5,Kuliyapitiya Center,09:15,Kuliyapitiya,visit beautiful place
+4.0,Bandarawela Town,21:30,Bandarawela,"watch film, visit beautiful place"
+5.0,Kalutara South,19:00,Kalutara,"watch film, visit beautiful place"
+2.0,Panadura Depot,14:00,Panadura,lunch
+2.5,Ahangama AC,11:45,Ahangama,"lunch, shopping"
+0.5,Rajagiriya Flyover,22:47,Rajagiriya,tea/coffee shop
+3.0,Embilipitiya DC,06:15,Embilipitiya,visit beautiful place
+4.0,Vavuniya Town DC,18:00,Vavuniya,visit beautiful place
+3.0,Hatton Bus Stand,06:15,Hatton,visit beautiful place
+2.75,Kegalle Town,14:15,Kegalle,"lunch, visit beautiful place"
+0.5,Pottuvil DC,06:02,Pottuvil,tea/coffee shop
+3.5,Galle Bus Stand,06:30,Galle,visit beautiful place
+2.75,Marawila AC,13:45,Marawila,"lunch, visit beautiful place"
+4.0,Dutch Hospital,21:30,Colombo,"watch film, visit beautiful place"
+1.5,Dambulla DC,07:15,Dambulla,breakfast
+0.5,Pottuvil DC,01:17,Pottuvil,tea/coffee shop
+0.75,Veyangoda Station,07:15,Veyangoda,"breakfast, tea/coffee shop"
+2.5,Hanwella AC,13:45,Hanwella,"lunch, shopping"
+0.5,Trincomalee Town,22:35,Trincomalee,tea/coffee shop
+2.5,Muttur DC,11:30,Muttur,"lunch, shopping"
+1.5,Horana Town,21:45,Horana,dinner
+2.5,Beruwala Beach,11:00,Beruwala,"lunch, shopping"
+2.75,Mihintale AC,14:00,Mihintale,"lunch, visit beautiful place"
+0.25,Ampara DC,05:30,Ampara,none
+3.5,Dambulla DC,21:30,Dambulla,"watch film, visit beautiful place"
+1.5,Puttalam Lagoon,08:30,Puttalam,breakfast
+1.0,Peradeniya Junction,08:15,Peradeniya,breakfast
+2.5,Passara DC,05:30,Passara,visit beautiful place
+0.25,Kosgama DC,06:00,Kosgama,none
+0.25,Ella Station,14:15,Ella,none
+1.5,Bandarawela Town,14:15,Bandarawela,lunch
+1.0,Station B,07:45,Colombo,breakfast
+0.75,Anuradhapura DC,11:00,Anuradhapura,lunch
+2.0,Dehiwala Junction,07:00,Dehiwala,breakfast
+2.0,Shangri La DC,08:00,Colombo,breakfast
+1.5,Katunayake Airport,14:45,Katunayake,lunch
+0.25,Mahiyanganaya AC,09:00,Mahiyanganaya,none
+2.75,Chavakachcheri AC,08:00,Chavakachcheri,"breakfast, visit beautiful place"
+2.75,Katunayake Airport,05:00,Katunayake,visit beautiful place
+0.75,Dutch Hospital,07:15,Colombo,"breakfast, tea/coffee shop"
+2.75,Kattankudy AC,08:00,Kattankudy,"breakfast, visit beautiful place"
+3.0,Ratmalana DC,11:45,Ratmalana,"lunch, shopping"
+0.75,Hikkaduwa AC,12:45,Hikkaduwa,lunch
+2.5,Pussellawa AC,09:45,Pussellawa,visit beautiful place
+0.5,Nuwara Eliya Grand,06:28,Nuwara Eliya,tea/coffee shop
+2.0,Chavakachcheri AC,10:45,Chavakachcheri,shopping
+0.5,Jaffna Library AC,16:21,Jaffna,tea/coffee shop
+3.0,Teldeniya AC,11:45,Teldeniya,"lunch, shopping"
+2.75,Akuressa Center,13:00,Akuressa,"lunch, visit beautiful place"
+0.5,Pottuvil DC,22:49,Pottuvil,tea/coffee shop
+3.0,Anuradhapura New Town,14:00,Anuradhapura,"lunch, shopping"
+3.0,Dambulla DC,15:30,Dambulla,visit beautiful place
+1.0,Dickwella DC,07:00,Dickwella,breakfast
+3.0,Eheliyagoda DC,20:15,Eheliyagoda,"dinner, shopping"
+2.0,Dutch Hospital,08:45,Colombo,breakfast
+1.5,Matara Town Hall,07:30,Matara,breakfast
+2.75,Ambalangoda DC,08:00,Ambalangoda,"breakfast, visit beautiful place"
+0.5,Station B,06:14,Colombo,tea/coffee shop
+0.5,Kekirawa AC,03:27,Kekirawa,tea/coffee shop
+3.0,Horana Town,06:45,Horana,visit beautiful place
+2.75,Wellawaya AC,08:45,Wellawaya,"breakfast, visit beautiful place"
+2.5,Thalahena DC,16:45,Thalahena,visit beautiful place
+0.75,Embilipitiya DC,08:45,Embilipitiya,"breakfast, tea/coffee shop"
+1.0,Galle Fort AC,08:30,Galle,breakfast
+0.5,Gampaha Town,16:27,Gampaha,tea/coffee shop
+3.0,Chilaw City,21:30,Chilaw,"dinner, shopping"
+3.0,Kuliyapitiya Center,14:45,Kuliyapitiya,"lunch, shopping"
+1.5,Tanamalwila AC,14:15,Tanamalwila,lunch
+0.5,Maskeliya Town,22:25,Maskeliya,tea/coffee shop
+5.0,Mullaitivu DC,21:30,Mullaitivu,"watch film, visit beautiful place"
+3.0,Polonnaruwa Center,19:00,Polonnaruwa,"dinner, shopping"
+0.25,Weligama Bay,22:00,Weligama,none
+3.5,Wennappuwa DC,22:45,Wennappuwa,visit beautiful place
+0.25,Matale Town,09:15,Matale,none
+2.0,Deniyaya AC,12:00,Deniyaya,lunch
+0.5,Avissawella Center,15:47,Avissawella,tea/coffee shop
+0.25,Polonnaruwa Center,22:15,Polonnaruwa,none
+2.75,Beliatta Highway,13:45,Beliatta,"lunch, visit beautiful place"
+3.5,Kottawa Interchange,14:15,Kottawa,visit beautiful place
+4.0,Dutch Hospital,13:00,Colombo,visit beautiful place
+4.0,Teldeniya AC,05:30,Teldeniya,visit beautiful place
+1.0,Panadura Depot,14:45,Panadura,lunch
+3.0,Mirissa Beach,21:00,Mirissa,"dinner, shopping"
+1.5,Ampara DC,12:00,Ampara,lunch
+3.0,Anamaduwa DC,16:00,Anamaduwa,visit beautiful place
+1.0,Padukka Center,12:30,Padukka,lunch
+2.0,Station A,08:30,Colombo,breakfast
+1.0,Avissawella Center,12:15,Avissawella,lunch
+4.0,Kadawatha Highway,21:15,Kadawatha,visit beautiful place
+0.75,Digana DC,18:00,Digana,shopping
+2.75,Warakapola AC,13:15,Warakapola,"lunch, visit beautiful place"
+3.0,Veyangoda Station,19:00,Veyangoda,"dinner, shopping"
+0.5,Warakapola AC,17:32,Warakapola,tea/coffee shop
+2.5,Balangoda AC,14:00,Balangoda,"lunch, shopping"
+5.0,Negombo Beach Road,06:30,Negombo,visit beautiful place
+1.0,Kekirawa AC,11:00,Kekirawa,lunch
+3.5,Jaffna Central DC,19:00,Jaffna,"watch film, visit beautiful place"
+0.75,Mullaitivu DC,11:30,Mullaitivu,lunch
+0.5,Trincomalee Town,06:10,Trincomalee,tea/coffee shop
+1.0,Horana Town,14:45,Horana,lunch
+0.5,Monaragala DC,16:05,Monaragala,tea/coffee shop
+2.75,Tissamaharama DC,14:45,Tissamaharama,"lunch, visit beautiful place"
+5.0,Anuradhapura New Town,14:00,Anuradhapura,"watch film, visit beautiful place"
+0.75,Haputale View,12:30,Haputale,lunch
+3.0,Kalutara South,05:00,Kalutara,visit beautiful place
+0.25,Galle Fort AC,21:00,Galle,none
+2.0,Tissamaharama DC,13:30,Tissamaharama,lunch
+3.0,Kosgama DC,21:30,Kosgama,"dinner, shopping"
+4.0,Hanwella AC,10:15,Hanwella,visit beautiful place
+2.75,Gampola Center,09:45,Gampola,visit beautiful place
+2.0,Chavakachcheri AC,19:15,Chavakachcheri,dinner
+0.5,Rajagiriya Flyover,06:20,Rajagiriya,tea/coffee shop
+0.25,Dehiwala Junction,07:15,Dehiwala,none
+2.5,Habarana DC,20:00,Habarana,"dinner, shopping"
+3.5,Dickwella DC,18:00,Dickwella,visit beautiful place
+5.0,Maho Station,11:00,Maho,visit beautiful place
+1.0,Negombo Beach Road,07:45,Negombo,breakfast
+3.5,Batticaloa City,06:30,Batticaloa,visit beautiful place
+2.0,Weligama Bay,07:00,Weligama,breakfast
+2.0,Maho Station,11:30,Maho,lunch
+1.5,Homagama Godagama,13:45,Homagama,lunch
+2.0,Gampola Center,07:45,Gampola,breakfast
+4.5,Kattankudy AC,11:45,Kattankudy,"watch film, visit beautiful place"
+3.5,Unawatuna DC,16:00,Unawatuna,visit beautiful place
+2.5,Dambulla DC,14:00,Dambulla,"lunch, shopping"
+2.0,Ella Station,11:15,Ella,lunch
+0.75,Katunayake Airport,21:45,Katunayake,dinner
+0.75,Tangalle Town,13:45,Tangalle,lunch
+0.5,Bandarawela Town,06:18,Bandarawela,tea/coffee shop
+3.5,Hambantota Port,19:45,Hambantota,visit beautiful place
+2.75,Tangalle Town,13:45,Tangalle,"lunch, visit beautiful place"
+2.5,Mirissa Beach,09:45,Mirissa,visit beautiful place
+2.75,Monaragala DC,12:30,Monaragala,"lunch, visit beautiful place"
+1.0,Monaragala DC,08:30,Monaragala,breakfast
+2.5,Hikkaduwa AC,10:30,Hikkaduwa,visit beautiful place
+0.75,Hambantota Port,12:30,Hambantota,lunch
+2.0,Kattankudy AC,08:45,Kattankudy,breakfast
+4.0,Mirissa Beach,22:45,Mirissa,visit beautiful place
+1.0,Hikkaduwa AC,05:00,Hikkaduwa,shopping
+3.5,Point Pedro DC,14:00,Point Pedro,"watch film, visit beautiful place"
+0.75,Ella Station,13:30,Ella,lunch
+3.5,Gampaha Town,15:00,Gampaha,visit beautiful place
+2.75,Panadura Depot,07:15,Panadura,"breakfast, visit beautiful place"
+1.5,Maskeliya Town,08:00,Maskeliya,breakfast
+0.75,Dambulla DC,07:30,Dambulla,"breakfast, tea/coffee shop"
+2.75,Tissamaharama DC,13:00,Tissamaharama,"lunch, visit beautiful place"
+0.5,Moratuwa Junction,06:30,Moratuwa,tea/coffee shop
+2.5,Pannipitiya Station,20:15,Pannipitiya,"dinner, shopping"
+2.5,Kurunegala Lake Rd,12:30,Kurunegala,"lunch, shopping"
+4.0,Kurunegala Lake Rd,22:45,Kurunegala,visit beautiful place
+2.5,Vavuniya Town DC,11:45,Vavuniya,"lunch, shopping"
+3.5,Station A,19:00,Colombo,"watch film, visit beautiful place"
+2.0,Haputale View,08:30,Haputale,breakfast
+2.75,Kadugannawa AC,21:30,Kadugannawa,visit beautiful place
+0.75,Mannar AC,21:15,Mannar,dinner
+2.0,Tanamalwila AC,07:30,Tanamalwila,breakfast
+5.0,Dehiwala Junction,10:00,Dehiwala,visit beautiful place
+4.5,Horana Town,13:45,Horana,visit beautiful place
+2.0,Deniyaya AC,12:30,Deniyaya,lunch
+2.75,Tambuttegama DC,07:45,Tambuttegama,"breakfast, visit beautiful place"
+2.75,Ampara DC,13:00,Ampara,"lunch, visit beautiful place"
+2.75,Homagama Godagama,14:30,Homagama,"lunch, visit beautiful place"
+2.5,Katunayake Airport,11:00,Katunayake,"lunch, shopping"
+5.0,Warakapola AC,19:00,Warakapola,"watch film, visit beautiful place"
+3.0,Ratnapura DC,11:45,Ratnapura,"lunch, shopping"
+2.75,Station A,06:30,Colombo,visit beautiful place
+0.75,Bambalapitiya RZ,12:45,Bambalapitiya,lunch
+0.5,Embilipitiya DC,06:05,Embilipitiya,tea/coffee shop
+4.0,Dutch Hospital,18:15,Colombo,visit beautiful place
+1.5,Jaffna Central DC,07:00,Jaffna,breakfast
+0.75,Station C,08:15,Kandy,"breakfast, tea/coffee shop"
+1.5,Galle Fort AC,13:15,Galle,lunch
+3.0,Hambantota Port,16:30,Hambantota,watch film
+3.0,Negombo Beach Road,21:30,Negombo,"dinner, shopping"
+2.0,Kilinochchi Center,07:30,Kilinochchi,breakfast
+5.0,Embilipitiya DC,07:45,Embilipitiya,visit beautiful place
+3.0,Passara DC,13:30,Passara,"lunch, shopping"
+2.5,Habarana DC,16:30,Habarana,watch film
+3.0,Wennappuwa DC,21:30,Wennappuwa,"dinner, shopping"
+3.5,Ahangama AC,14:00,Ahangama,"watch film, visit beautiful place"
+2.5,Tangalle Town,05:30,Tangalle,visit beautiful place
+2.0,Kuliyapitiya Center,08:30,Kuliyapitiya,breakfast
+2.75,CCC Fast Charge,08:45,Colombo,"breakfast, visit beautiful place"
+3.0,Jaffna Library AC,21:00,Jaffna,"dinner, shopping"
