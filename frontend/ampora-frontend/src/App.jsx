@@ -33,6 +33,7 @@ import AdminUserpage from "./pages/admin/UserPage.jsx";
 import AdminVehicle from "./pages/admin/Vehicle.jsx";
 
 import AdminLayout from "./components/Layout.jsx";
+import PaymentSuccess from "./pages/PaymentSuccess.jsx";
 
 function AppLayout() {
   const location = useLocation();
@@ -69,6 +70,7 @@ function AppLayout() {
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/help" element={<HelpSupport />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
 
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboardpage />} />

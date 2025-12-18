@@ -1,36 +1,61 @@
-// src/pages/StationFinder.jsx
-import React, { useState, useEffect } from "react";
+/* global google */
+import React, { useState, useEffect, useRef } from "react";
 import { FiSearch } from "react-icons/fi";
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  Marker,
+  useLoadScript,
+  Autocomplete,
+} from "@react-google-maps/api";
 import StationCard from "../components/Station/StationCard";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const API_BASE = "http://127.0.0.1:8083";
+const RADIUS_KM = 10;
 
-const StationFinder = () => {
-  const [search, setSearch] = useState("");
+/* ================= DISTANCE ================= */
+function distanceKm(lat1, lon1, lat2, lon2) {
+  const R = 6371;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * (Math.PI / 180)) *
+      Math.cos(lat2 * (Math.PI / 180)) *
+      Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+export default function StationFinder() {
+  const [searchPlace, setSearchPlace] = useState("");
   const [stations, setStations] = useState([]);
+  const [filteredStations, setFilteredStations] = useState([]);
   const [selectedStation, setSelectedStation] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Booking data
+  const searchRef = useRef(null);
+
+  /* Booking */
   const [bookingDate, setBookingDate] = useState(null);
   const [bookingTime, setBookingTime] = useState("");
   const [duration, setDuration] = useState(1);
   const [availability, setAvailability] = useState(null);
-  const [bookingLoading, setBookingLoading] = useState(false);
 
   const userId = localStorage.getItem("userId");
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+    libraries: ["places"],
   });
 
   const mapContainerStyle = { width: "100%", height: "100%" };
-  const center = { lat: 6.9271, lng: 79.8612 };
+  const [mapCenter, setMapCenter] = useState({
+    lat: 6.9271,
+    lng: 79.8612,
+  });
 
- 
+  /* ================= LOAD STATIONS ================= */
   useEffect(() => {
     async function loadStations() {
       try {
@@ -43,13 +68,15 @@ const StationFinder = () => {
           address: s.address || "No Address",
           lat: s.latitude,
           lng: s.longitude,
-          chargerId: s.chargers && s.chargers.length > 0 ? s.chargers[0].chargerID : null,
+          chargerId:
+            s.chargers && s.chargers.length > 0
+              ? s.chargers[0].chargerID
+              : null,
           maxPower: s.powerKw || 0,
         }));
 
         setStations(formatted);
-      } catch (err) {
-        console.error("Error loading stations:", err);
+        setFilteredStations(formatted);
       } finally {
         setLoading(false);
       }
@@ -57,254 +84,245 @@ const StationFinder = () => {
     loadStations();
   }, []);
 
- 
-  const filteredStations = stations.filter(
-    (s) =>
-      s.name.toLowerCase().includes(search.toLowerCase()) ||
-      s.address.toLowerCase().includes(search.toLowerCase())
-  );
-
-
-  async function checkAvailability() {
-    if (!bookingDate || !bookingTime || !duration) {
-      alert("Select date, time, and duration first.");
-      return;
-    }
-
-    const dateStr = bookingDate.toISOString().split("T")[0];
-    const [hh, mm] = bookingTime.split(":");
-
-    const startTime = `${hh}:${mm}`;
-    const endHour = Number(hh) + Number(duration);
-
-    if (endHour >= 24) {
-      alert("End time cannot exceed 23:59");
-      return;
-    }
-
-    const endTime = `${String(endHour).padStart(2, "0")}:${mm}`;
-
-    setBookingLoading(true);
-
-    try {
-      const res = await fetch(`${API_BASE}/api/bookings/availability`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chargerId: selectedStation.chargerId,
-          date: dateStr,
-          startTime,
-          endTime,
-        }),
-      });
-
-      const data = await res.json();
-      setAvailability(data.available);
-    } catch (err) {
-      console.error(err);
-      setAvailability(null);
-    } finally {
-      setBookingLoading(false);
-    }
+  function filterByDistance(lat, lng) {
+    setFilteredStations(
+      stations.filter(
+        (st) => distanceKm(lat, lng, st.lat, st.lng) <= RADIUS_KM
+      )
+    );
   }
 
-  
-  async function createBooking() {
-    if (availability !== true) {
-      alert("Time slot not available.");
-      return;
-    }
+  function handlePlaceSelect() {
+    const place = searchRef.current.getPlace();
+    if (!place || !place.geometry) return;
 
-    const dateStr = bookingDate.toISOString().split("T")[0];
-    const [hh, mm] = bookingTime.split(":");
-
-    const start = `${dateStr}T${hh}:${mm}:00`;
-    const end = `${dateStr}T${String(Number(hh) + duration).padStart(2, "0")}:${mm}:00`;
-
-    const payload = {
-      userId,
-      chargerId: selectedStation.chargerId,
-      startTime: start,
-      endTime: end,
-      date: dateStr,
-      bookingStatus: "PENDING",
+    const location = {
+      lat: place.geometry.location.lat(),
+      lng: place.geometry.location.lng(),
     };
-    console.log("Booking payload:", payload);
 
-    setBookingLoading(true);
-
-    try {
-      const res = await fetch(`${API_BASE}/api/bookings`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const json = await res.json();
-
-      if (json.bookingId) {
-        alert("Booking successful!");
-        setSelectedStation(null);
-      } else {
-        alert("Booking failed.");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Booking error.");
-    } finally {
-      setBookingLoading(false);
-    }
+    setSearchPlace(place.formatted_address);
+    setMapCenter(location);
+    filterByDistance(location.lat, location.lng);
   }
 
+  /* ================= BOOKING ================= */
+  async function checkAvailability() {
+    if (!bookingDate || !bookingTime || !duration) return;
+
+    const dateStr = bookingDate.toISOString().split("T")[0];
+    const [hh, mm] = bookingTime.split(":");
+    const endHour = Number(hh) + duration;
+
+    const res = await fetch(`${API_BASE}/api/bookings/availability`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chargerId: selectedStation.chargerId,
+        date: dateStr,
+        startTime: `${hh}:${mm}`,
+        endTime: `${endHour}:${mm}`,
+      }),
+    });
+
+    const data = await res.json();
+    setAvailability(data.available);
+  }
+
+  async function createBooking() {
+    if (!availability) return;
+
+    const dateStr = bookingDate.toISOString().split("T")[0];
+    const [hh, mm] = bookingTime.split(":");
+
+    await fetch(`${API_BASE}/api/bookings`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId,
+        chargerId: selectedStation.chargerId,
+        startTime: `${dateStr}T${hh}:${mm}:00`,
+        endTime: `${dateStr}T${Number(hh) + duration}:${mm}:00`,
+        bookingStatus: "PENDING",
+      }),
+    });
+
+    setSelectedStation(null);
+  }
+
+  if (!isLoaded || loading) return <p className="p-10">Loading…</p>;
 
   return (
-    <div className="w-screen overflow-x-hidden bg-[#EDFFFF] flex flex-col items-center pb-10">
-      {/* Banner */}
-      <div className="w-full h-[30vh] bg-black rounded-b-[50px] flex justify-center items-center shadow-md">
-        <h1 className="text-5xl font-bold text-white text-center">
-          Find Charging Stations ⚡
-        </h1>
-      </div>
+    <div className="w-screen bg-teal-100 pb-20">
 
-      {/* Search */}
-      <div className="w-10/12 mt-[-40px] bg-white p-5 rounded-2xl shadow-xl flex items-center gap-4">
-        <FiSearch size={24} className="text-emerald-500" />
-        <input
-          type="text"
-          placeholder="Search station name, city, or location..."
-          className="w-full p-3 rounded-xl border border-emerald-300 text-black"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+      {/* ================= HEADER ================= */}
+      <div className="relative h-[34vh] rounded-b-[70px] overflow-hidden
+                      bg-gradient-to-tr from-teal-900 via-emerald-800 to-teal-700">
+        <svg className="absolute bottom-0 w-full" viewBox="0 0 1440 120">
+          <path
+            fill="rgba(255,255,255,0.15)"
+            d="M0,64L60,58.7C120,53,240,43,360,53.3C480,64,600,96,720,101.3C840,107,960,85,1080,69.3C1200,53,1320,43,1380,37.3L1440,32V120H0Z"
+          />
+        </svg>
 
-      {/* Layout */}
-      <div className="w-10/12 mt-10 flex flex-col lg:flex-row gap-6">
-        {/* MAP */}
-        <div className="lg:w-7/12 h-[75vh] bg-white rounded-3xl shadow-xl overflow-hidden">
-          {!isLoaded || loading ? (
-            <p className="text-center mt-10 text-gray-500">Loading map...</p>
-          ) : (
-            <GoogleMap
-              mapContainerStyle={mapContainerStyle}
-              zoom={12}
-              center={center}
-            >
-              {filteredStations.map((st) => (
-                <Marker
-                  key={st.id}
-                  position={{ lat: st.lat, lng: st.lng }}
-                  onClick={() => setSelectedStation(st)}
-                />
-              ))}
-            </GoogleMap>
-          )}
+        <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white">
+            Find <span className="text-emerald-300">EV</span> Charging Stations
+          </h1>
+          <p className="mt-3 text-emerald-100 text-lg">
+            Fast • Smart • Sustainable
+          </p>
         </div>
+      </div>
 
-        {/* LIST */}
-        <div className="lg:w-5/12 h-[75vh] overflow-y-scroll bg-white rounded-3xl p-5 shadow-xl">
-          <h2 className="text-2xl font-bold text-emerald-600 mb-4">
-            Nearby Stations
-          </h2>
+      {/* ================= SEARCH ================= */}
+      <div className="max-w-5xl mx-auto -mt-12 px-4">
+        <div className="bg-white/95 backdrop-blur-xl p-5 rounded-2xl
+                        shadow-[0_20px_50px_rgba(0,0,0,0.15)]
+                        flex gap-4 items-center">
+          <FiSearch size={22} className="text-emerald-500" />
+          <Autocomplete
+            onLoad={(ref) => (searchRef.current = ref)}
+            onPlaceChanged={handlePlaceSelect}
+          >
+            <input
+              className="w-full p-3 rounded-xl outline-none"
+              placeholder="Search your area…"
+              value={searchPlace}
+              onChange={(e) => setSearchPlace(e.target.value)}
+            />
+          </Autocomplete>
+        </div>
+      </div>
+      {/* ================= INTRODUCTION ================= */}
+<div className="max-w-4xl mx-auto mt-10 px-6 text-center">
+  <p className="text-lg text-gray-700 leading-relaxed">
+    Discover reliable <span className="font-semibold text-emerald-600">EV charging stations</span> 
+    near you with ease.  
+    Search any location to instantly view nearby stations, compare availability,
+    and book your charging slot — all in one place.
+  </p>
 
-          <div className="flex flex-col gap-5">
+  <p className="mt-3 text-sm text-gray-500">
+    Smart routing • Real-time availability • Hassle-free booking
+  </p>
+</div>
+
+      {/* ================= MAP ================= */}
+      <div className="max-w-6xl mx-auto mt-14 px-4">
+        <div className="h-[65vh] bg-white rounded-[32px]
+                        shadow-[0_30px_80px_rgba(0,0,0,0.25)]
+                        overflow-hidden">
+          <GoogleMap
+            mapContainerStyle={mapContainerStyle}
+            center={mapCenter}
+            zoom={13}
+          >
             {filteredStations.map((st) => (
-              <div key={st.id} onClick={() => setSelectedStation(st)}>
-                <StationCard station={st} />
-              </div>
+              <Marker
+                key={st.id}
+                position={{ lat: st.lat, lng: st.lng }}
+                onClick={() => setSelectedStation(st)}
+              />
             ))}
-          </div>
+          </GoogleMap>
         </div>
       </div>
 
-      {/* BOOKING POPUP */}
+      {/* ================= STATIONS ================= */}
+      <div className="max-w-6xl mx-auto mt-10 px-4">
+        <div className="flex justify-between items-center mb-5">
+          <h2 className="text-xl font-bold text-emerald-600">
+            Stations within {RADIUS_KM} km
+          </h2>
+          <span className="text-sm bg-emerald-100 px-3 py-1 rounded-full">
+            ⚡ {filteredStations.length}
+          </span>
+        </div>
+
+        <div className="flex gap-6 overflow-x-auto pb-6
+                        snap-x snap-mandatory">
+          {filteredStations.map((st) => (
+            <div
+              key={st.id}
+              className="min-w-[320px] snap-start"
+              onClick={() => setSelectedStation(st)}
+            >
+              <StationCard station={st} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ================= BOOKING MODAL ================= */}
       {selectedStation && (
-        <div className="absolute top-20 w-10/12 lg:w-4/12 bg-white rounded-3xl shadow-xl p-5 border border-emerald-200">
-          <StationCard station={selectedStation} /> 
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm
+                        flex items-center justify-center z-50 px-4">
+          <div className="bg-white rounded-3xl shadow-2xl p-6 w-full max-w-md">
+            <StationCard station={selectedStation} />
 
-          <h3 className="text-xl  font-bold text-emerald-700 mt-4">
-            Book a Charging Slot
-          </h3>
+            <h3 className="text-xl font-bold text-emerald-700 mt-4">
+              Book Charging Slot
+            </h3>
 
-          {/* DATE */}
-          <label className="block mt-3 font-semibold text-sm text-emerald-600">
-            Select Date
-          </label>
-          <DatePicker
-            selected={bookingDate}
-            onChange={(d) => setBookingDate(d)}
-            dateFormat="yyyy-MM-dd"
-            minDate={new Date()}
-            placeholderText="Select a date"
-            className="w-full p-2 border rounded-lg text-black"
-          />
+            <DatePicker
+              selected={bookingDate}
+              onChange={setBookingDate}
+              minDate={new Date()}
+              className="w-full p-2 border rounded mt-2"
+            />
 
-          {/* TIME */}
-          <label className="block mt-3 font-semibold text-sm text-emerald-600">
-            Select Start Time
-          </label>
-          <input
-            type="time"
-            value={bookingTime}
-            onChange={(e) => setBookingTime(e.target.value)}
-            placeholder="Set Time "
-            className="w-full p-2 border rounded-lg border-black text-black"
-          />
+            <input
+              type="time"
+              className="w-full p-2 border rounded mt-2"
+              value={bookingTime}
+              onChange={(e) => setBookingTime(e.target.value)}
+            />
 
-          {/* Duration */}
-          <label className="block mt-3 font-semibold text-sm text-emerald-600">
-            Duration (Hours)
-          </label>
-          <select
-            value={duration}
-            onChange={(e) => setDuration(Number(e.target.value))}
-            className="w-full p-2 border rounded-lg border-black text-black"
-          >
-            <option value={1}>1 hour</option>
-            <option value={2}>2 hours</option>
-            <option value={3}>3 hours</option>
-          </select>
-
-          {/* Availability */}
-          {availability !== null && (
-            <p
-              className={`mt-3 text-sm font-bold ${
-                availability ? "text-green-600" : "text-red-600"
-              }`}
+            <select
+              className="w-full p-2 border rounded mt-2"
+              value={duration}
+              onChange={(e) => setDuration(Number(e.target.value))}
             >
-              {availability
-                ? "Slot is available ✔"
-                : "Slot unavailable ✖"}
-            </p>
-          )}
+              <option value={1}>1 hour</option>
+              <option value={2}>2 hours</option>
+              <option value={3}>3 hours</option>
+            </select>
 
-          {/* Buttons */}
-          <div className="flex gap-3 mt-5">
-            <button
-              onClick={checkAvailability}
-              className="flex-1 bg-emerald-500 text-white py-2 rounded-lg"
-            >
-              Check Availability
-            </button>
+            {availability !== null && (
+              <p
+                className={`mt-3 font-bold ${
+                  availability ? "text-green-600" : "text-red-600"
+                }`}
+              >
+                {availability ? "Slot available ✔" : "Slot unavailable ✖"}
+              </p>
+            )}
+
+            <div className="flex gap-3 mt-4">
+              <button
+                onClick={checkAvailability}
+                className="flex-1 bg-emerald-500 text-white py-2 rounded-xl"
+              >
+                Check
+              </button>
+              <button
+                onClick={createBooking}
+                className="flex-1 bg-black text-white py-2 rounded-xl"
+              >
+                Book
+              </button>
+            </div>
 
             <button
-              onClick={createBooking}
-              className="flex-1 bg-black text-white py-2 rounded-lg"
+              className="mt-4 w-full bg-gray-200 py-2 rounded-xl"
+              onClick={() => setSelectedStation(null)}
             >
-              Book Now
+              Close
             </button>
           </div>
-
-          <button
-            className="mt-4 w-full bg-gray-200 py-2 rounded-lg"
-            onClick={() => setSelectedStation(null)}
-          >
-            Close
-          </button>
         </div>
       )}
     </div>
   );
-};
-
-export default StationFinder;
+}
