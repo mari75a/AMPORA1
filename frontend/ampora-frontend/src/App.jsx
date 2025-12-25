@@ -25,6 +25,14 @@ import Footer from "./components/Footer.jsx";
 import Register from "./pages/Register.jsx";
 import Forget from "./pages/Forget.jsx";
 import LoaderProvider from "./components/LoaderProvider.jsx";
+
+import Operator from "./pages/Operator/Operator.jsx";
+import StationOp from "./pages/Operator/StationOp.jsx";
+
+import Maintenance from "./pages/Maintenance.jsx";
+import Reports from "./pages/Operator/Reports.jsx";
+import Booking from "./pages/Operator/Booking.jsx";
+
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AdminChargerStationPage from "./pages/admin/ChargerStation.jsx";
 import AdminDashboardpage from "./pages/admin/Dashboard.jsx";
@@ -34,6 +42,9 @@ import AdminVehicle from "./pages/admin/Vehicle.jsx";
 
 import AdminLayout from "./components/Layout.jsx";
 import PaymentSuccess from "./pages/PaymentSuccess.jsx";
+import ChargerPage from "./pages/admin/Charger.jsx";
+import Subscription from "./pages/admin/Subscription.jsx";
+
 
 function AppLayout() {
   const location = useLocation();
@@ -46,6 +57,8 @@ function AppLayout() {
 
   return (
     <>
+
+
 
     
       {!isAuthPage && !isAdminPage && <Navbar />}
@@ -85,8 +98,11 @@ function AppLayout() {
               path="charger-stations"
               element={<AdminChargerStationPage />}
             />{" "}
+            <Route path="charger" element={<ChargerPage />} />
+            <Route path="subscriptions" element={<Subscription />} />
           </Route>
         </Routes>
+
 
       </LoaderProvider>
       {!isAuthPage && !isAdminPage && <Footer />}
